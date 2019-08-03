@@ -16,28 +16,88 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <nav></nav>
+    <nav>
             <a href="code_newgame.html" target="_blank">New Game/ |</a>
             <a href="#" target="_blank">Login |</a>
             <a href="#" target="_blank">Clue</a>
         </nav>
     <h2> Welcome the the clue page</h2>
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt aspernatur, velit excepturi asperiores itaque molestias hic accusantium. Vero repellat, voluptatibus eius ipsam officiis obcaecati. Architecto alias maiores corrupti neque dicta..</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Found new Clue</a>
+    </div>
     <div class="container">
     <div id="clue_text" class="col-sm-6">
     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, officia qui reprehenderit dignissimos doloremque quod voluptate praesentium molestiae ducimus ex quos eos sapiente sit ea eaque! Quia ex debitis obcaecati.</p>
-    <div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Map of next clue</h5>
-              <p class="card-text">with the next clue, please follow the map to the next area your clue will be near.</p>
-              <a href="#" class="btn btn-primary">Go</a>
-            </div>
-          </div>
+    <!--Grid row-->
+<div class="row">
+
+  <!--Grid column-->
+  <div class="col-md-6 mb-4">
+
+    <!--Card-->
+    <div class="card card-cascade narrower">
+
+      <!--Card image-->
+      <div class="view view-cascade gradient-card-header blue-gradient">
+        <h5 class="mb-0">Regular map</h5>
+      </div>
+      <!--/Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade text-center">
+
+        <!--Google map-->
+        <div id="map-container-google-8" class="z-depth-1-half map-container-5" style="height: 300px">
+          <iframe src="https://maps.google.com/maps?q=Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
+
+      </div>
+      <!--/.Card content-->
+
     </div>
+    <!--/.Card-->
+
+  </div>
+  <!--Grid column-->
+
+  <!--Grid column-->
+  <div class="col-md-6 mb-4">
+
+    <!--Card-->
+    <div class="card card-cascade narrower">
+
+      <!--Card image-->
+      <div class="view view-cascade gradient-card-header peach-gradient">
+        <h5 class="mb-0">Custom map</h5>
+      </div>
+      <!--/Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade text-center">
+
+        <!--Google map-->
+        <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
+          <iframe src="https://maps.google.com/maps?q=Madryt&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            style="border:0" allowfullscreen></iframe>
+        </div>
+
+
+      </div>
+      <!--/.Card content-->
+
     </div>
+    <!--/.Card-->
+
+  </div>
+  <!--Grid column-->
+
+</div>
+<!--Grid row-->
   </div>
   </body>
 </html>
