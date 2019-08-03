@@ -9,15 +9,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-       <!-- Google Fonts API - Raleway -->
-       <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Google Fonts API - Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <!-- Local Style - CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
   </head>
   <body>
 
       <!-- Navigation bar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">QR Scavenger Clue Hunt</a>
+            <a class="navbar-brand" href="code_newgame.html">QR Scavenger Clue Hunt</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,10 +28,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="code_newgame.html"> New Game/Code <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="login.html"> Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Login</a>
+                  <a class="nav-link" href="game_mode.html">Game Mode</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="new_game.html">New Game</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="clue_page.html">Clue</a>
@@ -41,11 +47,18 @@
                 <p class="lead">Enter your name and password.</p>
                 <hr class="my-4">
 
-                <form>
+
+                <!-- <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+
+                        </div> -->
+
+                <form class = "bg-dark" style = "color:white">
                         <div class="form-group">
                           <label for="userName">Name</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
-                          <small id="emailHelp" class="form-text text-muted"></small>
+                          <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter name">
+                          <small id="nameHelp" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
                           <label for="userPassword">Password</label>
@@ -54,6 +67,7 @@
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <!-- </div> -->
         </div>
         <!-- Closing tag for jumbotron -->
 
