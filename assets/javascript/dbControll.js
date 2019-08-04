@@ -50,7 +50,7 @@ const dbi = {
 
     getGames : function (user, callBack) {
         // Queries the database for games owned by the specified user
-        // Returns a list of game names and directory names for the games in the form of {'game name': directoryname} to a callback function
+        // Returns a list of game names and directory names for the games in the form of {name: 'game name', id : 'directoryname'} to a callback function
         // Returns null to the callback function if user hase no saved games in the database
 
         // Start by grabbing the contents of the directory
@@ -78,11 +78,8 @@ const dbi = {
                     // For each element in userGames, we use that element as the value for a database lookup
                     this.database.ref(gameIDs[i]).once('value', function (snapshot) {
 
-                        // Then we construct an object first as a string as a way of being able to dynamically generate what will become a property name
-                        let stringOfObject = `{"${snapshot.val().gameName}":"${gameIDs[i]}"}`;
-
-                        // Then we parse that string into an actual object before pushing it to our userGames list
-                        userGames.push(JSON.parse(stringOfObject));
+                        // Then we construct an object with our two values, before pushing it to our userGames list
+                        userGames.push({name: snapshot.val().gameName, id: gameIDs[i]});
 
                         // Because these operations are preformed asynchronously we can't expect to have all our values in userGames when the for loop finishes
                         // likewise, we can't even be sure that we'll get all the info back in the same order we asked for it
@@ -138,10 +135,11 @@ const dbi = {
 // // For testing: 
 // let aGame;
 // dbi.getGames('TestUser19', function (x) {
-//     aGame = x[0][Object.keys(x[0])[0]];
+//     console.log(x)
+//     aGame = x[0].id;
 //     console.log(aGame)
-//     dbi.getClue(aGame, 5, (val) => {console.log('Clue: ' + val)})
-//     dbi.getHint(aGame, 5, (val) => {console.log('Hint: ' + val)})
+//     dbi.getClue(aGame, 1, (val) => {console.log('Clue: ' + val)})
+//     dbi.getHint(aGame, 1, (val) => {console.log('Hint: ' + val)})
 //     });
 
 
