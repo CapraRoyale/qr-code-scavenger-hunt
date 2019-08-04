@@ -141,28 +141,3 @@ const dbi = {
 //     dbi.getClue(aGame, 1, (val) => {console.log('Clue: ' + val)})
 //     dbi.getHint(aGame, 1, (val) => {console.log('Hint: ' + val)})
 //     });
-
-
-
-
-
-
-
-
-
-
-// // Testing testing testing....
-
-// // Test/example values
-// let gameName = 'Example Clue Hunt';
-// let gameID;
-// let clues = ['Under the stairs', 'In the \'cookie jar\'', 'Where you lay your head', 'Your most private location', 'Atop the clock tower']
-
-// // Create new code hunt game:
-// gameID = database.ref().push({ 'gameName': gameName });
-// for (let i = 0; i < clues.length; i++) {
-//     console.log('Adding next clue...')
-//     console.log(gameID)
-//     let path = `${gameID.key}/${i}`;
-//     database.ref(path).set(clues[i]);
-// };
