@@ -54,19 +54,42 @@ const dbi = {
         // Returns false to the callback function if user hase no saved games in the database
 
         // Start by grabbing the contents of the directory
-        this.database.ref(`owners/${user}`).once('value', function (snapshot) {
+        // Note that because we will need to use this.database again with this function,
+        // we need to setup our callback using arrow notation so that the 'this' keyword retains the same value inside the 
+        // callback function despite that callback being invoked elsewhere
+        this.database.ref(`owners/${user}`).once('value', (snapshot) => {
             
             // If user has no games saved, then abort the rest of this function and return false
-            console.log(snapshot.val())
             if (!snapshot.val()) {
                 callBack(false)}
+            
+            // If, however, the user does have at least one saved game, we can get into the actual meat of this function
             else {
-                //TODO
+                
+                // For storing our output
+                let userGames = []; 
 
-                // Some example output:
-                callBack([{'Example Clue Hunt 003':"-LlOCvAiBcj7ezCteUXz"},{'Example Clue Hunt 002':"-LlOCy-D0C4MBVlhYkF6"}])
+                // Generates a list of the database locations for every user game
+                let gameIDs = Object.values(snapshot.val())
 
-            // Else do the rest of the function
+                // Iterate through database locations to grab the user set name for each game
+                for (let i = 0; i < gameIDs.length; i++) {
+
+                    // For each element in userGames, we use that element as the value for a database lookup
+                    this.database.ref(gameIDs[i]).once('value', function (snapshot) {
+
+                        // Then we construct an object first as a string as a way of being able to dynamically generate what will become a property name
+                        let stringOfObject = `{"${snapshot.val().gameName}":"${gameIDs[i]}"}`;
+
+                        // Then we parse that string into an actual object before pushing it to our userGames list
+                        userGames.push(JSON.parse(stringOfObject));
+
+                        // Because these operations are preformed asynchronously we can't expect to have all our values in userGames when the for loop finishes
+                        // likewise, we can't even be sure that we'll get all the info back in the same order we asked for it
+                        // So, instead of returning userGames to the callback function when 'finished', we'll do it at the end of whichever callback
+                        // has added the final value to the list. We can determin this easily by comparing our list length to the length of the gameIDs list.
+                        if (userGames.length === gameIDs.length) {callBack(userGames)};
+                    })};
         }});
     },
 
@@ -112,11 +135,11 @@ const dbi = {
     },
 }
 
+// // For testing: 
+// dbi.getGames('TestUser19', function (x) {
+//     console.log(x)
 
-dbi.getGames('TestUser29', function (x) {
-    console.log(x)
-
-    });
+//     });
 
 
 
