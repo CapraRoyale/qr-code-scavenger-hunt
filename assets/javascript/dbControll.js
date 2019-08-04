@@ -51,7 +51,7 @@ const dbi = {
     getGames : function (user, callBack) {
         // Queries the database for games owned by the specified user
         // Returns a list of game names and directory names for the games in the form of {'game name': directoryname} to a callback function
-        // Returns false to the callback function if user hase no saved games in the database
+        // Returns null to the callback function if user hase no saved games in the database
 
         // Start by grabbing the contents of the directory
         // Note that because we will need to use this.database again with this function,
@@ -59,9 +59,9 @@ const dbi = {
         // callback function despite that callback being invoked elsewhere
         this.database.ref(`owners/${user}`).once('value', (snapshot) => {
             
-            // If user has no games saved, then abort the rest of this function and return false
+            // If user has no games saved, then abort the rest of this function and return null
             if (!snapshot.val()) {
-                callBack(false)}
+                callBack(null)}
             
             // If, however, the user does have at least one saved game, we can get into the actual meat of this function
             else {
@@ -114,10 +114,11 @@ const dbi = {
         // Queries the database for the specified clue, and returns the clue text to the callback function
 
 
-        // TODO: Write this
-
-        // Test output:
-        callback('Test output: Here is the hint your wrote for clue number #');
+        // Basically we just plug our arguments into a path and that leads straight to our clue text. 
+        // Then we just call .val() on our snapshot and pass that to the callback
+        this.database.ref(`${gameID}/hints/${hintNumber}`).once('value', (snapshot) => {
+            callback(snapshot.val())
+        });
 
 
     },
@@ -134,13 +135,14 @@ const dbi = {
     },
 }
 
-// For testing: 
-let aGame;
-dbi.getGames('TestUser19', function (x) {
-    aGame = x[0][Object.keys(x[0])[0]];
-    console.log(aGame)
-    dbi.getClue(aGame, 0, (val) => {console.log(val)})
-    });
+// // For testing: 
+// let aGame;
+// dbi.getGames('TestUser19', function (x) {
+//     aGame = x[0][Object.keys(x[0])[0]];
+//     console.log(aGame)
+//     dbi.getClue(aGame, 5, (val) => {console.log('Clue: ' + val)})
+//     dbi.getHint(aGame, 5, (val) => {console.log('Hint: ' + val)})
+//     });
 
 
 
