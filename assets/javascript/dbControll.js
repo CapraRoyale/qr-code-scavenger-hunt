@@ -99,12 +99,11 @@ const dbi = {
         // and a callback function
         // Queries the database for the specified clue, and returns the clue text to the callback function
 
-
-        // TODO: Write this
-
-        // Test output:
-        callback('Test output: Lorem ipsum, etc, blah, blah.');
-
+        // Basically we just plug our arguments into a path and that leads straight to our clue text. 
+        // Then we just call .val() on our snapshot and pass that to the callback
+        this.database.ref(`${gameID}/clues/${clueNumber}`).once('value', (snapshot) => {
+            callback(snapshot.val())
+        });
 
     },
 
@@ -135,11 +134,13 @@ const dbi = {
     },
 }
 
-// // For testing: 
-// dbi.getGames('TestUser19', function (x) {
-//     console.log(x)
-
-//     });
+// For testing: 
+let aGame;
+dbi.getGames('TestUser19', function (x) {
+    aGame = x[0][Object.keys(x[0])[0]];
+    console.log(aGame)
+    dbi.getClue(aGame, 0, (val) => {console.log(val)})
+    });
 
 
 
