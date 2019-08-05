@@ -1,8 +1,9 @@
 # ClueHunt-QR
 
 # Project Title
+People who like to create scavenger hunts by hiding written clues can't simply track the progress of the players. One issue of this type of game is in Geocaching, which heavily relies on the concept of Global Positioning Systems (GPS). In attempt to resolve this type of issue, our group built a platform to enable a user to set up a scavenger hunt game where the program generates clues which have QR codes on them allowing players to get to the next clue and prove who found it first, thus allowing the creator of the codes to keep track of any player's progress. Primarily the
+target audience are people who like outdoor games and have phones with cameras. Also people who have experience with geocaching.
 
-One Paragraph of project description goes here
 
 ## Getting Started
 
@@ -10,7 +11,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+*Up-to-date web browser:
+** Ideally use Google Chrome for best performance & experience
 
 ```
 Give examples
@@ -59,10 +61,12 @@ Give an example
 Add additional notes about how to deploy this on a live system
 
 ## Built With
+*IDE used: Microsoft Visual Studios Code
+*Browsers: Google Chrome, Blisk
+*Adobe XD - Wire-frame Layout
+*Google Fonts API
+*BootStrap 4
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
@@ -74,16 +78,17 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Dan Gold** - *Project Manager & Coordinator* - [LandGod](https://github.com/LandGod)
+* **Siege Lehman** - [CapraRoyale](https://github.com/CapraRoyale)
+* **Joshua Mannhalt**  - [Systallium](https://github.com/Systallium)
+* **Micah Andres** - [mandres2](https://github.com/mandres2)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the University of Washington License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* To our fellow TAs (Catherine P, and Trae Shanks) for support and guidance of this project.
+* Special thanks to our teacher: Arron Linton for the ongoing support for this project.
