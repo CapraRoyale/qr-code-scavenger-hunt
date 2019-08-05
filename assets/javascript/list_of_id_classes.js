@@ -5,13 +5,20 @@
 
 /________________________________________________Page 01: Game_mode.html (index.html ________________________________________________________/
 Classes:
-.gameCode
+<button>
+.submitButton
 
+<button>
+.newGame
+
+<button>
+.login
 
 
 
 ids:
-
+<form>
+#gameCode
 
 
 
