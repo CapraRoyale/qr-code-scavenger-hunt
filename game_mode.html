@@ -26,16 +26,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="game_mode.html"> Game Mode <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="game_mode.html">Game Mode<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="new_game.html">New Game</a>
             </li>
-            <!-- Through the Login Page -> User can click Dashboard  -->
             <li class="nav-item">
               <a class="nav-link" href="login.html">Login</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="clue_page.html">Clue</a>
             </li>
@@ -43,7 +41,7 @@
         </div>
       </nav>
 
-      <!-- /__________________________________________________________________________________________________________________________________/ -->
+      <!-- /_______________________________________________________________Main________________________________________________________________/ -->
       <div class="jumbotron">
           <h1 class="display-4">Game Mode</h1>
           <p class="lead">If you have your game code, please enter in the provided form. Otherwise click: <b>Start New Game</b></p>
@@ -53,18 +51,18 @@
 
       <!-- Form for filling out Game Code + Submit button -->
       <form>
-          <div class="col-xs-4 form-group" >
+          <div class="gameCode col-xs-4 form-group" >
             <h3 for="inputGameCode">Game Code</h3>
-            <input type="gameCode" class="form-control" id="gameCode" placeholder="ABCDE12345">
+            <input type="gameCode" class="gameCodeForm form-control" id="gameCode" placeholder="ABCDE12345">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="submitButton btn btn-primary">Submit</button>
       </form>
 
       <h3>Click Here to Start New Game</h3>
-      <button type="button" class="btn btn-success">New Game</button>
+      <button type="button" class="newGame btn btn-success">New Game</button>
 
       <h3>Login</h3>
-      <button type="button" class="btn btn-secondary">Login</button>
+      <button type="button" class="login btn btn-secondary">Login</button>
 
     </div>
     <!-- Optional JavaScript -->
