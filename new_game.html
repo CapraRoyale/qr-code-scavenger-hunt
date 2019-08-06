@@ -14,6 +14,19 @@
 
     <!-- Local Style - CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+
+      thead {color:black;}
+      tbody {color:black;}
+      tfoot {color:black;}
+
+      table, th, td {
+        border: 2px solid black;
+      }
+
+  </style>
+
   </head>
   <body>
     <!-- Navigation bar -->
@@ -49,61 +62,70 @@
           <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, explicabo aperiam consectetur magnam enim obcaecati asperiores sequi nobis quas dolorum, similique modi sapiente repellendus esse quis commodi odio quo. Itaque. <b>Start New Game</b></p>
           <hr class="my-4">
 
-          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
+        <!-- Option 1: Table outside of Card -->
+          <table>
+            <thead>
+              <tr>
+                <th>Clue</th>
+                <th>Hints</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>x</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>y</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>3</td>
+                <td>z</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <!-- Buttons -->
+          <input class="saveInput btn btn-primary" type="submit" value="Save Input">
+          <input class="editButton btn btn-primary" type="reset" value="Edit">
+
+          <!-- Option 2: Table within card.  -->
               <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
+                <div class="card-header">Set-up</div>
                 <div class="card-body">
                   <h5 class="card-title">Secondary card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Clue</th>
+                        <th>Hints</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>x</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>y</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td>3</td>
+                        <td>z</td>
+                      </tr>
+                    </tfoot>
+                  </table>
                 </div>
-              </div>
-              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Success card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Danger card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Warning card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Info card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Light card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Dark card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+                <!-- Buttons -->
+                <input class="saveInput btn btn-primary" type="submit" value="Save Input">
+                <br>
+                <input class="editButton btn btn-primary" type="reset" value="Edit">
               </div>
 
 
