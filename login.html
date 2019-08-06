@@ -50,16 +50,10 @@
   <!-- Login Body -->
   <div class="jumbotron">
     <h1 class="display-4">Login</h1>
-    <p class="lead">Enter your name, email, and password</p>
+    <p class="lead">Enter your email and password</p>
     <hr class="my-4">
 
     <form>
-       <!-- Name -->
-       <div class="form-group" type="hidden">
-          <label for="input_Name">Name</label>
-          <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp"
-            placeholder="Enter name">
-          <small id="nameHelp" class="form-text" style="color: white"></small>
 
       <!-- Email -->
       <div class="form-group" type="email">
@@ -90,6 +84,12 @@
       <button type="submit" class="newAccount btn btn-primary">Create a New Account</button>
       <br>
       <br>
+
+        <div class="nameForm form-group">
+            <label for="input_Name">Name</label>
+            <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp"
+              placeholder="Enter name">
+        <small id="nameHelp" class="form-text" style="color: white"></small>
 
     </form>
   </div>
