@@ -10,13 +10,12 @@ body {
 
   .jumbotron {
 
-    background-color: rgba(248, 243, 85, 0);
-    opacity: 55;
+    background-color: grey;
     margin-top: 50px;
-
     width: 55%;
-    color: white;
+    color: black;
   }
+
 
   .map-container-5{
     overflow:hidden;
