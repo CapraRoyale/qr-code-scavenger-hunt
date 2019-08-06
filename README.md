@@ -92,3 +92,7 @@ This project is licensed under the University of Washington License - see the [L
 
 * To our fellow TAs (Catherine P, and Trae Shanks) for support and guidance of this project.
 * Special thanks to our teacher: Arron Linton for the ongoing support for this project.
+
+
+## Progress-Log:
+8.5.19 - Worked on debugging Firebase, synchronizing js script to html elements, revising html divs and adding css features to web pages.
