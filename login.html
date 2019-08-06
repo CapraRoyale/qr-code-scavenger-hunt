@@ -1,86 +1,117 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Login</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <title>Login</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Google Fonts API - Raleway -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Local Style - CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google Fonts API - Raleway -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-  </head>
-  <body>
+  <!-- Local Style - CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-      <!-- Navigation bar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="game_mode.html">QR Scavenger Clue Hunt</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+</head>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="login.html"> Login <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="game_mode.html">Game Mode</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="new_game.html">New Game</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="clue_page.html">Clue</a>
-                </li>
-            </div>
-        </nav>
-        <!-- End of Navigation Bar -->
+<body>
 
-        <div class="jumbotron">
-                <h1 class="display-4">Login</h1>
-                <p class="lead">Enter your name and password.</p>
-                <hr class="my-4">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="game_mode.html">QR Scavenger Clue Hunt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="login.html"> Login <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="game_mode.html">Game Mode</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="new_game.html">New Game</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="clue_page.html">Clue</a>
+        </li>
+    </div>
+  </nav>
+  <!-- End of Navigation Bar -->
 
-                <!-- <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header"></div>
-                        <div class="card-body">
+  <!-- Login Body -->
+  <div class="jumbotron">
+    <h1 class="display-4">Login</h1>
+    <p class="lead">Enter your Email and password.</p>
+    <hr class="my-4">
 
-                      </div> -->
-                      <form>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                          <small id="emailHelp" class="form-text" style= "color: white">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
+    <form>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="input_Email">Email address</label>
+        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+          placeholder="Enter email">
+        <small id="emailHelp" class="form-text" style="color: white">We'll never share your email with anyone
+          else.</small>
+        <!-- <div class="invalidEmail invalid-feedback">Please provide a valid email</div> -->
+      </div>
+      <!-- Password -->
+      <div class="form-group">
+        <label for="input_Password">Password</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <!-- <div class="invalidPassword invalid-feedback">Please provide a valid password</div> -->
+      </div>
 
-                        <!-- Possible Remember Me* Nice to have function -->
-                        <!-- <div class="form-group form-check">
+      <!-- Possible Remember Me* Nice to have function -->
+      <!-- <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                         </div> -->
-                        <button type="submit" class="loginBtn btn btn-primary">Login</button>
-                      </form>
-                    </div>
-        </div>
-        <!-- Closing tag for jumbotron -->
+
+      <!-- Login Button -->
+      <button type="submit" class="loginBtn btn btn-primary">Login</button>
+      <br>
+      <br>
+      <!-- Create New Account Button -->
+      <button type="submit" class="newAccount btn btn-primary">Create a New Account</button>
+      <br>
+      <br>
+      <!-- Attn: Name form; <hidden>-->
+      <input type="hidden" class="form-control" id="newName" aria-describedby="nameHelp" placeholder="Enter Name">
+      <br>
+      <br>
+      <!-- New Email -->
+      <input type="hidden" class="form-control" id="newEmail" aria-describedby="nameHelp" placeholder="Enter a Valid Email">
+      <br>
+      <br>
+      <!-- New Password -->
+      <input type="hidden" class="form-control" id="newPassword" aria-describedby="nameHelp" placeholder="Enter a Password">
+
+    </form>
+  </div>
+  </div>
+  <!-- Closing tag for jumbotron / End of Login Body -->
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>
