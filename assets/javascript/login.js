@@ -17,7 +17,10 @@ uNameForm = $('.nameForm')
 const logInButton = $('.loginBtn');
 const newUserButton = $('.newAccount');
 
-function invalidInput(field, response) {
+// Username for new accounts must be global so it can be grabbed by the signin event listener.
+let uName;
+
+function invalidInput(field, response='Invalid input!') {
     // Function for handling specific types of invalid input
     switch (field) {
         case 'email':
@@ -38,6 +41,12 @@ function invalidInput(field, response) {
             errorPassword.text(response);
             break;
 
+        case 'reset':
+            uPassField.removeClass('is-invalid');
+            uNameField.removeClass('is-invalid');
+            uEmailField.removeClass('is-invalid');
+            break;
+
         default:
             throw ('Input Error: "field" argument must be equal to "name", "email", or "password"');
     }
@@ -49,16 +58,48 @@ newUserButton.on("click", function (event) {
     // Don't refresh the page
     event.preventDefault()
 
+    // Reset any invalid input styles to default first 
+    invalidInput('reset');
+
     // Only do the following if the name field has already been revealed
     if (uNameForm.css('display') !== 'none') {
         console.log('Will now accept new account details...');
         console.log(`Value for display was ${uNameForm.css('display')}`)
 
-        let uName = uNameField.val()
-        let uPass = uPassField.val()
-        let uEmail = uEmailField.val()
+        // Grab user inputted values from DOM
+        uName = uNameField.val().trim();
+        let uPass = uPassField.val();
+        let uEmail = uEmailField.val();
 
-        auth.createUserWithEmailAndPassword(uEmail, uPass).catch(function (error) {
+        console.log(uName);
+
+        // Check for valid user name
+        if (uName === '') {
+            invalidInput('name', 'Please enter a user name for your account.');
+            return;
+        }
+        else if (uName.length < 2) {
+            invalidInput('name', 'Name too short. Must have at least 2 characters.');
+            return;
+        }
+
+        auth.createUserWithEmailAndPassword(uEmail, uPass).then(function (response) {
+
+            let user = response.user 
+
+            console.log('Does this work??')
+            console.log(user);
+            console.log('Account created');
+
+            // If new user, attach username to account first
+            if (user.displayName === null) {
+                console.log('Username === null triggered!');
+                user.updateProfile({
+                    displayName: uName
+                });
+            };
+
+        }).catch(function (error) {
             console.log(error.message);
             switch (error.code) {
                 // Bad email errors
@@ -66,7 +107,7 @@ newUserButton.on("click", function (event) {
                     invalidInput('email', 'That email address already belongs to another user!');
                     break;
                 case 'auth/invalid-email':
-                    invalidInput('email', 'Invalid email. Please enter a valid email.');
+                    invalidInput('email', 'Please enter a valid email.');
                     break;
                 // TODO: Add more handling 
 
@@ -77,9 +118,13 @@ newUserButton.on("click", function (event) {
                 default:
                     invalidInput('password', error.message);
             };
+
+            return;
+
         });
+
     }
-    
+
     // If name field was not displayed, instead reveal it and do nothing else.
     else {
         console.log('Will now reveal name form...')
@@ -103,9 +148,11 @@ logInButton.on("click", function (event) {
     // Don't refresh the page (for DEBUG Only)
     event.preventDefault()
 
-    let uEmail = uEmailField.val()
-    let uPass = uPassField.val()
+    // Grab user inputted values from DOM
+    let uEmail = uEmailField.val();
+    let uPass = uPassField.val();
 
+    // Create new user with firebase and handle any errors
     auth.signInWithEmailAndPassword(uEmail, uPass).catch(function (error) {
         console.log(`Failed with error: ${error.code}`);
         console.log(error);
@@ -130,16 +177,20 @@ logInButton.on("click", function (event) {
 });
 
 // Authentication State Change Handler 
-firebase.auth().onAuthStateChanged(function (user) {
+auth.onAuthStateChanged(function (user) {
 
     // If user is logged in, send them to the dashboard
     if (user) {
-        window.open("dashboard.html", "_self")
+        // window.open("dashboard.html", "_self")
+        console.log('User Logged in successfully.')
+
+        // Redirect to appropriate page
+        //TODO
 
         // If for some reason the login state changes, but the user is not logged in
         // blank the input fields so we know something happened, but don't do anything else
     } else {
-        console.log('Auth State changed but the user is still not logged in');
+        console.log('Auth State changed: User is logged out.');
         uNameField.val('');
         uEmailField.val('');
         uPassField.val('');
