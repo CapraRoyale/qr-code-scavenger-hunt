@@ -55,59 +55,72 @@
 
     <form>
 
-      <!-- Email -->
-      <div class="form-group" type="email">
-        <label for="input_Email">Email address</label>
-        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-          placeholder="Enter email">
-        <small id="emailHelp" class="form-text" style="color: white">We'll never share your email with anyone
-          else.</small>
-      </div>
-      <!-- Password -->
-      <div class="form-group" type="password">
-        <label for="input_Password">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-        <small id="passwordHelp" class="form-text" style="color: white"></small>
+      <!-- Name -->
+      <div class="nameForm form-group">
+        <label for="input_Name">Name</label>
+        <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter name">
+        <small id="nameHelp" class="form-text" style="color: white"></small>
       </div>
 
-      <!-- Possible Remember Me* Nice to have function -->
-      <!-- <div class="form-group form-check">
+        <!-- Email -->
+        <div class="form-group" type="email">
+          <label for="input_Email">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <small id="emailHelp" class="form-text" style="color: white">We'll never share your email with anyone
+            else.</small>
+        </div>
+        <!-- Password -->
+        <div class="form-group" type="password">
+          <label for="input_Password">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <small id="passwordHelp" class="form-text" style="color: white"></small>
+        </div>
+
+        <!-- Possible Remember Me* Nice to have function -->
+        <!-- <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Remember Me</label>
       </div> -->
 
-      <!-- Login Button -->
-      <button type="submit" class="loginBtn btn btn-primary">Login</button>
-      <br>
-      <br>
-      <!-- Create New Account Button -->
-      <button type="submit" class="newAccount btn btn-primary">Create a New Account</button>
-      <br>
-      <br>
-
-        <div class="nameForm form-group">
-            <label for="input_Name">Name</label>
-            <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp"
-              placeholder="Enter name">
-        <small id="nameHelp" class="form-text" style="color: white"></small>
+        <!-- Login Button -->
+        <button type="submit" class="loginBtn btn btn-primary">Login</button>
+        <br>
+        <br>
+        <!-- Create New Account Button -->
+        <button type="submit" class="newAccount btn btn-primary">Create a New Account</button>
+        <br>
+        <br>
 
     </form>
-  </div>
   </div>
   <!-- Closing tag for jumbotron / End of Login Body -->
 
 
-  <!-- Optional JavaScript -->
+  <!-- JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
+
+  <!-- Firebase Components -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  ​
+  <!-- Add SDKs for Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+  <!-- Our scripts -->
+  <script src="assets/javascript/dbControll.js"></script>
+  <script src="assets/javascript/login.js"></script>
+
 </body>
 
 </html>
