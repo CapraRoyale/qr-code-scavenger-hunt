@@ -7,13 +7,15 @@ const auth = firebase.auth();
 // jQuery hooks:
 const uNameField = $('#inputName');
 const uEmailField = $('#inputEmail');
-const uPassField = $('#InputPassword1');
+const uPassField = $('#inputPassword');
 const errorName = $('#nameHelp');
 const errorEmail = $('#emailHelp');
 const errorPassword = $('#passwordHelp');
 
-const logInButton = $('#login-button');
-const newUserButton = $('#new-account-button');
+uNameForm = $('.nameForm')
+
+const logInButton = $('.loginBtn');
+const newUserButton = $('.newAccount');
 
 function invalidInput(field, response) {
     // Function for handling specific types of invalid input
@@ -47,56 +49,67 @@ newUserButton.on("click", function (event) {
     // Don't refresh the page
     event.preventDefault()
 
-    let uName = uNameField.val()
-    let uPass = uPassField.val()
-    let uEmail = uEmailField.val()
+    // Only do the following if the name field has already been revealed
+    if (uNameForm.css('display') !== 'none') {
+        console.log('Will now accept new account details...');
+        console.log(`Value for display was ${uNameForm.css('display')}`)
 
-    auth.createUserWithEmailAndPassword(uEmail, uPass).catch(function (error) {
-        console.log(error.message);
-        switch (error.code) {
-            // Bad email errors
-            case 'auth/email-already-in-use':
-                invalidInput('email', 'That email address already belongs to another user!');
-                break;
-            case 'auth/invalid-email':
-                invalidInput('email', 'Invalid email. Please enter a valid email.');
-                break;
-            // TODO: Add more handling 
+        let uName = uNameField.val()
+        let uPass = uPassField.val()
+        let uEmail = uEmailField.val()
 
-            // Bad password errors
-            // TODO: Add handling
+        auth.createUserWithEmailAndPassword(uEmail, uPass).catch(function (error) {
+            console.log(error.message);
+            switch (error.code) {
+                // Bad email errors
+                case 'auth/email-already-in-use':
+                    invalidInput('email', 'That email address already belongs to another user!');
+                    break;
+                case 'auth/invalid-email':
+                    invalidInput('email', 'Invalid email. Please enter a valid email.');
+                    break;
+                // TODO: Add more handling 
 
-            // For all other errors just print the raw firebase error under the password field
-            default:
-                invalidInput('password', error.message);
-        };
-    });
+                // Bad password errors
+                // TODO: Add handling
+
+                // For all other errors just print the raw firebase error under the password field
+                default:
+                    invalidInput('password', error.message);
+            };
+        });
+    }
+    
+    // If name field was not displayed, instead reveal it and do nothing else.
+    else {
+        console.log('Will now reveal name form...')
+        uNameForm.css('display', 'block');
+    };
+
 });
 
 logInButton.on("click", function (event) {
 
     // Error Codes:
     // auth/invalid-email
-        // Thrown if the email address is not valid.
+    // Thrown if the email address is not valid.
     // auth/user-disabled
-        // Thrown if the user corresponding to the given email has been disabled.
+    // Thrown if the user corresponding to the given email has been disabled.
     // auth/user-not-found
-        // Thrown if there is no user corresponding to the given email.
+    // Thrown if there is no user corresponding to the given email.
     // auth/wrong-password
-        // Thrown if the password is invalid for the given email, or the account corresponding to the email does not have a password set.
-
-
+    // Thrown if the password is invalid for the given email, or the account corresponding to the email does not have a password set.
 
     // Don't refresh the page (for DEBUG Only)
     event.preventDefault()
 
-    let uName = uNameField.val()
+    let uEmail = uEmailField.val()
     let uPass = uPassField.val()
 
-    auth.signInWithEmailAndPassword(uName, uPass).catch(function (error) {
+    auth.signInWithEmailAndPassword(uEmail, uPass).catch(function (error) {
         console.log(`Failed with error: ${error.code}`);
         console.log(error);
-        switch(error.code) {
+        switch (error.code) {
             case 'auth/invalid-email':
                 invalidInput('email', 'No user with that email exists.');
                 break;
@@ -111,7 +124,7 @@ logInButton.on("click", function (event) {
                 break;
             default:
                 alert('An unknown error occurred. Congradulations!');
-            
+
         }
     });
 });
@@ -122,9 +135,9 @@ firebase.auth().onAuthStateChanged(function (user) {
     // If user is logged in, send them to the dashboard
     if (user) {
         window.open("dashboard.html", "_self")
-    
-    // If for some reason the login state changes, but the user is not logged in
-    // blank the input fields so we know something happened, but don't do anything else
+
+        // If for some reason the login state changes, but the user is not logged in
+        // blank the input fields so we know something happened, but don't do anything else
     } else {
         console.log('Auth State changed but the user is still not logged in');
         uNameField.val('');
