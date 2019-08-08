@@ -63,15 +63,11 @@ newUserButton.on("click", function (event) {
 
     // Only do the following if the name field has already been revealed
     if (uNameForm.css('display') !== 'none') {
-        console.log('Will now accept new account details...');
-        console.log(`Value for display was ${uNameForm.css('display')}`)
 
         // Grab user inputted values from DOM
         uName = uNameField.val().trim();
         let uPass = uPassField.val();
         let uEmail = uEmailField.val();
-
-        console.log(uName);
 
         // Check for valid user name
         if (uName === '') {
@@ -83,24 +79,26 @@ newUserButton.on("click", function (event) {
             return;
         }
 
+        // Attempt to create new user account
         auth.createUserWithEmailAndPassword(uEmail, uPass).then(function (response) {
 
+            // Grab user object from response
             let user = response.user 
 
-            console.log('Does this work??')
-            console.log(user);
-            console.log('Account created');
-
-            // If new user, attach username to account first
-            if (user.displayName === null) {
-                console.log('Username === null triggered!');
+            // Add user name to account under 'displayName' property 
                 user.updateProfile({
                     displayName: uName
+                }).then(function(){
+                    // On success 
+                    console.log('Successfully created new account!')
+
+                }).catch(function(error){
+                    console.log('Database Error: Could not attach displayName to user account due to the following error:');
+                    throw(error);
                 });
-            };
 
         }).catch(function (error) {
-            console.log(error.message);
+            console.log(`Server rejected request with error message: '${error.message}'`);
             switch (error.code) {
                 // Bad email errors
                 case 'auth/email-already-in-use':
@@ -127,7 +125,6 @@ newUserButton.on("click", function (event) {
 
     // If name field was not displayed, instead reveal it and do nothing else.
     else {
-        console.log('Will now reveal name form...')
         uNameForm.css('display', 'block');
     };
 
@@ -154,8 +151,8 @@ logInButton.on("click", function (event) {
 
     // Create new user with firebase and handle any errors
     auth.signInWithEmailAndPassword(uEmail, uPass).catch(function (error) {
-        console.log(`Failed with error: ${error.code}`);
-        console.log(error);
+        console.log(`Login failed with error: ${error.code}`);
+
         switch (error.code) {
             case 'auth/invalid-email':
                 invalidInput('email', 'No user with that email exists.');
@@ -190,7 +187,7 @@ auth.onAuthStateChanged(function (user) {
         // If for some reason the login state changes, but the user is not logged in
         // blank the input fields so we know something happened, but don't do anything else
     } else {
-        console.log('Auth State changed: User is logged out.');
+        console.log('Auth State change detected: User is logged out.');
         uNameField.val('');
         uEmailField.val('');
         uPassField.val('');
