@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 const dbi = {
     database: firebase.database(),
 
-    saveNewGame: function(gameName, gameOwner, clueList, hintList) {
+    saveNewGame: function (gameName, gameOwner, clueList, hintList) {
         // Method that creates a new directory in the database, which will hold all the info we need about our game
         // Also adds an entry to the 'owners' directory under the current owner name so that this direcotry can be found later
         // If a callback is specified then it is activated when final operation is complete.
@@ -39,7 +39,7 @@ const dbi = {
             let clueLocation = this.database.ref('clues').push(clueList[i]);
 
             // Add clue location refence to game clue list
-            this.database.ref(gamePath).set(clueLocation);
+            this.database.ref(gamePath).set(clueLocation.key);
         };
 
         // Add list of clue hints to directory under directory/'hints'/cluenumber (indexed from zero)
@@ -54,7 +54,7 @@ const dbi = {
 
     },
 
-    getGames: function(user, callBack) {
+    getGames: function (user, callBack) {
         // Queries the database for games owned by the specified user
         // Returns a list of game names and directory names for the games in the form of {name: 'game name', id : 'directoryname'} to a callback function
         // Returns null to the callback function if user hase no saved games in the database
@@ -83,7 +83,7 @@ const dbi = {
                 for (let i = 0; i < gameIDs.length; i++) {
 
                     // For each element in userGames, we use that element as the value for a database lookup
-                    this.database.ref(gameIDs[i]).once('value', function(snapshot) {
+                    this.database.ref(gameIDs[i]).once('value', function (snapshot) {
 
                         // Then we construct an object with our two values, before pushing it to our userGames list
                         userGames.push({ name: snapshot.val().gameName, id: gameIDs[i] });
@@ -99,21 +99,19 @@ const dbi = {
         });
     },
 
-    getClue: function(gameID, clueNumber, callback) {
-        // takes the big long random number specifying the directory that data for a game is stored in, 
-        // the number (indexed from zero) of the clue desired,
-        // and a callback function
-        // Queries the database for the specified clue, and returns the clue text to the callback function
+    getClue: function (clueID, callback) {
+        // takes the big long random number specifying the directory that our clue text is stored in
+        // plugs that in to a database GET and then returns the .val (which is just the text of our clue) 
+        // to our callback function 
+        this.database.ref(`${clueID}`).once('value', (snapshot) => {
 
-        // Basically we just plug our arguments into a path and that leads straight to our clue text. 
-        // Then we just call .val() on our snapshot and pass that to the callback
-        this.database.ref(`${gameID}/clues/${clueNumber}`).once('value', (snapshot) => {
-            callback(snapshot.val())
+            callback(snapshot.val());
+
         });
 
     },
 
-    getHint: function(gameID, hintNumber, callback) {
+    getHint: function (gameID, hintNumber, callback) {
         // takes the big long random number specifying the directory that data for a game is stored in, 
         // the number (indexed from zero) of the clue/hint desired,
         // and a callback function
@@ -129,7 +127,7 @@ const dbi = {
 
     },
 
-    executeTest: function() {
+    executeTest: function () {
         // Test/example values -- This won't be included in the final version, but is useful for testing.
         let gameName = 'Example Clue Hunt 002';
         let owner = 'TestUser19';
