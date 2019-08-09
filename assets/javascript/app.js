@@ -14,30 +14,33 @@ $(document).ready(function() {
         var generateClues = $("#number-of-clues").val();
         //Make sure the vlue submitted is at least 1
         if (generateClues >= 1) {
-            console.log(generateClues);
             //Generate an instance of Table data for each integer
             for (let i = 0; i < generateClues; i++) {
-                console.log("clue" + i);
+
                 //Generate variables to contain table data and table row HTML elements
                 //TODO: Generate these variables with a for loop in case we want to easily add more in the future
                 var tr = $("<tr>");
                 var td0 = $("<td>");
                 var td1 = $("<td>");
                 var td2 = $("<td>");
+                var td3 = $("<td>");
                 //Generate variables to contain HTML elements for the form
                 var clueInput = $("<input>", {
                     type: "text",
                     id: "clue" + i
                 })
                 var hintInput = $("<input>", {
-                        type: "text",
-                        id: "hint" + i
-                    })
-                    //Attach variable content to table row element and append to the page to generate a form
+                    type: "text",
+                    id: "hint" + i
+                })
+                var qr = [];
+                //Attach variable content to table row element and append to the page to generate a form
                 td0.append(i + 1);
                 td1.append(clueInput);
                 td2.append(hintInput);
-                tr.append(td0, td1, td2);
+                td3.append(qr);
+                //
+                tr.append(td0, td1, td2, td3);
                 $("#clues-and-hints>tbody").append(tr);
 
             }
@@ -47,6 +50,31 @@ $(document).ready(function() {
             $("#db-gen-new-game").show();
             $("#clues-and-hints").show();
         }
+        $("#db-gen-new-game").click(function() {
+            //
+            var genClueList = [];
+            var genHintList = [];
+            //
+            for (let i = 0; i < generateClues; i++) {
+                //
+                var currentClue = $("#clue" + i).val().trim();
+                //
+                if (currentClue != "") {
 
+                    genClueList.push(currentClue);
+                    //
+                    var currentHint = $("#hint" + i).val();
+
+                    genHintList.push(currentHint);
+                }
+            }
+            console.log(ownerName, groupName, genClueList, genHintList);
+            dbi.saveNewGame(ownerName, groupName, genClueList, genHintList);
+            //Hide the Submit button to prevent repeat submittals and hide the table
+            $("#db-gen-new-game").hide();
+            $("#clues-and-hints").hide();
+            //
+            $("#clues-and-hints-header").text("Success!");
+        })
     });
 });
