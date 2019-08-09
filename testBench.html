@@ -28,7 +28,7 @@
     <!--Start Page Test-->
     <div class="container">
         <div class="row">
-            <div class="col-sm-9 col-md-6 col-lg-4">
+            <div class="col-sm-12 col-md-8 col-lg-9">
                 <div class="card text-white bg-primary">
                     <img class="card-img-top" src="" alt="">
                     <div class="card-body">
@@ -37,26 +37,30 @@
 
                             <label for="owner-name">Owner</label>
                             <textarea class="form-control" name="owner-name" id="owner-name" rows="1"></textarea>
-
+                            <br>
                             <label for="group-name">Name Your Game</label>
                             <textarea class="form-control" name="group-name" id="group-name" rows="1"></textarea>
-
+                            <br>
                             <label for="number-of-clues">How many clues?</label>
                             <input type="number" min="0" name="number-of-clues" id="number-of-clues" class="form-control" placeholder="Pick a number, any number" aria-describedby="helpId">
-                            <button type="submit" class="btn btn-primary" id="new-game">Submit</button>
+                            <br>
+                            <button type="submit" class="btn btn-warning" id="new-game">Submit</button>
 
                         </div>
                         <!-- Table Data Below-->
+                        <h1 id="clues-and-hints-header"></h1>
                         <table id="clues-and-hints">
                             <thead>
                                 <tr>
-                                    <td>Number</td>
+                                    <td>#</td>
                                     <td>Clue</td>
                                     <td>Hint</td>
                                 </tr>
                             </thead>
                             <tbody></tbody>
                         </table>
+                        <br>
+                        <button type="submit" class="btn btn-danger" id="db-gen-new-game">Submit</button>
                     </div>
                 </div>
             </div>
