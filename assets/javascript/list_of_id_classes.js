@@ -129,6 +129,10 @@ ________________________________________________________________________________
 // .nav-link
 // .nav-item
 // .btn btn-info btn-lg
+// .printButton
+// .editButton
+// Active game table has 3 rows and 4 col
+// active_game_table
 
 
 
