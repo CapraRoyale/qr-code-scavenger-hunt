@@ -27,13 +27,19 @@ const dbi = {
         // Add username of the creator of this particular game to the directory under 'owner'
         this.database.ref(`${gameID.key}/owner`).set(gameOwner);
 
-        // Add list of clues to directory under directory/'clues'/cluenumber (indexed from zero)
+        // Add list of clues to the unorderd clue repository and grab the location for each
+        // then add the location to the game directory under directory/'clues'/cluenumber (indexed from zero)
+
         // Iterate through list of clues
         for (let i = 0; i < clueList.length; i++) {
-            // Construct unique path using current game directory and current list index
-            let path = `${gameID.key}/clues/${i}`;
-            // Add text of clue using constructed path
-            this.database.ref(path).set(clueList[i]);
+            // Construct unique path using current game directory and current list index for clue reference location
+            let gamePath = `${gameID.key}/clues/${i}`;
+
+            // Store clue in clue bucket and grab firebase generated memory location the it was put into
+            let clueLocation = this.database.ref('clues').push(clueList[i]);
+
+            // Add clue location refence to game clue list
+            this.database.ref(gamePath).set(clueLocation);
         };
 
         // Add list of clue hints to directory under directory/'hints'/cluenumber (indexed from zero)
