@@ -12,9 +12,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const dbi = {
-    database : firebase.database(),
+    database: firebase.database(),
 
-    saveNewGame : function (gameName, gameOwner, clueList, hintList) {
+    saveNewGame: function(gameName, gameOwner, clueList, hintList) {
         // Method that creates a new directory in the database, which will hold all the info we need about our game
         // Also adds an entry to the 'owners' directory under the current owner name so that this direcotry can be found later
         // If a callback is specified then it is activated when final operation is complete.
@@ -48,7 +48,7 @@ const dbi = {
 
     },
 
-    getGames : function (user, callBack) {
+    getGames: function(user, callBack) {
         // Queries the database for games owned by the specified user
         // Returns a list of game names and directory names for the games in the form of {name: 'game name', id : 'directoryname'} to a callback function
         // Returns null to the callback function if user hase no saved games in the database
@@ -58,16 +58,17 @@ const dbi = {
         // we need to setup our callback using arrow notation so that the 'this' keyword retains the same value inside the 
         // callback function despite that callback being invoked elsewhere
         this.database.ref(`owners/${user}`).once('value', (snapshot) => {
-            
+
             // If user has no games saved, then abort the rest of this function and return null
             if (!snapshot.val()) {
-                callBack(null)}
-            
+                callBack(null)
+            }
+
             // If, however, the user does have at least one saved game, we can get into the actual meat of this function
             else {
-                
+
                 // For storing our output
-                let userGames = []; 
+                let userGames = [];
 
                 // Generates a list of the database locations for every user game
                 let gameIDs = Object.values(snapshot.val())
@@ -76,21 +77,23 @@ const dbi = {
                 for (let i = 0; i < gameIDs.length; i++) {
 
                     // For each element in userGames, we use that element as the value for a database lookup
-                    this.database.ref(gameIDs[i]).once('value', function (snapshot) {
+                    this.database.ref(gameIDs[i]).once('value', function(snapshot) {
 
                         // Then we construct an object with our two values, before pushing it to our userGames list
-                        userGames.push({name: snapshot.val().gameName, id: gameIDs[i]});
+                        userGames.push({ name: snapshot.val().gameName, id: gameIDs[i] });
 
                         // Because these operations are preformed asynchronously we can't expect to have all our values in userGames when the for loop finishes
                         // likewise, we can't even be sure that we'll get all the info back in the same order we asked for it
                         // So, instead of returning userGames to the callback function when 'finished', we'll do it at the end of whichever callback
                         // has added the final value to the list. We can determin this easily by comparing our list length to the length of the gameIDs list.
-                        if (userGames.length === gameIDs.length) {callBack(userGames)};
-                    })};
-        }});
+                        if (userGames.length === gameIDs.length) { callBack(userGames) };
+                    })
+                };
+            }
+        });
     },
 
-    getClue : function(gameID, clueNumber, callback) {
+    getClue: function(gameID, clueNumber, callback) {
         // takes the big long random number specifying the directory that data for a game is stored in, 
         // the number (indexed from zero) of the clue desired,
         // and a callback function
@@ -104,7 +107,7 @@ const dbi = {
 
     },
 
-    getHint : function(gameID, hintNumber, callback) {
+    getHint: function(gameID, hintNumber, callback) {
         // takes the big long random number specifying the directory that data for a game is stored in, 
         // the number (indexed from zero) of the clue/hint desired,
         // and a callback function
@@ -120,12 +123,12 @@ const dbi = {
 
     },
 
-    executeTest : function () {
+    executeTest: function() {
         // Test/example values -- This won't be included in the final version, but is useful for testing.
         let gameName = 'Example Clue Hunt 002';
         let owner = 'TestUser19';
         let clues = ['Under the stairs', 'In the \'cookie jar\'', 'Where you lay your head', 'Your most private location', 'Atop the clock tower'];
-        let hints = ['000', '111','222','333','444'];
+        let hints = ['000', '111', '222', '333', '444'];
 
         // Create new code hunt game:
         dbi.saveNewGame(gameName, owner, clues, hints);
