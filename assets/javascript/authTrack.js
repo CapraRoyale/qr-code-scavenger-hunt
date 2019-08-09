@@ -3,7 +3,8 @@ const auth = firebase.auth();
 
 const authentication = {
 
-    failedLogoutCounter : 0,
+    failedLogoutCounter: 0,
+    loginElement: undefined, //TODO: Add jquery hook to login/logout element from NavBar
 
     // Get user's unique firebase user ID
     // if no user is signed in, this function returns null
@@ -25,8 +26,8 @@ const authentication = {
         // On success, refresh page
         auth.signOut().then(function () {
             location.reload();
-        
-        // On failure, 
+
+            // On failure, 
         }).catch(function (error) {
 
             // Print error to console as warning:
@@ -40,17 +41,51 @@ const authentication = {
                 alert("The system is unable to log you at this time, please refresh the page and try again!");
             };
 
-            setTimeout(function(){
+            setTimeout(function () {
 
                 failedLogoutCounter++;
 
                 authentication.logout();
-            },3000);
+            }, 3000);
 
         });
     },
 
 
     // Whenever auth-state changes, make sure the correct login/logout link is displayed on the nav-bar
-    
-}
+    setNavbarStatus: function () {
+
+        // Authentication State Change Handler 
+        auth.onAuthStateChanged(function (user) {
+
+            // If user is logged in, chage button to 'logout'
+            if (user) {
+
+                // Remove existing click handlers
+                authentication.loginElement.off()
+
+                // Change text
+                authentication.loginElement.text('Logout');
+
+                // Add new click handler which just calls the log out function
+                authentication.loginElement.click(function () {
+                    authentication.logout();
+                });
+
+                // If user is logged out, change button to 'login'
+            } else {
+                // Remove existing click handlers
+                authentication.loginElement.off()
+
+                // Change text
+                authentication.loginElement.text('Login');
+
+                // Add new click handler which sends the user to the login page
+                authentication.loginElement.click(function () {
+                    window.location.href = "login.html";
+                });
+
+            }
+        });
+    }
+};
