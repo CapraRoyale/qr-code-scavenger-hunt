@@ -40,6 +40,7 @@ body {
 
 
 /* _____________________________________________________ tracking_page.html _______________________________________________________________ */
+
 /* Desktop */
 
 @media (max-width: 2560px){
@@ -235,27 +236,26 @@ body {
 /* Phones */
 @media(min-width: 300px) and (max-width: 450px) {
   body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 310%;
     color: black;
     font-size: 15px;
     font-family: 'Raleway', sans-serif;
+    background: 0;
 }
 
 .gameTracker{
-  margin-top: 35px;
-  margin-left: 75px;
+  margin-top: 0px;
+  margin-left: 0px;
   padding-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
   padding-right: 0px;
   padding-left: 0px;
+  height: 200vh;
+  width: 63vh;
 }
 
 .display-4{
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
 .trackerTable{
