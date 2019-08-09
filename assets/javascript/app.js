@@ -23,24 +23,22 @@ $(document).ready(function() {
                 var td0 = $("<td>");
                 var td1 = $("<td>");
                 var td2 = $("<td>");
-                var td3 = $("<td>");
                 //Generate variables to contain HTML elements for the form
                 var clueInput = $("<input>", {
                     type: "text",
                     id: "clue" + i
-                })
+                });
                 var hintInput = $("<input>", {
                     type: "text",
                     id: "hint" + i
-                })
-                var qr = [];
+                });
                 //Attach variable content to table row element and append to the page to generate a form
                 td0.append(i + 1);
                 td1.append(clueInput);
                 td2.append(hintInput);
-                td3.append(qr);
+
                 //
-                tr.append(td0, td1, td2, td3);
+                tr.append(td0, td1, td2);
                 $("#clues-and-hints>tbody").append(tr);
 
             }
@@ -66,6 +64,14 @@ $(document).ready(function() {
                     var currentHint = $("#hint" + i).val();
 
                     genHintList.push(currentHint);
+                    //
+                    //Generate QR code
+                    var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(currentClue + currentHint);
+                    console.log(qr);
+                    //
+                    var img = $("<img>")
+                    img.attr("src", qr);
+                    $(".images").append(img);
                 }
             }
             console.log(ownerName, groupName, genClueList, genHintList);
