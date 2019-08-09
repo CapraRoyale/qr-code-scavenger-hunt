@@ -40,6 +40,7 @@ body {
 
 
 /* _____________________________________________________ tracking_page.html _______________________________________________________________ */
+
 /* Desktop */
 
 @media (max-width: 2560px){
@@ -66,6 +67,33 @@ body {
   position: center;
 }
 }
+
+
+@media (min-width: 1600px) and (max-width: 1699px) {
+  body {
+    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 200%;
+    color: black;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+
+.gameTracker{
+  margin-top: 240px;
+  margin-left: 333px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  position: center;
+}
+}
+
 
 @media (min-width: 1280px) and (max-width: 1440px) {
 
@@ -157,7 +185,7 @@ body {
     background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     background-repeat: no-repeat;
     background-position: cover;
-    background-size: 200%;
+    background-size: 240%;
     color: black;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
@@ -177,30 +205,57 @@ body {
 }
 }
 
-/* Phones */
-@media(min-width: 300px) and (max-width: 450px) {
+
+
+@media (min-width: 500px) and (max-width: 590px) {
+
   body {
     background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     background-repeat: no-repeat;
     background-position: cover;
-    background-size: 250%;
+    background-size: 270%;
     color: black;
-    font-size: 15px;
+    font-size: 20px;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
 }
 
+
 .gameTracker{
-  margin-top: 35px;
-  margin-left: 75px;
+  margin-top: 142px;
+  margin-left: 119px;
   padding-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
   padding-right: 0px;
   padding-left: 0px;
+  position: center;
+}
+}
+
+/* Phones */
+@media(min-width: 300px) and (max-width: 450px) {
+  body {
+    color: black;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    background: 0;
+}
+
+.gameTracker{
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  height: 200vh;
+  width: 63vh;
 }
 
 .display-4{
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
 .trackerTable{
