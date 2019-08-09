@@ -78,6 +78,9 @@ ________________________________________________________________________________
 <jumbotron>
 .gameTracker
 
+<table>
+.trackerTable
+
 <button>
 .goDashboard
 
