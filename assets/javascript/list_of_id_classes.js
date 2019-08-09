@@ -115,7 +115,17 @@ ________________________________________________________________________________
 /_________________________________________________Page 05: dashboard.html_____________________________________________________________________/
 
 
-
+// nav bar classes:
+// .navbar-toggler
+// .navbar-toggler-icon
+// .navbar navbar-expand-lg navbar-light bg-light
+// .navbar-brand
+// .collapse navbar-collapse
+// .navbar-nav mr-auto
+// .nav-item active
+// .nav-link
+// .nav-item
+// .btn btn-info btn-lg
 
 
 
