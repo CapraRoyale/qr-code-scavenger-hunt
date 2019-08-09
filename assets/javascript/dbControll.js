@@ -101,9 +101,10 @@ const dbi = {
 
     getClue: function (clueID, callback) {
         // takes the big long random number specifying the directory that our clue text is stored in
+        // adds the leading '-' to it and then
         // plugs that in to a database GET and then returns the .val (which is just the text of our clue) 
         // to our callback function 
-        this.database.ref(`${clueID}`).once('value', (snapshot) => {
+        this.database.ref(`-${clueID}`).once('value', (snapshot) => {
 
             callback(snapshot.val());
 
