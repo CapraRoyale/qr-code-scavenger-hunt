@@ -42,7 +42,7 @@ body {
 
 /* _________________________________________________@media tracking_page.html _______________________________________________________________ */
 
-/* Desktop */
+
 
 @media (max-width: 2560px){
   body {
@@ -203,7 +203,7 @@ body {
   }
 }
 
-/* Tablets */
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
   body {
@@ -230,7 +230,7 @@ body {
   }
 }
 
- @media(min-width: 700px) and (max-width: 768px) {
+@media(min-width: 700px) and (max-width: 768px) {
 
 
   body {
@@ -477,7 +477,6 @@ body {
 }
 
 
-
 @media(min-width: 300px) and (max-width: 450px){
   body {
       color: black;
@@ -494,16 +493,30 @@ body {
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
-    width: 40vh;
-    height: 230vh;
+    width: 246px;
+    height: 550px;
+  }
+}
+
+
+@media(min-width: 450px) and (max-width: 499px){
+  body {
+      color: black;
+      font-size: 15px;
+      font-family: 'Raleway', sans-serif;
+      background: 0;
   }
 
-  .lead{
-    margin-left: 86px;
-  }
-
-  .gameModeDisplay{
-  font-size: 30px;
+  .gameMode{
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 246px;
+    height: 550px;
   }
 
 }
