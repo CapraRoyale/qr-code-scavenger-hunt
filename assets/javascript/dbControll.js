@@ -13,7 +13,7 @@ const dbi = {
         // Save name of new directory to variable gameID (use gameID.key for actual directory name)
         gameID = this.database.ref(gameOwner).push({ 'gameName': gameName });
 
-        // Add list of clues to the unorderd clue repository and grab the location for each
+        // Add list of clues to the unordered clue repository and grab the location for each
         // then add the location to the game directory under directory/'clues'/cluenumber (indexed from zero)
 
         // Iterate through list of clues
