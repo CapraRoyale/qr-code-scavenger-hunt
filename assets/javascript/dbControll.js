@@ -137,3 +137,10 @@ const dbi = {
 //     dbi.getClue(aGame, 1, (val) => {console.log('Clue: ' + val)})
 //     dbi.getHint(aGame, 1, (val) => {console.log('Hint: ' + val)})
 //     });
+
+
+
+
+
+
+
