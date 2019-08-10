@@ -16,6 +16,14 @@ body {
     color: black;
     margin-left: 300px;
   }
+   /* jumbotron from dashboard.html */
+   .dashboard {
+    background-color: grey;
+    margin-top: 50px;
+    width: 55%;
+    color: black;
+    margin-left: 300px;
+  }
 
 
   .map-container-5{
