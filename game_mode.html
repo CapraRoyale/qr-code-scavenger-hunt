@@ -47,6 +47,36 @@
 
         </div>
     </nav>
+
+
+<!-- /_______________________________________________________________Main________________________________________________________________/ -->
+    <div class="gameMode jumbotron">
+        <h1 class="gameModeDisplay">Game Mode</h1>
+        <p class="lead">If you have your game code, please enter in the provided form. Otherwise click: <b>Start New
+        Game</b></p>
+        <hr class="my-4">
+
+
+
+        <!-- Form for filling out Game Code + Submit button -->
+        <form>
+            <div class="gameCode col-xs-4 form-group">
+                <h3 for="inputGameCode">Game Code</h3>
+                <input type="gameCode" class="gameCodeForm form-control" id="gameCode" placeholder="ABCDE12345">
+            </div>
+            <button type="submit" class="submitButton btn btn-primary">Submit</button>
+        </form>
+
+        <h3>Click Here to Start New Game</h3>
+        <button type="button" class="newGame btn btn-success">New Game</button>
+
+        <h3>Login</h3>
+        <button type="button" class="login btn btn-secondary">Login</button>
+
+    </div>
+
+
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     ​
@@ -72,31 +102,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- /_______________________________________________________________Main________________________________________________________________/ -->
-    <div class="jumbotron">
-        <h1 class="display-4">Game Mode</h1>
-        <p class="lead">If you have your game code, please enter in the provided form. Otherwise click: <b>Start New
-        Game</b></p>
-        <hr class="my-4">
 
-
-
-        <!-- Form for filling out Game Code + Submit button -->
-        <form>
-            <div class="gameCode col-xs-4 form-group">
-                <h3 for="inputGameCode">Game Code</h3>
-                <input type="gameCode" class="gameCodeForm form-control" id="gameCode" placeholder="ABCDE12345">
-            </div>
-            <button type="submit" class="submitButton btn btn-primary">Submit</button>
-        </form>
-
-        <h3>Click Here to Start New Game</h3>
-        <button type="button" class="newGame btn btn-success">New Game</button>
-
-        <h3>Login</h3>
-        <button type="button" class="login btn btn-secondary">Login</button>
-
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
