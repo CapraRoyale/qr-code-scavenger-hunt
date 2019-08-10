@@ -8,12 +8,13 @@ body {
     font-family: 'Raleway', sans-serif;
   }
 
-  .jumbotron {
-
+  /* jumbotron from game_mode.html */
+  .gameMode {
     background-color: grey;
     margin-top: 50px;
     width: 55%;
     color: black;
+    margin-left: 300px;
   }
 
 
@@ -39,7 +40,7 @@ body {
 
 
 
-/* _____________________________________________________ tracking_page.html _______________________________________________________________ */
+/* _________________________________________________@media tracking_page.html _______________________________________________________________ */
 
 /* Desktop */
 
@@ -443,47 +444,66 @@ body {
 }
 
 
-/* _____________________________________________________ game_mode.html _______________________________________________________________ */
 
-@media(min-width: 300px) and (max-width: 450px) {
+/* ___________________________________________________@media game_mode.html _______________________________________________________________ */
+
+@media(min-width: 100px) and (max-width: 299px){
   body {
-    color: black;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    background: 0;
+      color: black;
+      font-size: 15px;
+      font-family: 'Raleway', sans-serif;
+      background: 0;
+  }
+
+  .gameMode{
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 40vh;
+    height: 230vh;
+  }
+
+  .lead{
+    margin-left: 86px;
+  }
+
+  .gameModeDisplay{
+  font-size: 30px;
+  }
 }
 
-.gameTracker{
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  height: 200vh;
-  width: 63vh;
-}
-
-.display-4{
-  font-size: 2.0rem;
-}
-
-.trackerTable{
-  font-size: 1.0rem;
-}
-}
 
 
-
-@media(min-width: 100px) and (max-width: 299px) {
+@media(min-width: 300px) and (max-width: 450px){
   body {
-    color: black;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    background: 0;
-}
+      color: black;
+      font-size: 15px;
+      font-family: 'Raleway', sans-serif;
+      background: 0;
+  }
 
+  .gameMode{
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 40vh;
+    height: 230vh;
+  }
 
+  .lead{
+    margin-left: 86px;
+  }
+
+  .gameModeDisplay{
+  font-size: 30px;
+  }
 
 }
