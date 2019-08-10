@@ -1,4 +1,4 @@
-// Handle for firebase authenticaiton
+// Handle for firebase authentication
 const auth = firebase.auth();
 
 const authentication = {
@@ -19,7 +19,7 @@ const authentication = {
         return auth.currentUser.displayName;
     },
 
-    // Logout current user 
+    // Logout current user
     // Attempts to log out the current user. If attempt fails, it sets an interval to try again every few seconds
     logout: function () {
 
@@ -27,7 +27,7 @@ const authentication = {
         auth.signOut().then(function () {
             location.reload();
 
-            // On failure, 
+            // On failure,
         }).catch(function (error) {
 
             // Print error to console as warning:
@@ -55,7 +55,7 @@ const authentication = {
     // Whenever auth-state changes, make sure the correct login/logout link is displayed on the nav-bar
     setNavbarStatus: function () {
 
-        // Authentication State Change Handler 
+        // Authentication State Change Handler
         auth.onAuthStateChanged(function (user) {
 
             // If user is logged in, chage button to 'logout'
@@ -90,5 +90,5 @@ const authentication = {
     }
 };
 
-//TODO: setNavBar status should always call itself inside of document.ready() whever its loaded whith a page so that
-// that just automatically happens. Not going to write that until we have the proper elment ID though.
+//TODO: setNavBar status should always call itself inside of document.ready() whever its loaded with a page so that
+// that just automatically happens. Not going to write that until we have the proper element ID though.
