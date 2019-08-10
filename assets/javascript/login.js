@@ -1,9 +1,6 @@
 // dbControll.js already initializes firebase and calls up the database
 // so we don't need to do any of that here. 
 
-// Handle for firebase authenticaiton
-const auth = firebase.auth();
-
 // jQuery hooks:
 const uNameField = $('#inputName');
 const uEmailField = $('#inputEmail');
