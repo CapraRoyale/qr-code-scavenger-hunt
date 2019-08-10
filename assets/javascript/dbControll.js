@@ -43,7 +43,7 @@ const dbi = {
 
         // Start by grabbing the contents of the directory
         // Note that because we will need to use this.database again with this function,
-        // we need to setup our callback using arrow notation so that the 'this' keyword retains the same value inside the 
+        // we need to setup our callback using arrow notation so that the 'this' keyword retains the same value inside the
         // callback function despite that callback being invoked elsewhere
         this.database.ref(authentication.uID()).once('value', (snapshot) => {
 
@@ -79,8 +79,8 @@ const dbi = {
     getClue: function (clueID, callback) {
         // takes the big long random number specifying the directory that our clue text is stored in
         // adds the leading '-' to it and then
-        // plugs that in to a database GET and then returns the .val (which is just the text of our clue) 
-        // to our callback function 
+        // plugs that in to a database GET and then returns the .val (which is just the text of our clue)
+        // to our callback function
         this.database.ref(`-${clueID}`).once('value', (snapshot) => {
 
             callback(snapshot.val());
@@ -90,7 +90,7 @@ const dbi = {
     },
 
     getClueFromGame: function (gameID, clueNumber, callback) {
-        // Basically we just plug our arguments into a path and that leads straight to our clue refer code. 
+        // Basically we just plug our arguments into a path and that leads straight to our clue refer code.
         // Then we just call .val() on our snapshot and pass that to a new database get, which should then return a snapshot with the actual
         // clue text, which we then pass to the callback with .val to grab the actual text from the snapshot object
         this.database.ref(`${authentication.uID()}/${gameID}/clues/${clueNumber}`).once('value', (snapshot) => {
@@ -101,13 +101,13 @@ const dbi = {
     },
 
     getHint: function (gameID, hintNumber, callback) {
-        // takes the big long random number specifying the directory that data for a game is stored in, 
+        // takes the big long random number specifying the directory that data for a game is stored in,
         // the number (indexed from zero) of the clue/hint desired,
         // and a callback function
         // Queries the database for the specified clue, and returns the clue text to the callback function
 
 
-        // Basically we just plug our arguments into a path and that leads straight to our clue text. 
+        // Basically we just plug our arguments into a path and that leads straight to our clue text.
         // Then we just call .val() on our snapshot and pass that to the callback
         this.database.ref(`${authentication.uID()}/${gameID}/hints/${hintNumber}`).once('value', (snapshot) => {
             callback(snapshot.val())
@@ -128,7 +128,7 @@ const dbi = {
     },
 }
 
-// // For testing: 
+// // For testing:
 // let aGame;
 // dbi.getGames('TestUser19', function (x) {
 //     console.log(x)
