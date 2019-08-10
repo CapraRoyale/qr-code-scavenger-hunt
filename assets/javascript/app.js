@@ -79,8 +79,8 @@ $(document).ready(function() {
             //Hide the Submit button to prevent repeat submittals and hide the table
             $("#db-gen-new-game").hide();
             $("#clues-and-hints").hide();
-            //
+            //Populate Text of Header with success message
             $("#clues-and-hints-header").text("Success!");
         })
     });
-});
+})
