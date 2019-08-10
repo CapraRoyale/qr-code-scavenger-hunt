@@ -1,15 +1,3 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyBrRR7AaTFxH1M2UpCLdFJErlKayHh3Vkw",
-    authDomain: "qr-code-hunt-for-red-october.firebaseapp.com",
-    databaseURL: "https://qr-code-hunt-for-red-october.firebaseio.com",
-    projectId: "qr-code-hunt-for-red-october",
-    storageBucket: "qr-code-hunt-for-red-october.appspot.com",
-    messagingSenderId: "912354708461",
-    appId: "1:912354708461:web:cf9e153278af2886"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
 const dbi = {
     database: firebase.database(),
