@@ -6,10 +6,9 @@ $(document).ready(function() {
     //Create a click condition for the form that generates a value based on the input number
     $("#create-new-game>#new-game").click(function() {
         //Create variables to contain form text input
-        ownerName = $("#owner-name").val();
         groupName = $("#group-name").val();
         //
-        $("#clues-and-hints-header").prepend(ownerName, "<br>", groupName);
+        $("#clues-and-hints-header").prepend(authentication.uName() + "<br>" + groupName);
         //Create variable based on input number for clues
         var generateClues = $("#number-of-clues").val();
         //Make sure the vlue submitted is at least 1
@@ -71,16 +70,20 @@ $(document).ready(function() {
                     //
                     var img = $("<img>")
                     img.attr("src", qr);
-                    $(".images").append(img);
+                    // 
+
+                    $(".images").append(img, "<br><br>");
                 }
             }
-            console.log(ownerName, groupName, genClueList, genHintList);
-            dbi.saveNewGame(ownerName, groupName, genClueList, genHintList);
+            console.log(groupName, genClueList, genHintList);
+            var localGameID = dbi.saveNewGame(groupName, genClueList, genHintList);
             //Hide the Submit button to prevent repeat submittals and hide the table
             $("#db-gen-new-game").hide();
             $("#clues-and-hints").hide();
             //Populate Text of Header with success message
+            console.log(localGameID);
             $("#clues-and-hints-header").text("Success!");
+            $("#game-id").text(localGameID);
         })
     });
 })
