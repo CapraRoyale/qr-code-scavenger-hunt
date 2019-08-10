@@ -19,10 +19,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-    ​
+
     <!-- Add SDKs for Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
 
+    <script src="assets/javascript/authTrack.js"></script>
     <script src="assets/javascript/dbControll.js"></script>
     <script src="assets/javascript/app.js"></script>
     <!--Start Page Test-->
@@ -48,7 +50,7 @@
 
                         </div>
                         <!-- Table Data Below-->
-                        <h1 id="clues-and-hints-header"></h1>
+                        <h1 class="Text-align-center" id="clues-and-hints-header"></h1>
                         <table id="clues-and-hints">
                             <thead>
                                 <tr>
@@ -57,10 +59,12 @@
                                     <td>Hint</td>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+                            </tbody>
                         </table>
                         <br>
                         <button type="submit" class="btn btn-danger" id="db-gen-new-game">Submit</button>
+                        <div class="images"></div>
                     </div>
                 </div>
             </div>

@@ -2,148 +2,104 @@
 <html lang="en">
 
 <head>
-    <title>New Game</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Google Fonts API - Raleway -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-    <!-- Local Style - CSS -->
+    <!-- Style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <style>
-        thead {
-            color: black;
-        }
-
-        tbody {
-            color: black;
-        }
-
-        tfoot {
-            color: black;
-        }
-
-        table,
-        th,
-        td {
-            border: 2px solid black;
-        }
-    </style>
-
 </head>
 
 <body>
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">QR Scavenger Clue Hunt</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="new_game.html"> New Game <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Game Mode</a>
-                </li>
-                <!-- Through the Login Page -> User can click Dashboard  -->
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
+    <!-- Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="clue_page.html">Clue</a>
-                </li>
+    <script src="assets/javascript/authTrack.js"></script>
+    <script src="assets/javascript/dbControll.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <!--Start Page Test-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="index.html">
+                        <h1>QR Scavenger Clue Hunt</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Game Mode</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="new_game.html">New Game<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="clue_page.html">Clue</a>
+                            </li>
 
-        </div>
-    </nav>
-
-    <!-- /__________________________________________________________________________________________________________________________________/ -->
-    <div class="jumbotron">
-        <h1 class="display-4">New Game</h1>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, explicabo aperiam consectetur magnam enim obcaecati asperiores sequi nobis quas dolorum, similique modi sapiente repellendus esse quis commodi odio quo. Itaque. <b>Start New Game</b></p>
-        <hr class="my-4">
-        <!-- Option 1: Table outside of Card -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Clue</th>
-                    <th>Hints</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>x</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>y</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>3</td>
-                    <td>z</td>
-                </tr>
-            </tfoot>
-        </table>
-
-        <!-- Buttons -->
-        <input class="saveInput btn btn-primary" type="submit" value="Save Input">
-        <input class="editButton btn btn-primary" type="reset" value="Edit">
-
-        <!-- Option 2: Table within card.  -->
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Set-up</div>
-            <div class="card-body">
-                <h5 class="card-title">Secondary card title</h5>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Clue</th>
-                            <th>Hints</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>x</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>y</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>3</td>
-                            <td>z</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                    </div>
+                </nav>
             </div>
-            <!-- Buttons -->
-            <input class="saveInput btn btn-primary" type="submit" value="Save Input">
-            <br>
-            <input class="editButton btn btn-primary" type="reset" value="Edit">
         </div>
+        <div class="row">
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-9">
+                <div class="card text-white bg-primary">
+                    <img class="card-img-top" src="" alt="">
+                    <div class="card-body">
+                        <!--Form Data Below-->
+                        <div id="create-new-game" class="form-group">
 
+                            <label for="owner-name">Owner</label>
+                            <textarea class="form-control" name="owner-name" id="owner-name" rows="1"></textarea>
+                            <br>
+                            <label for="group-name">Name Your Game</label>
+                            <textarea class="form-control" name="group-name" id="group-name" rows="1"></textarea>
+                            <br>
+                            <label for="number-of-clues">How many clues?</label>
+                            <input type="number" min="0" name="number-of-clues" id="number-of-clues" class="form-control" placeholder="Pick a number, any number" aria-describedby="helpId">
+                            <br>
+                            <button type="submit" class="btn btn-warning" id="new-game">Submit</button>
 
+                        </div>
+                        <!-- Table Data Below-->
+                        <h1 class="Text-align-center" id="clues-and-hints-header"></h1>
+                        <table id="clues-and-hints">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>Clue</td>
+                                    <td>Hint</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <br>
+                        <button type="submit" class="btn btn-danger" id="db-gen-new-game">Submit</button>
+                        <div class="images"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
