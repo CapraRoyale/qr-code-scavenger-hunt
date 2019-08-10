@@ -312,7 +312,6 @@ body {
 
 
 
-
 @media (min-width: 500px) and (max-width: 599px) {
 
   body {
@@ -367,7 +366,6 @@ body {
 
 
 
-/* Phones */
 @media(min-width: 300px) and (max-width: 450px) {
   body {
     color: black;
@@ -396,6 +394,7 @@ body {
   font-size: 1.0rem;
 }
 }
+
 
 
 @media(min-width: 100px) and (max-width: 299px) {
@@ -440,5 +439,51 @@ body {
 .goDashboard{
   margin-right: 70px;
 }
+
+}
+
+
+/* _____________________________________________________ game_mode.html _______________________________________________________________ */
+
+@media(min-width: 300px) and (max-width: 450px) {
+  body {
+    color: black;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    background: 0;
+}
+
+.gameTracker{
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  height: 200vh;
+  width: 63vh;
+}
+
+.display-4{
+  font-size: 2.0rem;
+}
+
+.trackerTable{
+  font-size: 1.0rem;
+}
+}
+
+
+
+@media(min-width: 100px) and (max-width: 299px) {
+  body {
+    color: black;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    background: 0;
+}
+
+
 
 }
