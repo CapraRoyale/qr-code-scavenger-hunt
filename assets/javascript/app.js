@@ -5,11 +5,11 @@ $(document).ready(function() {
     $("#clues-and-hints").hide();
     //Create a click condition for the form that generates a value based on the input number
     $("#create-new-game>#new-game").click(function() {
-        //Create variables to contain form inputs
-
+        //Create variables to contain form text input
         ownerName = $("#owner-name").val();
         groupName = $("#group-name").val();
-        $("#clues-and-hints-header").prepend(ownerName, " ", groupName);
+        //
+        $("#clues-and-hints-header").prepend(ownerName, "<br>", groupName);
         //Create variable based on input number for clues
         var generateClues = $("#number-of-clues").val();
         //Make sure the vlue submitted is at least 1
