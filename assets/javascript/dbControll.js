@@ -16,7 +16,7 @@ const dbi = {
 
     saveNewGame: function (gameName, clueList, hintList) {
         // Method that creates a new directory in the database, which will hold all the info we need about our game
-        // Also adds an entry to the 'owners' directory under the current owner's user ID so that this direcotry can be found later
+        // Also adds an entry to the 'owners' directory under the current owner's user ID so that this directory can be found later
 
         // First let's grab the currently logged-in user's user ID since we'll want to store the game info inside a folder of that name for authentication purposes
         let gameOwner = authentication.uID();
