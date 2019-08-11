@@ -83,6 +83,8 @@ const dbi = {
         // Using an already known game ID, attempt to retrieve all information for a game under 
         // that game ID, under the given user's files
         // An object will be returned to the callback function in the following format:
+        // {name: 'Name of Game', clues: ['array', 'of', 'clue', 'text', 'in', 'order'], hint: ['array', 'of', 'hint', 'text', 'in', 'order']}
+        // ie: {name: 'string', clues: ['strings'], hints: ['strings']}
 
         this.database.ref(`${authentication.uID()}/${gameID}`).once('value', (snapshot) => {
 
@@ -108,7 +110,12 @@ const dbi = {
                     
                     // Then asynchronously grab the clue text using the codes from our snapshot
                     this.database.ref(`clues/${snapVal.clues[i]}`).once('value', (subSnapshot) => {
+
+                        // add clue text to list in singleGame object via index
                         singleGame.clues[i] = (subSnapshot.val());
+
+                        // If all other asynchronous callback have already resolved, then pass the 
+                        // completed object to the callback function
                         if (singleGame.clues.length === snapVal.clues.length) {
                             callback(singleGame);
                         };
