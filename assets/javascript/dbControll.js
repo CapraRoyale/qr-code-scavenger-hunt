@@ -34,6 +34,9 @@ const dbi = {
             let path = `${gameOwner}/${gameID.key}/hints/${i}`;
             this.database.ref(path).set(hintList[i]);
         };
+
+        // Return game's server location so that we can reference it again easily after creation
+        return gameID.key;
     },
 
     getGames: function (callBack) {
@@ -72,6 +75,52 @@ const dbi = {
                 // Once we're all finished grabbing values out of our snapshot and appending them to our userGames array
                 // in object form, we'll return the array.
                 callBack(userGames);
+            }
+        });
+    },
+
+    getSingleGame: function (gameID, callback) {
+        // Using an already known game ID, attempt to retrieve all information for a game under 
+        // that game ID, under the given user's files
+        // An object will be returned to the callback function in the following format:
+        // {name: 'Name of Game', clues: ['array', 'of', 'clue', 'text', 'in', 'order'], hint: ['array', 'of', 'hint', 'text', 'in', 'order']}
+        // ie: {name: 'string', clues: ['strings'], hints: ['strings']}
+
+        this.database.ref(`${authentication.uID()}/${gameID}`).once('value', (snapshot) => {
+
+            // If the game does not exist, return null
+            if (!snapshot.val()) {
+                callBack(null)
+            }
+
+            // If, however, the user does have info saved under this gameID, contruct an object from the returned snapshot
+            else {
+
+                // First lets get the useable object out of the snapshot
+                let snapVal = snapshot.val();
+
+                // Create return object with value for name and empty lists for clues and hints
+                let singleGame = {name: snapVal.gameName, clues: [], hints: []};
+
+                // Iterate through clue and hints list at the same time (since they must be the same length anyway)
+                for (let i = 0; i < snapVal.clues.length; i++) {
+
+                    // Grab hint straight from snapshot and add to hint list in singleGame object
+                    singleGame.hints.push(snapVal.hints[i]);
+                    
+                    // Then asynchronously grab the clue text using the codes from our snapshot
+                    this.database.ref(`clues/${snapVal.clues[i]}`).once('value', (subSnapshot) => {
+
+                        // add clue text to list in singleGame object via index
+                        singleGame.clues[i] = (subSnapshot.val());
+
+                        // If all other asynchronous callback have already resolved, then pass the 
+                        // completed object to the callback function
+                        if (singleGame.clues.length === snapVal.clues.length) {
+                            callback(singleGame);
+                        };
+                    });
+                }; 
             }
         });
     },
@@ -116,6 +165,7 @@ const dbi = {
 
     },
 
+<<<<<<< HEAD
     executeTest: function () {
         // Test/example values -- This won't be included in the final version, but is useful for testing.
         let gameName = 'Example Clue Hunt 002';
@@ -144,3 +194,6 @@ const dbi = {
 
 
 
+=======
+}
+>>>>>>> 0f1396a0479077a0a9e0b297c3ef1762e660ca6a

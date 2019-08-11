@@ -5,19 +5,18 @@ $(document).ready(function() {
     $("#clues-and-hints").hide();
     //Create a click condition for the form that generates a value based on the input number
     $("#create-new-game>#new-game").click(function() {
-        //Create variables to contain form inputs
-
+        //Create variables to contain form text input
         ownerName = $("#owner-name").val();
         groupName = $("#group-name").val();
-        $("#clues-and-hints-header").prepend(ownerName, " ", groupName);
+        //
+        $("#clues-and-hints-header").prepend(ownerName, "<br>", groupName);
         //Create variable based on input number for clues
         var generateClues = $("#number-of-clues").val();
         //Make sure the vlue submitted is at least 1
         if (generateClues >= 1) {
-            console.log(generateClues);
             //Generate an instance of Table data for each integer
             for (let i = 0; i < generateClues; i++) {
-                console.log("clue" + i);
+
                 //Generate variables to contain table data and table row HTML elements
                 //TODO: Generate these variables with a for loop in case we want to easily add more in the future
                 var tr = $("<tr>");
@@ -28,15 +27,17 @@ $(document).ready(function() {
                 var clueInput = $("<input>", {
                     type: "text",
                     id: "clue" + i
-                })
+                });
                 var hintInput = $("<input>", {
-                        type: "text",
-                        id: "hint" + i
-                    })
-                    //Attach variable content to table row element and append to the page to generate a form
+                    type: "text",
+                    id: "hint" + i
+                });
+                //Attach variable content to table row element and append to the page to generate a form
                 td0.append(i + 1);
                 td1.append(clueInput);
                 td2.append(hintInput);
+
+                //
                 tr.append(td0, td1, td2);
                 $("#clues-and-hints>tbody").append(tr);
 
@@ -47,6 +48,39 @@ $(document).ready(function() {
             $("#db-gen-new-game").show();
             $("#clues-and-hints").show();
         }
+        $("#db-gen-new-game").click(function() {
+            //
+            var genClueList = [];
+            var genHintList = [];
+            //
+            for (let i = 0; i < generateClues; i++) {
+                //
+                var currentClue = $("#clue" + i).val().trim();
+                //
+                if (currentClue != "") {
 
+                    genClueList.push(currentClue);
+                    //
+                    var currentHint = $("#hint" + i).val();
+
+                    genHintList.push(currentHint);
+                    //
+                    //Generate QR code
+                    var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(currentClue + currentHint);
+                    console.log(qr);
+                    //
+                    var img = $("<img>")
+                    img.attr("src", qr);
+                    $(".images").append(img);
+                }
+            }
+            console.log(ownerName, groupName, genClueList, genHintList);
+            dbi.saveNewGame(ownerName, groupName, genClueList, genHintList);
+            //Hide the Submit button to prevent repeat submittals and hide the table
+            $("#db-gen-new-game").hide();
+            $("#clues-and-hints").hide();
+            //Populate Text of Header with success message
+            $("#clues-and-hints-header").text("Success!");
+        })
     });
-});
+})
