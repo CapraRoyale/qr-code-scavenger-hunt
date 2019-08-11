@@ -23,29 +23,27 @@
 
 // On-click Functions:
 
-// This line of code is the onclick function for the <submit button> which will lead  the user to: clue_page.html
 
-// When user clicks "Submit"
-$(".submitButton").on("click", function(event) {
-// This line of code prevents the page from refreshing when a user hits: Submit
-event.preventDefault();
-// Grab the user input
-var code = $("#gameCodeForm").val().trim();
-// Clear absolutely everything stored in localStorage using localStorage.clear()
-localStorage.clear();
-// Store the code Data into localStorage using"localStorage.setItem" -> Set item (key)
-localStorage.setItem("code", code);
-});
+// _______________Submit User Code -> Go To Clue Page_____________________//
+// When user enters input this code will be stored locally.
+function store() {
+// Declared a variable: codeVariable | where, the user inputs their data in the id, #codeForm, and will be transferred to localStorage.
+var codeVariable = document.getElementById("codeForm");
+localStorage.setItem("code", codeVariable.value);
+};
 
-function clueFunction() {
 // After local storage has been saved -> redirect to clue_page.html
+function clueFunction(){
 window.open("clue_page.html");
 };
 
+// ____________________New Game_________________________//
 // This line of code is the onclick function for the <New Game button> which will lead the user to: new_game.html
 function newGame() {
     window.open("new_game.html");
 };
+
+// ____________________Login_________________________//
 
 // This line of code is the onclick function for the <Login button> which will lead the user to: login.html
 function login() {

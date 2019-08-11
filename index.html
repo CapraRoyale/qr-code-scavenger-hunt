@@ -66,9 +66,9 @@
             <div class="gameCode col-xs-4 form-group">
                 <h3 for="inputGameCode">Game Code</h3>
                 <!-- Game Code Form -->
-                <input id="gameCodeForm" type="text" placeholder="ABCDE12345">
+                <input id="codeForm" type="text" placeholder="ABCDE12345">
             </div>
-            <button onclick="clueFunction()" value="Save" type="submit" class="submitButton btn btn-primary">Submit</button>
+            <button onclick="clueFunction(), store()"value="Save" type="button" class="submitButton btn btn-primary">Submit</button>
         </form>
 
         <h3>Click Here to Start New Game</h3>
@@ -81,6 +81,8 @@
 
     <!-- Local .js -->
     <script src = "assets/javascript/index.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
@@ -105,7 +107,7 @@
     </script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
