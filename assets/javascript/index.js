@@ -1,13 +1,3 @@
-// On-click Functions:
-
-// This line of code is the onclick function for the <submit button> which will lead  the user to: clue_page.html
-function clueFunction() {
-
-    // SAVE CODE TO LOCAL STORAGE
-
-    // THEN --> REDIRECT TO HERE:
-    window.open("clue_page.html");
-
     // ___________________________________________________Algorithm _____________________________________________________________________//
     // 1) Basically the objective here is to pass user data -> via their special login code to link them to their 'current' clue page.
 
@@ -30,12 +20,30 @@ function clueFunction() {
 
     // ___________________________________________________Program _____________________________________________________________________//
 
+
+// On-click Functions:
+
+// _______________Submit User Code -> Go To Clue Page_____________________//
+
+// When user enters input this code will be stored locally.
+function store() {
+// Declared a variable: codeVariable | where, the user inputs their data in the id, #codeForm, and will be transferred to localStorage.
+var codeVariable = document.getElementById("codeForm");
+localStorage.setItem("code", codeVariable.value);
 };
 
+// After local storage has been saved -> redirect to clue_page.html
+function clueFunction(){
+window.open("clue_page.html", "_self");
+};
+
+// ____________________New Game_________________________//
 // This line of code is the onclick function for the <New Game button> which will lead the user to: new_game.html
 function newGame() {
     window.open("new_game.html");
 };
+
+// ____________________Login_________________________//
 
 // This line of code is the onclick function for the <Login button> which will lead the user to: login.html
 function login() {
