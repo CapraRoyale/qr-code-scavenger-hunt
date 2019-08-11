@@ -4,7 +4,7 @@ const dbi = {
 
     saveNewGame: function (gameName, clueList, hintList) {
         // Method that creates a new directory in the database, which will hold all the info we need about our game
-        // Also adds an entry to the 'owners' directory under the current owner's user ID so that this direcotry can be found later
+        // Also adds an entry to the 'owners' directory under the current owner's user ID so that this directory can be found later
 
         // First let's grab the currently logged-in user's user ID since we'll want to store the game info inside a folder of that name for authentication purposes
         let gameOwner = authentication.uID();
@@ -165,4 +165,35 @@ const dbi = {
 
     },
 
+<<<<<<< HEAD
+    executeTest: function () {
+        // Test/example values -- This won't be included in the final version, but is useful for testing.
+        let gameName = 'Example Clue Hunt 002';
+        let owner = 'TestUser19';
+        let clues = ['Under the stairs', 'In the \'cookie jar\'', 'Where you lay your head', 'Your most private location', 'Atop the clock tower'];
+        let hints = ['000', '111', '222', '333', '444'];
+
+        // Create new code hunt game:
+        dbi.saveNewGame(gameName, owner, clues, hints);
+    },
 }
+
+// // For testing:
+// let aGame;
+// dbi.getGames('TestUser19', function (x) {
+//     console.log(x)
+//     aGame = x[0].id;
+//     console.log(aGame)
+//     dbi.getClue(aGame, 1, (val) => {console.log('Clue: ' + val)})
+//     dbi.getHint(aGame, 1, (val) => {console.log('Hint: ' + val)})
+//     });
+
+
+
+
+
+
+
+=======
+}
+>>>>>>> 0f1396a0479077a0a9e0b297c3ef1762e660ca6a
