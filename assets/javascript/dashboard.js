@@ -30,7 +30,7 @@ let authCheck = setInterval(() => {
             }
 
             // If user does have games, iterate through the list of games and add a table row and columns
-            // Columns are 1) Game Name 2) Edit Button / Print Codes Button 3) Trck
+            // Columns are 1) Game Name 2) Edit Button / Print Codes Button 3) Track
             else {
 
                 // Iterate through list of game objects
@@ -41,10 +41,10 @@ let authCheck = setInterval(() => {
                     let nameCol = $('<td>').text(gameList[i].name);
 
                     let editCol = $('<button>').text('Edit/Print');
-                    editCol.addClass('.edit-link');
+                    editCol.addClass('edit-link');
 
                     let trackCol = $('<button>').text('Track');
-                    trackCol.addClass('.track-link')
+                    trackCol.addClass('track-link')
 
                     // Assigin unique game IDs to buttons
                     editCol.attr('game', gameList[i].id)
@@ -60,13 +60,13 @@ let authCheck = setInterval(() => {
                 }
 
                 // Set up event handlers for buttons
-                $('.edit-link').click(function () {
+                $(".edit-link").on('click', function () {
 
                     // When button is clicked, add game name to url as argument
                     window.location.href = `new_game.html?game=${$(this).attr('game')}`;
                 })
 
-                $('.track-link').click(function () {
+                $(".track-link").on('click', function () {
 
                     // When button is clicked, add game name to url as argument
                     window.location.href = `tracking_page.html?game=${$(this).attr('game')}`;
