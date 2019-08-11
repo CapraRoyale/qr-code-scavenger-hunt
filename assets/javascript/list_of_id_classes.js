@@ -8,7 +8,7 @@
 (classes):
 
 <form>
-.gameCodeForm
+.codeForm
 
 <button>
 .submitButton
