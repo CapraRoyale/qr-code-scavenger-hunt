@@ -23,8 +23,8 @@
 
 // On-click Functions:
 
-
 // _______________Submit User Code -> Go To Clue Page_____________________//
+
 // When user enters input this code will be stored locally.
 function store() {
 // Declared a variable: codeVariable | where, the user inputs their data in the id, #codeForm, and will be transferred to localStorage.
