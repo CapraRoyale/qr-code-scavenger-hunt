@@ -34,7 +34,7 @@ localStorage.setItem("code", codeVariable.value);
 
 // After local storage has been saved -> redirect to clue_page.html
 function clueFunction(){
-window.open("clue_page.html");
+window.open("clue_page.html", "_self");
 };
 
 // ____________________New Game_________________________//
