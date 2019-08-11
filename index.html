@@ -20,6 +20,9 @@
 
     <!-- Local Style - CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+
+
 </head>
 
 <body>
@@ -62,20 +65,24 @@
         <form>
             <div class="gameCode col-xs-4 form-group">
                 <h3 for="inputGameCode">Game Code</h3>
-                <input type="gameCode" class="gameCodeForm form-control" id="gameCode" placeholder="ABCDE12345">
+                <!-- Game Code Form -->
+                <input id="codeForm" type="text" placeholder="ABCDE12345">
             </div>
-            <button type="submit" class="submitButton btn btn-primary">Submit</button>
+            <button onclick="store(), clueFunction()" value="Save" type="button" class="submitButton btn btn-primary">Submit</button>
         </form>
 
         <h3>Click Here to Start New Game</h3>
-        <button type="button" class="newGame btn btn-success">New Game</button>
+        <button onclick ="newGame()" type="button" class="newGame btn btn-success">New Game</button>
 
         <h3>Login</h3>
-        <button type="button" class="login btn btn-secondary">Login</button>
+        <button onclick = "login()" type="button" class="login btn btn-secondary">Login</button>
 
     </div>
 
+    <!-- Local .js -->
+    <script src = "assets/javascript/index.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
@@ -98,19 +105,12 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
