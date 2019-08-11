@@ -3,13 +3,13 @@ $(document).ready(function() {
     //Hide the database submittal and table headers
     $("#db-gen-new-game").hide();
     $("#clues-and-hints").hide();
+    $("#edit-new-game").hide();
     //Create a click condition for the form that generates a value based on the input number
     $("#create-new-game>#new-game").click(function() {
         //Create variables to contain form text input
-        ownerName = $("#owner-name").val();
         groupName = $("#group-name").val();
-        //
-        $("#clues-and-hints-header").prepend(ownerName, "<br>", groupName);
+        //Populate header HTML element with variable text
+        $("#clues-and-hints-header").prepend(authentication.uName() + "<br>" + groupName);
         //Create variable based on input number for clues
         var generateClues = $("#number-of-clues").val();
         //Make sure the vlue submitted is at least 1
@@ -47,6 +47,7 @@ $(document).ready(function() {
             //Show the database submit buttons and table headers
             $("#db-gen-new-game").show();
             $("#clues-and-hints").show();
+
         }
         $("#db-gen-new-game").click(function() {
             //
@@ -65,22 +66,82 @@ $(document).ready(function() {
 
                     genHintList.push(currentHint);
                     //
-                    //Generate QR code
-                    var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(currentClue + currentHint);
-                    console.log(qr);
-                    //
-                    var img = $("<img>")
-                    img.attr("src", qr);
-                    $(".images").append(img);
                 }
             }
-            console.log(ownerName, groupName, genClueList, genHintList);
-            dbi.saveNewGame(ownerName, groupName, genClueList, genHintList);
+            //Take the entry name in Firebase and return it as variable for display
+            var localGameID = dbi.saveNewGame(groupName, genClueList, genHintList);
+            //
+            var qrGen = function(qrContent) {
+                    // Create variable to contain Google QR code generating API according to input qrContent
+                    var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(qrContent);
+                    console.log(qr);
+                    // Create variable to contain HTML element 
+                    var img = $("<img>")
+                    img.attr("src", qr);
+                    // Attach newly generated image to the HTML element with the 'images' class
+                    $(".images").append(img, "<br><br>");
+                }
+                //
+            console.log(groupName, genClueList, genHintList);
+            //Create a promise for execution when the firebase results return
+            var saveGameReturnData = new Promise(function(resolve, reject) {
+                //If the request is succesful, resolve the request by populating game code into page
+                resolve(
+                    localGameID, $("#game-id").text(localGameID), qrGen(localGameID)
+                );
+                //If the request is unsuccesful, throw an error
+                reject(
+                    console.log(err)
+                );
+            })
+            saveGameReturnData;
+            //
+            $("#edit-new-game").show();
             //Hide the Submit button to prevent repeat submittals and hide the table
             $("#db-gen-new-game").hide();
             $("#clues-and-hints").hide();
             //Populate Text of Header with success message
             $("#clues-and-hints-header").text("Success!");
+            //
+            //Generate QR codes based on Clues
+            console.log(localGameID);
+            //Create edit function for game clues
+            $('#edit-new-game').click(function() {
+                $("#clues-and-hints>tbody").empty();
+                $("#clues-and-hints").show();
+                //
+                dbi.getSingleGame(localGameID, function(result) {
+                    for (let i = 0; i < result.clues.length; i++) {
+                        console.log(result.clues[i], result.hints[i]);
+
+                        var tr = $("<tr>");
+                        var td0 = $("<td>");
+                        var td1 = $("<td>");
+                        var td2 = $("<td>");
+                        //Generate variables to contain HTML elements for the form
+                        var clueInput = $("<input>", {
+                            type: "text",
+                            id: "clue" + i,
+                            value: result.clues[i]
+                        });
+                        var hintInput = $("<input>", {
+                            type: "text",
+                            id: "hint" + i,
+                            value: result.hints[i]
+                        });
+                        //Attach variable content to table row element and append to the page to generate a form
+                        td0.append(i + 1);
+                        td1.append(clueInput);
+                        td2.append(hintInput);
+
+                        //
+                        tr.append(td0, td1, td2);
+                        $("#clues-and-hints>tbody").append(tr);
+
+                    }
+                })
+            })
+
         })
     });
 })
