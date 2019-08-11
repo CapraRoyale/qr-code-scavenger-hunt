@@ -24,20 +24,20 @@
 // On-click Functions:
 
 // This line of code is the onclick function for the <submit button> which will lead  the user to: clue_page.html
-function clueFunction() {
-    // When user clicks "Submit"
+
+// When user clicks "Submit"
 $(".submitButton").on("click", function(event) {
-    // This line of code prevents the page from refreshing when a user hits: Submit
-    event.preventDefault();
-    // Grab the user input
-    var codeData = $(".gameCodeForm").val().trim();
-    // Clear absolutely everything stored in localStorage using localStorage.clear()
-    localStorage.clear();
-    // Store the code Data into localStorage using "localStorage.setItem" -> Set item (key)
-    localStorage.setItem("codeData", codeData);
-}),
+// This line of code prevents the page from refreshing when a user hits: Submit
+event.preventDefault();
+// Grab the user input
+var code = $("#gameCodeForm").val().trim();
+// Clear absolutely everything stored in localStorage using localStorage.clear()
+localStorage.clear();
+// Store the code Data into localStorage using"localStorage.setItem" -> Set item (key)
+localStorage.setItem("code", code);
+});
 
-
+function clueFunction() {
 // After local storage has been saved -> redirect to clue_page.html
 window.open("clue_page.html");
 };
