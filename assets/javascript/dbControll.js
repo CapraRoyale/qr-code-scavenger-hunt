@@ -100,14 +100,14 @@ const dbi = {
                 let snapVal = snapshot.val();
 
                 // Create return object with value for name and empty lists for clues and hints
-                let singleGame = {name: snapVal.gameName, clues: [], hints: []};
+                let singleGame = { name: snapVal.gameName, clues: [], hints: [] };
 
                 // Iterate through clue and hints list at the same time (since they must be the same length anyway)
                 for (let i = 0; i < snapVal.clues.length; i++) {
 
                     // Grab hint straight from snapshot and add to hint list in singleGame object
                     singleGame.hints.push(snapVal.hints[i]);
-                    
+
                     // Then asynchronously grab the clue text using the codes from our snapshot
                     this.database.ref(`clues/${snapVal.clues[i]}`).once('value', (subSnapshot) => {
 
@@ -120,7 +120,7 @@ const dbi = {
                             callback(singleGame);
                         };
                     });
-                }; 
+                };
             }
         });
     },
@@ -165,35 +165,4 @@ const dbi = {
 
     },
 
-<<<<<<< HEAD
-    executeTest: function () {
-        // Test/example values -- This won't be included in the final version, but is useful for testing.
-        let gameName = 'Example Clue Hunt 002';
-        let owner = 'TestUser19';
-        let clues = ['Under the stairs', 'In the \'cookie jar\'', 'Where you lay your head', 'Your most private location', 'Atop the clock tower'];
-        let hints = ['000', '111', '222', '333', '444'];
-
-        // Create new code hunt game:
-        dbi.saveNewGame(gameName, owner, clues, hints);
-    },
 }
-
-// // For testing:
-// let aGame;
-// dbi.getGames('TestUser19', function (x) {
-//     console.log(x)
-//     aGame = x[0].id;
-//     console.log(aGame)
-//     dbi.getClue(aGame, 1, (val) => {console.log('Clue: ' + val)})
-//     dbi.getHint(aGame, 1, (val) => {console.log('Hint: ' + val)})
-//     });
-
-
-
-
-
-
-
-=======
-}
->>>>>>> 0f1396a0479077a0a9e0b297c3ef1762e660ca6a
