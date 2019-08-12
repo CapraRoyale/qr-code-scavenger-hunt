@@ -22,14 +22,16 @@ const authentication = {
     // Get user's unique firebase user ID
     // if no user is signed in, this function returns null
     uID: function () {
-        return auth.currentUser.uid;
+        if (!auth.currentUser) {return null}
+        else {return auth.currentUser.uid};
     },
 
     // Get user's display name
     // if no user is signed in, this function returns null
     // if the user is signed in, but this function still returns null, then we made a mistake during account creation
     uName: function () {
-        return auth.currentUser.displayName;
+        if (!auth.currentUser) {return null}
+        else {return auth.currentUser.displayName};
     },
 
     // Logout current user
