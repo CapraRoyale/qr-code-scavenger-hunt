@@ -14,9 +14,14 @@ const mainDisplayArea = $('#game-display-area');
 
 let authCheck = setInterval(() => {
 
+    // Check if the auth variable has been initialized. If it has proceed, otherwise do nothing.
     if (auth) {
 
+        // Remove timer, since we only want any of this to happen once
         clearInterval(authCheck);
+
+        // Double check that user is not logged in. If they are not, send them to the login page.
+        if (!authentication.uID()) {window.location.href = "login.html"};
 
         // As soon as the page loads, we need to ping the database for all games owned by there user
         // Will return an array of objects that look like the following: {name: 'game name', id : 'directoryID'}
