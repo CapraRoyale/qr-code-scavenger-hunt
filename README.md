@@ -97,4 +97,3 @@ This project is licensed under the University of Washington License - see the [L
 ## Progress-Log:
 8.5.19 - Worked on debugging Firebase, synchronizing js script to html elements, revising html divs and adding css features to web pages.
 8.7.19 - Wireframing Tracking Page -> Started implementing HTML elements onto Tracking Page.
-8.8.19 - Began mobile-responsiveness for html pages.
