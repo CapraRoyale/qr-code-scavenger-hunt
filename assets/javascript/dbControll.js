@@ -46,14 +46,14 @@ const dbi = {
 
         // Grab the list of clue locations from the existing database 
         this.database.ref(`${gameOwner}/${gameID}/clues/`).once('value', (snapshot) => {
+            
             let clueHandle = snapshot.val();
 
+            // Create an object to hold all updates we'll make
+            let updates = {};
 
             // Iterate through new list of clues
             for (let i = 0; i < clueList.length; i++) {
-
-                // Create an object to hold all updates we'll make
-                let updates = {};
 
                 // For each item, check to see if a database already contains an entry
                 // If so, replace it, if not, create it
@@ -77,6 +77,10 @@ const dbi = {
                 }
                 else {throw('Something is very broken and you should show this error to Dan.')};
             };
+
+            // After doing all of that, we need to push our big fat object full of all of our updates to the server
+            this.database.ref().update(updates);
+
         });
 
 
