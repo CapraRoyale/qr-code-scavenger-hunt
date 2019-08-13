@@ -487,11 +487,12 @@ body {
 
 
 
-/* ___________________________________________________@media game_mode.html _______________________________________________________________ */
+/* ___________________________________________________@media index.html _______________________________________________________________ */
 
-/* 100-299px */
-@media(min-width: 100px) and (max-width: 299px){
 
+@media(min-width: 300px) and (max-width: 768px){
+
+  /* <jumbotron> */
   .gameMode{
     margin-top: 0px;
     margin-left: 0px;
@@ -500,81 +501,51 @@ body {
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
-    width: 66vh;
-    height: 230vh;
+    width: 100vh;
+    /* Assuming the smallest screen height is 768px */
+    height: 250vh;
   }
 
+  /* Navigation bar */
+  .topnav{
+    background-color: gray;
+    overflow: hidden;
+    width: 100vh;
+  }
+
+  /* instruction text */
   .lead{
-    margin-left: 86px;
+    margin-right: 219px;
+    margin-left: 0px;
+    margin-bottom: 0px;
   }
 
+  /* Game Mode Header */
   .gameModeDisplay{
   font-size: 30px;
+  margin-right: 200px;
   }
-}
 
-/* 300-450px */
-@media(min-width: 300px) and (max-width: 450px){
-
-
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 414px;
-    height: 770px;
+  /* Header for */
+  #header3{
+    margin-right: 219px;
   }
-}
 
-/* 450-499px */
-@media(min-width: 450px) and (max-width: 499px){
+  #codeForm{
+    margin-right: 219px;
+  }
 
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 500px;
-    height: 670px;
+  .submitButton{
+    margin-right: 219px;
+  }
+
+  .newGame{
+    margin-right: 219px;
+  }
+
+  .login{
+    margin-right: 219px;
   }
 
 }
 
-/* 500-599px */
-@media (min-width: 500px) and (max-width: 599px) {
-
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 600px;
-    height: 685px;
-  }
-}
-
-/* 600-699px */
-@media (min-width: 600px) and (max-width: 699px) {
-
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 600px;
-    height: 685px;
-  }
-}
