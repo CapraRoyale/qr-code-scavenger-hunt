@@ -29,7 +29,9 @@
 function store() {
 // Declared a variable: codeVariable | where, the user inputs their data in the id, #codeForm, and will be transferred to localStorage.
 var codeVariable = document.getElementById("codeForm");
+// The setItem() method of the Storage interface, when passed a key name and value, will add that key to the given Storage object, or update that key's value if it already exists.
 localStorage.setItem("code", codeVariable.value);
+
 };
 
 // After local storage has been saved -> redirect to clue_page.html

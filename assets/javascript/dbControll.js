@@ -4,7 +4,6 @@ const dbi = {
 
     saveNewGame: function (gameName, clueList, hintList) {
         // Method that creates a new directory in the database, which will hold all the info we need about our game
-        // Also adds an entry to the 'owners' directory under the current owner's user ID so that this directory can be found later
 
         // First let's grab the currently logged-in user's user ID since we'll want to store the game info inside a folder of that name for authentication purposes
         let gameOwner = authentication.uID();
@@ -37,6 +36,60 @@ const dbi = {
 
         // Return game's server location so that we can reference it again easily after creation
         return gameID.key;
+    },
+
+    updateGame: function (gameID, clueList, hintList) {
+        // Method that updates an existing directory in the database, which will holds all the info we need about our game
+
+        // First let's grab the currently logged-in user's user ID since we'll want to store the game info inside a folder of that name for authentication purposes
+        let gameOwner = authentication.uID();
+
+        // Grab the list of clue locations from the existing database 
+        this.database.ref(`${gameOwner}/${gameID}/clues/`).once('value', (snapshot) => {
+            
+            let clueHandle = snapshot.val();
+
+            // Create an object to hold all updates we'll make
+            let updates = {};
+
+            // Figure out which is longer, updated or old list and use that length for iteration
+            let longerListLength;
+            if (clueHandle.length > clueList.length) {longerListLength = clueHandle.length}
+            else {longerListLength = clueList.length};
+
+            // Iterate through new list of clues
+            for (let i = 0; i < longerListLength; i++) {
+
+                // For each item, check to see if a database already contains an entry
+                // If so, replace it, if not, create it
+                if (clueHandle[i] && clueList[i]) {
+
+                    // For updates, we'll add them all to one objects that we'll push to the db all at once later
+                    updates[`clues/${clueHandle[i]}`] = clueList[i];
+                    updates[`${gameOwner}/${gameID}/hints/${i}`] = hintList[i];
+                }
+                else if (clueList[i]) {
+                    // For additions, we'll push new clue text now, then add the referce id that gets stored with the rest of the game
+                    // to the update object
+                    let thatID = this.database.ref('clues').push(clueList[i]).key;
+                    updates[`${gameOwner}/${gameID}/clues/${i}`] = thatID;
+                    updates[`${gameOwner}/${gameID}/hints/${i}`] = hintList[i];
+                }
+                else if (clueHandle[i]) {
+                    // And if the update has removed a clue, the we set it to null in the database
+                    updates[`${gameOwner}/${gameID}/clues/${i}`] = null;
+                    updates[`${gameOwner}/${gameID}/hints/${i}`] = null;
+                    updates[`clues/${clueHandle[i]}`] = null;
+                }
+                else {throw('Something is very broken and you should show this error to Dan.')};
+            };
+
+            // After doing all of that, we need to push our big fat object full of all of our updates to the server
+            this.database.ref().update(updates);
+
+        });
+
+
     },
 
     getGames: function (callBack) {
