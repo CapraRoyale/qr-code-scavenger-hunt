@@ -4,6 +4,7 @@ $(document).ready(function() {
     $("#db-gen-new-game").hide();
     $("#clues-and-hints").hide();
     $("#edit-new-game").hide();
+    $("#submit-game-edit").hide();
     //Create a click condition for the form that generates a value based on the input number
     $("#create-new-game>#new-game").click(function() {
         //Create variables to contain form text input

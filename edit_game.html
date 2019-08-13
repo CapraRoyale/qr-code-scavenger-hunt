@@ -26,7 +26,12 @@
     <script src="assets/javascript/dbControll.js"></script>
     <script src="assets/javascript/app.js"></script>
     <!--Start Page Test-->
-
+    <script>
+        $(document).ready(function grabGameCode() {
+            var gameCode = location.search.substring(1).split("&");
+            var temp = gameCode[1]
+        })
+    </script>
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">QR Scavenger Clue Hunt</a>
@@ -58,16 +63,7 @@
             <div class="col-sm-12 col-md-8 col-lg-9">
                 <div class="card text-white bg-primary">
                     <div class="card-body">
-                        <!--Form Data Below-->
-                        <div id="create-new-game" class="form-group">
-                            <label for="group-name">Name Your Game</label>
-                            <textarea class="form-control" name="group-name" id="group-name" rows="1"></textarea>
-                            <br>
-                            <label for="number-of-clues">How many clues?</label>
-                            <input type="number" min="0" name="number-of-clues" id="number-of-clues" class="form-control" placeholder="Pick a number, any number" aria-describedby="helpId">
-                            <br>
-                            <button type="submit" class="btn btn-warning" id="new-game">Submit</button>
-                        </div>
+
                         <!-- Table Data Below-->
                         <h1 class="Text-align-center" id="clues-and-hints-header"></h1>
                         <h3 id="game-id"></h3>
@@ -83,7 +79,6 @@
                             </tbody>
                         </table>
                         <br>
-                        <button type="submit" class="btn btn-secondary" id="db-gen-new-game">Submit</button>
                         <button type="submit" class="btn btn-danger" id="edit-new-game">Edit</button>
                         <button type="submit" class="btn btn-warning" id="submit-game-edit">Submit Edits</button>
                         <br>
