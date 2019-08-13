@@ -34,10 +34,9 @@
     <!-- Navigation bar -->
     <nav>
         <div class="topnav">
-            <a class="active" href="index.html">Game Mode</a>
-            <a href="new_game.html">New Game</a>
-            <a href="clue_page.html">Clue</a>
-            <a href="login.html">Login</a>
+                <a class="active" href="index.html">Enter Code</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a class="login_logout" href="login.html">Login</a>
         </div>
     </nav>
     </div>
@@ -91,7 +90,17 @@
     <script src="assets/javascript/authTrack.js"></script>
     <script src="assets/javascript/dbControll.js"></script>
     <script src="assets/javascript/dashboard.js"></script>
-
+    <script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+    </script>
 
 </body>
 

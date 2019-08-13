@@ -56,10 +56,12 @@
 =======
     <nav>
         <div class="topnav">
-            <a class="active" href="index.html">Game Mode</a>
-            <a href="new_game.html">New Game</a>
-            <a href="clue_page.html">Clue</a>
-            <a href="login.html">Login</a>
+                <a class="active" href="index.html">Enter Code</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a class="login_logout" href="login.html">Login</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                      </a>
           </div>
 >>>>>>> 63e34157964d3699d7abea66edb22b92a6465fe9
     </nav>
@@ -105,6 +107,17 @@
             </div>
         </div>
     </div>
+    <script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+    </script>
 </body>
 
 </html>
