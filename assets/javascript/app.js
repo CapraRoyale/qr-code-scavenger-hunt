@@ -118,6 +118,7 @@ $(document).ready(function() {
             $('#edit-new-game').click(function() {
                 $("#clues-and-hints>tbody").empty();
                 $("#clues-and-hints").show();
+                $("#submit-game-edit").show();
                 //
                 dbi.getSingleGame(localGameID, function(result) {
                     for (let i = 0; i < result.clues.length; i++) {
