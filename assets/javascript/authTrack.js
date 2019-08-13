@@ -17,7 +17,7 @@ const auth = firebase.auth();
 const authentication = {
 
     failedLogoutCounter: 0,
-    loginElement: undefined, //TODO: Add jquery hook to login/logout element from NavBar
+    loginElement: $('.login_logout'), //TODO: Add jquery hook to login/logout element from NavBar
 
     // Get user's unique firebase user ID
     // if no user is signed in, this function returns null
