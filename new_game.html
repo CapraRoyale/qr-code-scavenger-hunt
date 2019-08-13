@@ -26,50 +26,40 @@
     <script src="assets/javascript/dbControll.js"></script>
     <script src="assets/javascript/app.js"></script>
     <!--Start Page Test-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="index.html">
-                        <h1>QR Scavenger Clue Hunt</h1>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Game Mode</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="new_game.html">New Game<span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.html">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="clue_page.html">Clue</a>
-                            </li>
 
-                    </div>
-                </nav>
-            </div>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">QR Scavenger Clue Hunt</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.html"> Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Game Mode</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="new_game.html">New Game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="clue_page.html">Clue</a>
+                </li>
+            </ul>
         </div>
-        <div class="row">
-            <div class="col"></div>
-        </div>
+    </nav>
+    <!-- End of Navigation Bar -->
+
+    <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-9">
                 <div class="card text-white bg-primary">
-                    <img class="card-img-top" src="" alt="">
                     <div class="card-body">
                         <!--Form Data Below-->
                         <div id="create-new-game" class="form-group">
-
-                            <label for="owner-name">Owner</label>
-                            <textarea class="form-control" name="owner-name" id="owner-name" rows="1"></textarea>
-                            <br>
                             <label for="group-name">Name Your Game</label>
                             <textarea class="form-control" name="group-name" id="group-name" rows="1"></textarea>
                             <br>
@@ -77,10 +67,10 @@
                             <input type="number" min="0" name="number-of-clues" id="number-of-clues" class="form-control" placeholder="Pick a number, any number" aria-describedby="helpId">
                             <br>
                             <button type="submit" class="btn btn-warning" id="new-game">Submit</button>
-
                         </div>
                         <!-- Table Data Below-->
                         <h1 class="Text-align-center" id="clues-and-hints-header"></h1>
+                        <h3 id="game-id"></h3>
                         <table id="clues-and-hints">
                             <thead>
                                 <tr>
@@ -94,6 +84,8 @@
                         </table>
                         <br>
                         <button type="submit" class="btn btn-danger" id="db-gen-new-game">Submit</button>
+                        <button type="submit" class="btn btn-danger" id="edit-new-game">Edit</button>
+                        <br>
                         <div class="images"></div>
                     </div>
                 </div>
