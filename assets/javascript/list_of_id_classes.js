@@ -134,6 +134,16 @@ ________________________________________________________________________________
 // Active game table has 3 rows and 4 col
 // active_game_table
 
+/_________________________________________________Page 06: print_page.html_____________________________________________________________________/
+
+#menu
+#wrapper
+div#content
+div#mast
+div#mast img
+a:link
+a:visted
+#content a:link
 
 
 
