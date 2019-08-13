@@ -1,5 +1,13 @@
 //When document loads, execute code
 $(document).ready(function() {
+
+    // var grabString = location.search;
+    // // console.log(grabString);
+    // var temp = grabString.split("=");
+    // // console.log(temp);
+    // gameCode = decodeURI(temp[1]);
+    // console.log(gameCode);
+
     //Hide the database submittal and table headers
     $("#db-gen-new-game").hide();
     $("#clues-and-hints").hide();
