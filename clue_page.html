@@ -10,10 +10,10 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-     <!-- Google Fonts API - Raleway -->
-     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Google Fonts API - Raleway -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -32,10 +32,9 @@
   <!-- Navigation bar -->
   <nav>
       <div class="topnav">
-          <a class="active" href="index.html">Game Mode</a>
-          <a href="new_game.html">New Game</a>
-          <a href="clue_page.html">Clue</a>
-          <a href="login.html">Login</a>
+          <a class="active" href="index.html">Enter Code</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a class="login_logout" href="login.html">Login</a>
         </div>
   </nav>
 
@@ -48,6 +47,8 @@
       corrupti neque dicta..</p>
       <!--Grid row-->
       <div class="row">
+        <!-- This is the div id that will contain the rendered data from clue_page.js logic -->
+        <div id="renderArea"></div>
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
@@ -83,9 +84,6 @@
   </div>
   <div class="container">
     <div id="clue_text" class="col-sm-6">
-
-    <!-- This is the div id that will contain: clue_page.js logic -->
-    <div id="clueLogic"></div>
 
     </div>
 

@@ -104,6 +104,5 @@ const authentication = {
         });
     }
 };
-
 //TODO: setNavBar status should always call itself inside of document.ready() whever its loaded with a page so that
 // that just automatically happens. Not going to write that until we have the proper element ID though.
