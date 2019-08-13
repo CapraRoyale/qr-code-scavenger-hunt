@@ -52,8 +52,13 @@ const dbi = {
             // Create an object to hold all updates we'll make
             let updates = {};
 
+            // Figure out which is longer, updated or old list and use that length for iteration
+            let longerListLength;
+            if (clueHandle.length > clueList.length) {longerListLength = clueHandle.length}
+            else {longerListLength = clueList.length};
+
             // Iterate through new list of clues
-            for (let i = 0; i < clueList.length; i++) {
+            for (let i = 0; i < longerListLength; i++) {
 
                 // For each item, check to see if a database already contains an entry
                 // If so, replace it, if not, create it
@@ -74,6 +79,7 @@ const dbi = {
                     // And if the update has removed a clue, the we set it to null in the database
                     updates[`${gameOwner}/${gameID}/clues/${i}`] = null;
                     updates[`${gameOwner}/${gameID}/hints/${i}`] = null;
+                    updates[`clues/${clueHandle[i]}`] = null;
                 }
                 else {throw('Something is very broken and you should show this error to Dan.')};
             };
