@@ -27,9 +27,11 @@
     <script src="assets/javascript/app.js"></script>
     <!--Start Page Test-->
     <script>
-        $(document).ready(function grabGameCode() {
-            var gameCode = location.search.substring(1).split("&");
-            var temp = gameCode[1]
+        $(document).ready(function() {
+            var grabString = location.search;
+            // var temp = grabString[1].split("=");
+            gameCode = decodeURI(grabString);
+            console.log(gameCode);
         })
     </script>
     <!-- Navigation bar -->
