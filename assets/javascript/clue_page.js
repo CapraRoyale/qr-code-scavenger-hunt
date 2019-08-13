@@ -10,12 +10,11 @@ $(document).ready(function () {
 
     // dbi.getClue is from: dbControll.js which will retrieve it's data.
     dbi.getClue(localStorage.getItem("code"), function (clueText) {
-        //Call-back Function
-        // This line of code is where .append + localStorage.getItem is applied. -> Rendering portion.
 
         //This console.log('getClue') will test out whether a clue was deployed.
         console.log('getClue');
         console.log(clueText);
+        // Call-back Function:
         if (clueText) {
             $("#renderArea").append(clueText);
         } else {
