@@ -8,15 +8,17 @@
 $(document).ready(function() {
 
 // Is this necessary?
-$("#clueLogic").text(clue);
+// $("#clueLogic").text(clue);
 
 // Clear absolutely everything stored in localStorage using localStorage.clear() --> don't think this is necessary.
 // localStorage.clear();
 
-// This line of code is where .append + localStorage.getItem is applied. -> Rendering portion.
-$("#clueLogic").append
+
 
 // dbi.getClue is from: dbControll.js which will retrieve it's data.
 dbi.getClue(
     localStorage.getItem("code")
-);
+    // This line of code is where .append + localStorage.getItem is applied. -> Rendering portion.
+    $("#clueLogic").append
+
+)
