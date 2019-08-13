@@ -175,16 +175,12 @@ auth.onAuthStateChanged(function (user) {
 
     // If user is logged in, send them to the dashboard
     if (user) {
-        // window.open("dashboard.html", "_self")
-        console.log('User Logged in successfully.')
-
-        // Redirect to appropriate page
-        //TODO
+        window.open("dashboard.html", "_self");
 
         // If for some reason the login state changes, but the user is not logged in
         // blank the input fields so we know something happened, but don't do anything else
     } else {
-        console.log('Auth State change detected: User is logged out.');
+
         uNameField.val('');
         uEmailField.val('');
         uPassField.val('');
