@@ -76,42 +76,15 @@
         <!-- Option 1: Table outside of Card -->
         <div class="row">
             <div class="col">
+                <h4>Saved Clue Hunts</h4>
                 <table>
                     <thead>
                         <tr>
-                            <th>Current Active Clue Games |</th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tbody class="active_game_table">
-                        <tr>
-                            <td>1</td>
-                            <td>x</td>
-                            <td>
-                                <input class="editButton btn btn-primary" type="reset" value="Edit Game"></td>
-                            <td>
-                                <input class="printButton btn btn-primary" type="reset" value="Print Codes">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>y</td>
-                            <td>
-                                <input class="editButton btn btn-primary" type="reset" value="Print Codes">
-                            </td>
-                            <td>
-                                <input class="printButton btn btn-primary" type="reset" value="Print Codes">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>z</td>
-                            <td>
-                                <input class="editButton btn btn-primary" type="reset" value="Edit Game"></td>
-                            <td>
-                                <input class="printButton btn btn-primary" type="reset" value="Edit Game">
-                            </td>
-                        </tr>
+                    <tbody id="game-display-area" class="active_game_table">
+                        <!-- Tables rows will be appended here via JavaScript -->
                     </tbody>
                 </table>
 
@@ -122,6 +95,22 @@
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <!-- Firebase Components -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    ​
+    <!-- Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+    <!-- Our scripts -->
+    <script src="assets/javascript/authTrack.js"></script>
+    <script src="assets/javascript/dbControll.js"></script>
+    <script src="assets/javascript/dashboard.js"></script>
+
+
 </body>
 
 </html>
