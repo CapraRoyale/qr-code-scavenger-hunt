@@ -82,418 +82,13 @@ body {
 
 
 
-/* _________________________________________________@media tracking_page.html _______________________________________________________________ */
+/* _______________________@media index.html _________________________ */
 
 
-
-@media (max-width: 2560px){
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 600px;
-  margin-left: 450px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-
-
-.trackerTable{
-  margin-left: 510px;
-  }
-
-
-}
-
-
-@media (min-width: 2000px) and (max-width: 2559px) {
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 500px;
-  margin-left: 400px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-  text-align: center;
-}
-
-.trackerTable{
-  margin-left: 390px;
-  }
-
-}
-
-@media (min-width: 1780px) and (max-width: 1999px) {
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 240px;
-  margin-left: 333px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-  text-align: center;
-}
-
-.trackerTable{
-  margin-left: 320px;
-  }
-
-}
-
-
-
-@media (min-width: 1600px) and (max-width: 1779px) {
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 240px;
-  margin-left: 333px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-  text-align: center;
-}
-
-.trackerTable{
-  margin-left: 276px;
-  }
-
-}
-
-
-@media (min-width: 1280px) and (max-width: 1599px) {
-
-  body {
-      background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-      background-repeat: no-repeat;
-      background-position: cover;
-      background-size: 200%;
-      color: black;
-      font-size: 20px;
-      font-family: 'Raleway', sans-serif;
-      text-align: center;
-  }
-
-
-  .gameTracker{
-    margin-top: 160px;
-    margin-left: 250px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    position: center;
-  }
-
-  .trackerTable{
-  margin-left: 276px;
-  }
-}
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  body {
-      background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-      background-repeat: no-repeat;
-      background-position: cover;
-      background-size: 200%;
-      color: black;
-      font-size: 20px;
-      font-family: 'Raleway', sans-serif;
-      text-align: center;
-  }
-
-
-  .gameTracker{
-    margin-top: 200px;
-    margin-left: 190px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    position: center;
-  }
-}
-
-@media(min-width: 700px) and (max-width: 768px) {
-
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 220%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 143px;
-  margin-left: 185px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-
-}
-
-
-@media (max-width: 607px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 240%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 65px;
-  margin-left: 139px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-@media (min-width: 600px) and (max-width: 699px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 240%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 124px;
-  margin-left: 139px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-
-
-@media (min-width: 500px) and (max-width: 599px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 270%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 142px;
-  margin-left: 119px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-@media (min-width: 450px) and (max-width: 499px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 270%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 114px;
-  margin-left: 110px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-
-
-@media(min-width: 300px) and (max-width: 450px) {
-  body {
-    color: black;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    background: 0;
-}
-
-.gameTracker{
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  height: 200vh;
-  width: 63vh;
-}
-
-.display-4{
-  font-size: 2.0rem;
-}
-
-.trackerTable{
-  font-size: 1.0rem;
-}
-}
-
-
-@media(min-width: 100px) and (max-width: 299px) {
-  body {
-    color: black;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    background: 0;
-}
-
-.gameTracker{
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 500px;
-  height: 500vh;
-}
-
-.lead{
-  margin-right: 85px;
-}
-
-.display-4{
-  font-size: 8px;
-
-}
-
-.trackerTable{
-  font-size: 8px;
-  margin-top: 0px;
-  margin-left: 140px;
-  margin-right: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-
-}
-
-.goDashboard{
-  margin-right: 70px;
-}
-
-}
-
-
-
-
-/* ___________________________________________________@media index.html _______________________________________________________________ */
-
-
-@media(min-width: 300px) and (max-width: 768px){
+@media(min-width: 300px) {
 
   /* <jumbotron> */
-  .gameMode{
+  .gameMode {
     margin-top: 0px;
     margin-left: 0px;
     padding-top: 0px;
@@ -507,45 +102,78 @@ body {
   }
 
   /* Navigation bar */
-  .topnav{
+  .topnav {
     background-color: gray;
     overflow: hidden;
     width: 100vh;
   }
 
-  /* instruction text */
-  .lead{
-    margin-right: 219px;
+  /* Game Mode Title */
+  .gameModeDisplay {
+    margin-left: 260px;
+  }
+  /* <p> Instructions */
+  .lead {
+    margin-left: 110px;
+  }
+  /* <h3 Game Code> */
+  #gameCodeHeader {
+    margin-left: 301px;
+  }
+  /* <form code> */
+  #codeForm {
+    margin-left: 268px;
+  }
+  /* <submit button> */
+  .submitButton {
+    margin-left: 334px;
+  }
+  /* <h3 New Game> */
+  #newGameHeader {
+    margin-left: 188px;
+  }
+  /* <new game button> */
+  .newGame {
+    margin-left: 320px;
+  }
+  /* <h3 Login> */
+  #loginHeader {
+    margin-left: 337px;
+  }
+  /* <login button> */
+  .login {
+    margin-left: 339px;
+  }
+};
+
+
+/* __________________________________________________________________________________________________ */
+@media(min-width: 768px){
+
+  /* <jumbotron> */
+  .gameMode {
+    margin-top: 0px;
     margin-left: 0px;
+    padding-top: 0px;
     margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100vh;
+    /* Assuming the smallest screen height is 768px */
+    height: 255vh;
   }
+};
 
-  /* Game Mode Header */
-  .gameModeDisplay{
-  font-size: 30px;
-  margin-right: 200px;
-  }
+/* __________________________________________________________________________________________________ */
 
-  /* Header for */
-  #header3{
-    margin-right: 219px;
-  }
+@media(min-width:992px) {
 
-  #codeForm{
-    margin-right: 219px;
-  }
+};
 
-  .submitButton{
-    margin-right: 219px;
-  }
+/* __________________________________________________________________________________________________ */
 
-  .newGame{
-    margin-right: 219px;
-  }
+@media(min-width: 1200px) {
 
-  .login{
-    margin-right: 219px;
-  }
-
-}
+};
 

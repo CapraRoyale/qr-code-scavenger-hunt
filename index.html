@@ -48,17 +48,18 @@
         <!-- Form for filling out Game Code + Submit button -->
         <form>
             <div class="gameCode col-xs-4 form-group">
-                <h3 id="header3" for="inputGameCode">Game Code</h3>
+                <h3 id="gameCodeHeader" for="inputGameCode">Game Code</h3>
                 <!-- Game Code Form -->
                 <input id="codeForm" type="text" placeholder="ABCDE12345">
             </div>
             <button onclick="store(), clueFunction()" value="Save" type="button" class="submitButton btn btn-primary">Submit</button>
         </form>
-
-        <h3 id="header3">Click Here to Start New Game</h3>
+        <br>
+        <h3 id="newGameHeader">Click Here to Start New Game</h3>
         <button onclick ="newGame()" type="button" class="newGame btn btn-success">New Game</button>
-
-        <h3 id="header3">Login</h3>
+        <br>
+        <br>
+        <h3 id="loginHeader">Login</h3>
         <button onclick = "login()" type="button" class="login btn btn-secondary">Login</button>
 
     </div>
