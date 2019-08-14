@@ -1,5 +1,5 @@
 // dbControll.js already initializes firebase and calls up the database
-// so we don't need to do any of that here. 
+// so we don't need to do any of that here.
 
 // jQuery hooks:
 const uNameField = $('#inputName');
@@ -55,7 +55,7 @@ newUserButton.on("click", function (event) {
     // Don't refresh the page
     event.preventDefault()
 
-    // Reset any invalid input styles to default first 
+    // Reset any invalid input styles to default first
     invalidInput('reset');
 
     // Only do the following if the name field has already been revealed
@@ -80,13 +80,13 @@ newUserButton.on("click", function (event) {
         auth.createUserWithEmailAndPassword(uEmail, uPass).then(function (response) {
 
             // Grab user object from response
-            let user = response.user 
+            let user = response.user
 
-            // Add user name to account under 'displayName' property 
+            // Add user name to account under 'displayName' property
                 user.updateProfile({
                     displayName: uName
                 }).then(function(){
-                    // On success 
+                    // On success
                     console.log('Successfully created new account!')
 
                 }).catch(function(error){
@@ -104,7 +104,7 @@ newUserButton.on("click", function (event) {
                 case 'auth/invalid-email':
                     invalidInput('email', 'Please enter a valid email.');
                     break;
-                // TODO: Add more handling 
+                // TODO: Add more handling
 
                 // Bad password errors
                 // TODO: Add handling
@@ -152,39 +152,35 @@ logInButton.on("click", function (event) {
 
         switch (error.code) {
             case 'auth/invalid-email':
-                invalidInput('email', 'No user with that email exists.');
+                invalidInput('email', 'No User With That E-mail Exists');
                 break;
             case 'auth/user-disabled':
-                invalidInput(/*TODO*/)
+                invalidInput('email', 'User Identity Disabled');
                 break;
             case 'auth/user-not-found':
-                //TODO
+                invalidInput('email', 'Invalid/Wrong User ID');
                 break;
             case 'auth/wrong-password':
-                //TODO
+                invalidInput('password', 'Invalid/Wrong Password');
                 break;
             default:
-                alert('An unknown error occurred. Congradulations!');
+                alert('An Unknown Error Occurred... Congratulations!');
 
-        }
+        };
     });
 });
 
-// Authentication State Change Handler 
+// Authentication State Change Handler
 auth.onAuthStateChanged(function (user) {
 
     // If user is logged in, send them to the dashboard
     if (user) {
-        // window.open("dashboard.html", "_self")
-        console.log('User Logged in successfully.')
-
-        // Redirect to appropriate page
-        //TODO
+        window.open("dashboard.html", "_self");
 
         // If for some reason the login state changes, but the user is not logged in
         // blank the input fields so we know something happened, but don't do anything else
     } else {
-        console.log('Auth State change detected: User is logged out.');
+
         uNameField.val('');
         uEmailField.val('');
         uPassField.val('');
