@@ -85,7 +85,7 @@ body {
 /* _______________________@media index.html _________________________ */
 
 
-@media(min-width: 300px) {
+@media(min-width: 300px) and (max-width: 767px) {
 
   /* <jumbotron> */
   .gameMode {
@@ -122,7 +122,7 @@ body {
   }
   /* <form code> */
   #codeForm {
-    margin-left: 268px;
+    margin-left: 260px;
   }
   /* <submit button> */
   .submitButton {
@@ -148,12 +148,12 @@ body {
 
 
 /* __________________________________________________________________________________________________ */
-@media(min-width: 768px){
+@media(min-width: 768px) {
 
   /* <jumbotron> */
   .gameMode {
-    margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 14px;
+    margin-left: 112px;
     padding-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -161,19 +161,119 @@ body {
     padding-left: 0px;
     width: 100vh;
     /* Assuming the smallest screen height is 768px */
-    height: 255vh;
+    height: 85vh;
+  }
+
+  /* Navigation bar */
+  .topnav {
+    background-color: gray;
+    overflow: hidden;
+    width: 130vh;
+  }
+
+  /* Game Mode Title */
+  .gameModeDisplay {
+    margin-left: 260px;
+  }
+  /* <p> Instructions */
+  .lead {
+    margin-left: 110px;
+  }
+  /* <h3 Game Code> */
+  #gameCodeHeader {
+    margin-left: 301px;
+  }
+  /* <form code> */
+  #codeForm {
+    margin-left: 260px;
+  }
+  /* <submit button> */
+  .submitButton {
+    margin-left: 334px;
+  }
+  /* <h3 New Game> */
+  #newGameHeader {
+    margin-left: 188px;
+  }
+  /* <new game button> */
+  .newGame {
+    margin-left: 320px;
+  }
+  /* <h3 Login> */
+  #loginHeader {
+    margin-left: 337px;
+  }
+  /* <login button> */
+  .login {
+    margin-left: 339px;
+  }
+};
+
+/* __________________________________________________________________________________________________ */
+/* Fix this. Not responding in Chrome Dev Tools */
+@media(min-width:992px) {
+
+  /* <jumbotron> */
+  .gameMode {
+    margin-top: 14px;
+    margin-left: 112px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100vh;
+    /* Assuming the smallest screen height is 768px */
+    height: 85vh;
+  }
+
+  /* Navigation bar */
+  .topnav {
+    background-color: gray;
+    overflow: hidden;
+    width: 100vh;
+
+  }
+
+  /* Game Mode Title */
+  .gameModeDisplay {
+    margin-left: 260px;
+  }
+  /* <p> Instructions */
+  .lead {
+    margin-left: 110px;
+  }
+  /* <h3 Game Code> */
+  #gameCodeHeader {
+    margin-left: 301px;
+  }
+  /* <form code> */
+  #codeForm {
+    margin-left: 260px;
+  }
+  /* <submit button> */
+  .submitButton {
+    margin-left: 334px;
+  }
+  /* <h3 New Game> */
+  #newGameHeader {
+    margin-left: 188px;
+  }
+  /* <new game button> */
+  .newGame {
+    margin-left: 320px;
+  }
+  /* <h3 Login> */
+  #loginHeader {
+    margin-left: 337px;
+  }
+  /* <login button> */
+  .login {
+    margin-left: 339px;
   }
 };
 
 /* __________________________________________________________________________________________________ */
 
-@media(min-width:992px) {
-
-};
-
-/* __________________________________________________________________________________________________ */
-
 @media(min-width: 1200px) {
-
 };
-
