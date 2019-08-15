@@ -1,4 +1,3 @@
-
 // jQuery DOM hooks
 const mainDisplayArea = $('#game-display-area');
 
@@ -21,7 +20,7 @@ let authCheck = setInterval(() => {
         clearInterval(authCheck);
 
         // Double check that user is not logged in. If they are not, send them to the login page.
-        if (!authentication.uID()) {window.location.href = "login.html"};
+        if (!authentication.uID()) { window.location.href = "login.html" };
 
         // As soon as the page loads, we need to ping the database for all games owned by there user
         // Will return an array of objects that look like the following: {name: 'game name', id : 'directoryID'}
@@ -65,13 +64,13 @@ let authCheck = setInterval(() => {
                 }
 
                 // Set up event handlers for buttons
-                $(".edit-link").on('click', function () {
+                $(".edit-link").on('click', function() {
 
                     // When button is clicked, add game name to url as argument
-                    window.location.href = `new_game.html?game=${$(this).attr('game')}`;
+                    window.location.href = `edit_game.html?game=${$(this).attr('game')}`;
                 })
 
-                $(".track-link").on('click', function () {
+                $(".track-link").on('click', function() {
 
                     // When button is clicked, add game name to url as argument
                     window.location.href = `tracking_page.html?game=${$(this).attr('game')}`;
