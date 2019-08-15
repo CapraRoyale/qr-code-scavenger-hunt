@@ -1,13 +1,5 @@
 //When document loads, execute code
 $(document).ready(function() {
-
-    // var grabString = location.search;
-    // // console.log(grabString);
-    // var temp = grabString.split("=");
-    // // console.log(temp);
-    // gameCode = decodeURI(temp[1]);
-    // console.log(gameCode);
-
     //Hide the database submittal and table headers
     $("#db-gen-new-game").hide();
     $("#clues-and-hints").hide();
@@ -80,6 +72,7 @@ $(document).ready(function() {
             //Take the entry name in Firebase and return it as variable for display
             var localGameID = dbi.saveNewGame(groupName, genClueList, genHintList);
             //
+            $("#clues-and-hints>tbody").empty();
             var qrGen = function(qrContent) {
                     // Create variable to contain Google QR code generating API according to input qrContent
                     var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(qrContent);
@@ -116,6 +109,7 @@ $(document).ready(function() {
             console.log(localGameID);
             //Create edit function for game clues
             $('#edit-new-game').click(function() {
+                $("#edit-new-game").hide();
                 $("#clues-and-hints>tbody").empty();
                 $("#clues-and-hints").show();
                 $("#submit-game-edit").show();
@@ -151,6 +145,36 @@ $(document).ready(function() {
                     }
                 })
             })
+            $("#submit-game-edit").click(function() {
+                //
+                $("#edit-new-game").show();
+                $("#clues-and-hints>tbody").empty();
+                $("#clues-and-hints").hide();
+                $("#submit-game-edit").hide();
+                //
+                var genClueList = [];
+                var genHintList = [];
+                //
+                console.log(generateClues);
+                for (let i = 0; i < generateClues; i++) {
+                    //
+                    var currentClue = $("#clue" + i).val();
+                    //
+                    if (currentClue != "") {
+
+                        genClueList.push(currentClue);
+
+                        //
+                        var currentHint = $("#hint" + i).val();
+
+                        genHintList.push(currentHint);
+
+                        //
+                    }
+                }
+                console.log(genClueList, genHintList);
+                dbi.updateGame(localGameID, genClueList, genHintList);
+            });
 
         })
     });
