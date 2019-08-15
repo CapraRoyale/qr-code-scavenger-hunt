@@ -183,8 +183,7 @@ const dbi = {
         // adds the leading '-' to it and then
         // plugs that in to a database GET and then returns the .val (which is just the text of our clue)
         // to our callback function
-        this.database.ref(`-${clueID}`).once('value', (snapshot) => {
-
+        this.database.ref(`clues/-${clueID}`).once('value', (snapshot) => {
             callback(snapshot.val());
 
         });
@@ -196,7 +195,7 @@ const dbi = {
         // Then we just call .val() on our snapshot and pass that to a new database get, which should then return a snapshot with the actual
         // clue text, which we then pass to the callback with .val to grab the actual text from the snapshot object
         this.database.ref(`${authentication.uID()}/${gameID}/clues/${clueNumber}`).once('value', (snapshot) => {
-            this.database.ref(snapshot.val()).once('value', (subSnapshot) => {
+            this.database.ref(`clues/${snapshot.val()}`).once('value', (subSnapshot) => {
                 callback(subSnapshot.val())
             });
         });
