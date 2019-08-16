@@ -2,7 +2,6 @@ body {
     background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     background-repeat: no-repeat;
     background-position: cover;
-    background-size: 100%;
     color: black;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
@@ -17,9 +16,11 @@ body {
     /* Minor-off positioning begins to start at 1800px */
     padding-top: 34px;
     margin-top: 55px;
-    margin-left: 400px;
-    width: 95vh;
-    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 50%;
+    /* height: 80vh; */
   }
 
    /* jumbotron from dashboard.html */
@@ -84,24 +85,25 @@ body {
   color: white;
 }
 
-/* @media dimension groups: min-width: 300px, 768, 992, 1200 */
+/* @media dimension groups: min-width: 576px, 768, 992, 1200 */
 
 /* _______________________@media index.html _________________________ */
 
-@media(min-width: 300px) and (max-width: 768px) {
+@media(min-width: 576px) {
 
   /* <jumbotron> */
   .gameMode {
     margin-top: 0px;
-    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
-    width: 100vh;
+    width: 50%;
     /* Assuming the smallest screen height is 768px */
-    height: 250vh;
+    /* height: 250vh; */
   }
 
   /* Navigation bar */
@@ -113,113 +115,53 @@ body {
 
   /* Game Mode Title */
   .gameModeDisplay {
-    margin-left: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <p> Instructions */
   .lead {
-    margin-left: 110px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <h3 Game Code> */
   #gameCodeHeader {
-    margin-left: 301px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <form code> */
   #codeForm {
-    margin-left: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <submit button> */
   .submitButton {
-    margin-left: 334px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <h3 New Game> */
   #newGameHeader {
-    margin-left: 188px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <new game button> */
   .newGame {
-    margin-left: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <h3 Login> */
   #loginHeader {
-    margin-left: 337px;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* <login button> */
   .login {
-    margin-left: 339px;
+    margin-left: auto;
+    margin-right: auto;
   }
 };
 
 
-/* __________________________________________________________________________________________________ */
-@media(min-width: 769px) {
- /* <jumbotron> */
-.gameMode {
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 100vh !important;
-  /* Assuming the smallest screen height is 768px */
-  height: 250vh;
-}
 
-/* Navigation bar */
-.topnav {
-  background-color: gray;
-  overflow: hidden;
-  width: 100vh;
-}
-
-/* Game Mode Title */
-.gameModeDisplay {
-  margin-left: 260px;
-}
-/* <p> Instructions */
-.lead {
-  margin-left: 110px;
-}
-/* <h3 Game Code> */
-#gameCodeHeader {
-  margin-left: 301px;
-}
-/* <form code> */
-#codeForm {
-  margin-left: 260px;
-}
-/* <submit button> */
-.submitButton {
-  margin-left: 334px;
-}
-/* <h3 New Game> */
-#newGameHeader {
-  margin-left: 188px;
-}
-/* <new game button> */
-.newGame {
-  margin-left: 320px;
-}
-/* <h3 Login> */
-#loginHeader {
-  margin-left: 337px;
-}
-/* <login button> */
-.login {
-  margin-left: 339px;
-}
-};
-
-/* __________________________________________________________________________________________________ */
-
-
-/* @media(min-width:992px) { */
-/* }; */
-/* __________________________________________________________________________________________________ */
-
-/* @media(min-width: 1200px) { */
-/* }; */
 
 
 
