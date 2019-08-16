@@ -92,7 +92,7 @@ const dbi = {
 
     },
 
-    getGames: function (callBack) {
+    getGames: function (callback) {
         // Queries the database for games owned by the specified user
         // Returns a list of game names and directory names for the games in the form of {name: 'game name', id : 'directoryID'} to a callback function
         // Returns null to the callback function if user hase no saved games in the database
@@ -105,7 +105,7 @@ const dbi = {
 
             // If user has no games saved, then abort the rest of this function and return null
             if (!snapshot.val()) {
-                callBack(null)
+                callback(null)
             }
 
             // If, however, the user does have at least one saved game, we can get into the actual meat of this function
@@ -127,7 +127,7 @@ const dbi = {
 
                 // Once we're all finished grabbing values out of our snapshot and appending them to our userGames array
                 // in object form, we'll return the array.
-                callBack(userGames);
+                callback(userGames);
             }
         });
     },
@@ -143,7 +143,7 @@ const dbi = {
 
             // If the game does not exist, return null
             if (!snapshot.val()) {
-                callBack(null)
+                callback(null)
             }
 
             // If, however, the user does have info saved under this gameID, contruct an object from the returned snapshot
