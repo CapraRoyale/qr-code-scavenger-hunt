@@ -151,12 +151,64 @@ body {
 
 
 /* __________________________________________________________________________________________________ */
-@media(min-width: 768) {
+@media(min-width: 769) {
  /* <jumbotron> */
 .gameMode {
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 100vh;
   /* Assuming the smallest screen height is 768px */
-  height: 140vh;
-};
+  height: 250vh;
+}
+
+/* Navigation bar */
+.topnav {
+  background-color: gray;
+  overflow: hidden;
+  width: 100vh;
+}
+
+/* Game Mode Title */
+.gameModeDisplay {
+  margin-left: 260px;
+}
+/* <p> Instructions */
+.lead {
+  margin-left: 110px;
+}
+/* <h3 Game Code> */
+#gameCodeHeader {
+  margin-left: 301px;
+}
+/* <form code> */
+#codeForm {
+  margin-left: 260px;
+}
+/* <submit button> */
+.submitButton {
+  margin-left: 334px;
+}
+/* <h3 New Game> */
+#newGameHeader {
+  margin-left: 188px;
+}
+/* <new game button> */
+.newGame {
+  margin-left: 320px;
+}
+/* <h3 Login> */
+#loginHeader {
+  margin-left: 337px;
+}
+/* <login button> */
+.login {
+  margin-left: 339px;
+}
 };
 
 /* __________________________________________________________________________________________________ */
