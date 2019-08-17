@@ -153,13 +153,14 @@ const dbi = {
                 let snapVal = snapshot.val();
 
                 // Create return object with value for name and empty lists for clues and hints
-                let singleGame = { name: snapVal.gameName, clues: [], hints: [] };
+                let singleGame = { name: snapVal.gameName, clues: [], hints: [], clueCodes: [] };
 
                 // Iterate through clue and hints list at the same time (since they must be the same length anyway)
                 for (let i = 0; i < snapVal.clues.length; i++) {
 
                     // Grab hint straight from snapshot and add to hint list in singleGame object
                     singleGame.hints.push(snapVal.hints[i]);
+                    singleGame.clueCodes.push(snapVal.clues[i]);
 
                     // Then asynchronously grab the clue text using the codes from our snapshot
                     this.database.ref(`clues/${snapVal.clues[i]}`).once('value', (subSnapshot) => {
