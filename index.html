@@ -33,7 +33,9 @@
 
 
 <!-- /_______________________________________________________________Main________________________________________________________________/ -->
-    <div class="gameMode jumbotron">
+
+    <!-- This is the jumbotron that contains the user inputs. -->
+        <div class="gameMode jumbotron">
         <h1 class="gameModeDisplay">Game Mode</h1>
         <p class="lead">If you have your game code, please enter in the provided form. Otherwise click: <b>Start New
         Game</b></p>
@@ -52,10 +54,12 @@
         </form>
         <!-- <Break> to separate Start New Game Header from Submit Button -->
         <br>
+        <!-- New Game Button -->
         <h3 id="newGameHeader">Click Here to Start New Game</h3>
         <button onclick ="newGame()" type="button" class="newGame btn btn-success">New Game</button>
         <br>
         <br>
+        <!-- Login button -->
         <h3 id="loginHeader">Login</h3>
         <button onclick = "login()" type="button" class="login btn btn-secondary">Login</button>
 
