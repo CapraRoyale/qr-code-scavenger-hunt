@@ -67,7 +67,7 @@ function login() {
 
 if (clueCode) {
     $("#codeForm").val(clueCode.slice(1))
-    if ($('#codeForm').val() == "undefined") {$('#codeForm').val('')}
+    if ($('#codeForm').val() == "ndefined") {$('#codeForm').val('')}
 }
 
 
