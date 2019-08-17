@@ -94,71 +94,74 @@ waitForAuth(function () {
 
             //Create edit function for game clues
             $('#edit-new-game').click(function () {
-                $("#edit-new-game").hide();
-                $("#clues-and-hints>tbody").empty();
-                $("#clues-and-hints").show();
-                $("#submit-game-edit").show();
-                //
-                dbi.getSingleGame(localGameID, function (result) {
-                    for (let i = 0; i < result.clues.length; i++) {
 
-                        var tr = $("<tr>");
-                        var td0 = $("<td>");
-                        var td1 = $("<td>");
-                        var td2 = $("<td>");
-                        //Generate variables to contain HTML elements for the form
-                        var clueInput = $("<input>", {
-                            type: "text",
-                            id: "clue" + i,
-                            value: result.clues[i]
-                        });
-                        var hintInput = $("<input>", {
-                            type: "text",
-                            id: "hint" + i,
-                            value: result.hints[i]
-                        });
-                        //Attach variable content to table row element and append to the page to generate a form
-                        td0.append(i + 1);
-                        td1.append(clueInput);
-                        td2.append(hintInput);
+                window.location.href = "edit_game.html";
 
-                        //
-                        tr.append(td0, td1, td2);
-                        $("#clues-and-hints>tbody").append(tr);
+                // $("#edit-new-game").hide();
+                // $("#clues-and-hints>tbody").empty();
+                // $("#clues-and-hints").show();
+                // $("#submit-game-edit").show();
+                // //
+                // dbi.getSingleGame(localGameID, function (result) {
+                //     for (let i = 0; i < result.clues.length; i++) {
 
-                    }
-                })
-            })
-            $("#submit-game-edit").click(function () {
-                //
-                $("#edit-new-game").show();
-                $("#clues-and-hints>tbody").empty();
-                $("#clues-and-hints").hide();
-                $("#submit-game-edit").hide();
-                //
-                var genClueList = [];
-                var genHintList = [];
-                //
-                for (let i = 0; i < generateClues; i++) {
-                    //
-                    var currentClue = $("#clue" + i).val();
-                    //
-                    if (currentClue != "") {
+                //         var tr = $("<tr>");
+                //         var td0 = $("<td>");
+                //         var td1 = $("<td>");
+                //         var td2 = $("<td>");
+                //         //Generate variables to contain HTML elements for the form
+                //         var clueInput = $("<input>", {
+                //             type: "text",
+                //             id: "clue" + i,
+                //             value: result.clues[i]
+                //         });
+                //         var hintInput = $("<input>", {
+                //             type: "text",
+                //             id: "hint" + i,
+                //             value: result.hints[i]
+                //         });
+                //         //Attach variable content to table row element and append to the page to generate a form
+                //         td0.append(i + 1);
+                //         td1.append(clueInput);
+                //         td2.append(hintInput);
 
-                        genClueList.push(currentClue);
+                //         //
+                //         tr.append(td0, td1, td2);
+                //         $("#clues-and-hints>tbody").append(tr);
 
-                        //
-                        var currentHint = $("#hint" + i).val();
-
-                        genHintList.push(currentHint);
-
-                        //
-                    }
-                }
-                console.log(genClueList, genHintList);
-                dbi.updateGame(localGameID, genClueList, genHintList);
-            });
-
+                // }
+            // })
         })
-    });
+        $("#submit-game-edit").click(function () {
+            //
+            $("#edit-new-game").show();
+            $("#clues-and-hints>tbody").empty();
+            $("#clues-and-hints").hide();
+            $("#submit-game-edit").hide();
+            //
+            var genClueList = [];
+            var genHintList = [];
+            //
+            for (let i = 0; i < generateClues; i++) {
+                //
+                var currentClue = $("#clue" + i).val();
+                //
+                if (currentClue != "") {
+
+                    genClueList.push(currentClue);
+
+                    //
+                    var currentHint = $("#hint" + i).val();
+
+                    genHintList.push(currentHint);
+
+                    //
+                }
+            }
+            console.log(genClueList, genHintList);
+            dbi.updateGame(localGameID, genClueList, genHintList);
+        });
+
+    })
+});
 })
