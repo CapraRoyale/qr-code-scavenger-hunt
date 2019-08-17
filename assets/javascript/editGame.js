@@ -58,7 +58,7 @@ waitForAuth(function () {
         // Function that Siege wrote earlier, slightly modified
         var qrGen = function (qrContent) {
             // Create variable to contain Google QR code generating API according to input qrContent
-            var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(qrContent);
+            var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(`https://landgod.github.io/ClueHunt-QR/index.html?code=${qrContent}`);
             console.log(qr);
             // Create variable to contain HTML element 
             var img = $("<img>")
