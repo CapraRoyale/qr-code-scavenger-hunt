@@ -46,4 +46,4 @@ This project is licensed under the University of Washington License
 8.8.19 - Our project was set up via github, and Dan was designated as Project manager/coordinator. Everyone within the group created branches and began working on assigned task ranging from developing the <div> elements for the HTML pages, as well as developing the logic/back-end elements for the game.
 8.10.19 - From this point we were working on debugging any firebase/javascript issues. Also worked on getting all HTML elements properly linked to one another
 8.12.19-8.16.19 - The foundation of the application for both Front-End and Back-End was finalized. As a group the only things we were working on was CSS mobility, as polishing up any issues with the game. (i.e. Creating a function that stops certain pages from having errors due to not loading certain things in time).
-8.17.19 - Deployment of application + Presentation Day.
+8.17.19 - Deployment of application / Presentation to class.
