@@ -39,10 +39,10 @@ waitForAuth(() => {
                 let newRow = $('<tr>');
                 let nameCol = $('<td>').text(gameList[i].name);
 
-                let editCol = $('<button>').text('Edit/Print');
+                let editCol = $('<button class="btn btn-success my-2">').text('Edit/Print');
                 editCol.addClass('edit-link');
 
-                let trackCol = $('<button>').text('Track');
+                let trackCol = $('<button class="btn btn-secondary">').text('Track');
                 trackCol.addClass('track-link')
 
                 // Assigin unique game IDs to buttons
