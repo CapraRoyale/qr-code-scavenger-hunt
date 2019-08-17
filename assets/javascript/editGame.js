@@ -1,4 +1,4 @@
-$(document).ready(function() {
+waitForAuth(function() {
     //Create variable to grab content from URL
     var grabString = location.search;
     //Split the string after the '=' sign and contain new string in a variable
