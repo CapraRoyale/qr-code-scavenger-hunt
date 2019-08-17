@@ -14,12 +14,13 @@ body {
     color: black;
     /* These positions and dimensions of the w x h for the jumbotron work well for 1552px and up */
     /* Minor-off positioning begins to start at 1800px */
-    padding-top: 34px;
-    margin-top: 55px;
+    padding-top: auto;
+    margin-top: 85px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    width: 50%;
+    width: 100%;
+    text-align: center;
     /* height: 80vh; */
   }
 
@@ -93,15 +94,15 @@ body {
 
   /* <jumbotron> */
   .gameMode {
-    margin-top: 0px;
+    margin-top: 85px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 50%;
+    padding-top: auto;
+    margin-bottom: auto;
+    padding-bottom: auto;
+    padding-right: auto;
+    padding-left: auto;
+
     /* Assuming the smallest screen height is 768px */
     /* height: 250vh; */
   }
