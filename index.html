@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Google Fonts API - Raleway -->
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -23,22 +24,22 @@
 
 <body>
     <!-- Navigation bar -->
-    <nav >
+    <nav>
         <div class="topnav">
-                <a class="active" href="index.html">Enter Code</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a class="login_logout" href="login.html">Login</a>
+            <a class="active" href="index.html">Enter Code</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a class="login_logout" href="login.html">Login</a>
         </div>
     </nav>
 
 
-<!-- /_______________________________________________________________Main________________________________________________________________/ -->
+    <!-- /_______________________________________________________________Main________________________________________________________________/ -->
 
     <!-- This is the jumbotron that contains the user inputs. -->
-        <div class="gameMode jumbotron">
+    <div class="gameMode jumbotron">
         <h1 class="gameModeDisplay">Game Mode</h1>
         <p class="lead">If you have your game code, please enter in the provided form. Otherwise click: <b>Start New
-        Game</b></p>
+                Game</b></p>
         <hr class="my-4">
 
 
@@ -50,25 +51,25 @@
                 <!-- Game Code Form -->
                 <input id="codeForm" type="text" placeholder="ABCDE12345">
             </div>
-            <button onclick="store(), clueFunction()" value="Save" type="button" class="submitButton btn btn-primary">Submit</button>
+            <button onclick="store(), clueFunction()" value="Save" type="button"
+                class="submitButton btn btn-primary">Submit</button>
         </form>
         <!-- <Break> to separate Start New Game Header from Submit Button -->
         <br>
         <!-- New Game Button -->
         <h3 id="newGameHeader">Click Here to Start New Game</h3>
-        <button onclick ="newGame()" type="button" class="newGame btn btn-success">New Game</button>
+        <button onclick="newGame()" type="button" class="newGame btn btn-success">New Game</button>
         <br>
         <br>
         <!-- Login button -->
         <h3 id="loginHeader">Login</h3>
-        <button onclick = "login()" type="button" class="login btn btn-secondary">Login</button>
+        <button onclick="login()" type="button" class="login btn btn-secondary">Login</button>
 
     </div>
-<!-- /___________________________________________________________End of Main________________________________________________________________/ -->
+    <!-- /___________________________________________________________End of Main________________________________________________________________/ -->
 
 
     <!-- Local .js -->
-    <script src = "assets/javascript/index.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 
@@ -77,38 +78,25 @@
     ​
     <!-- Add SDKs for Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
 
-    ​
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="assets/javascript/authTrack.js"></script>
+    <script src="assets/javascript/index.js"></script>
+
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBrRR7AaTFxH1M2UpCLdFJErlKayHh3Vkw",
-            authDomain: "qr-code-hunt-for-red-october.firebaseapp.com",
-            databaseURL: "https://qr-code-hunt-for-red-october.firebaseio.com",
-            projectId: "qr-code-hunt-for-red-october",
-            storageBucket: "qr-code-hunt-for-red-october.appspot.com",
-            messagingSenderId: "912354708461",
-            appId: "1:912354708461:web:cf9e153278af2886"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
     </script>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-</script>
 </body>
 
 </html>

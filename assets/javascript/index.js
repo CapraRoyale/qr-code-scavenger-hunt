@@ -42,7 +42,9 @@ window.open("clue_page.html", "_self");
 // ____________________New Game_________________________//
 // This line of code is the onclick function for the <New Game button> which will lead the user to: new_game.html
 function newGame() {
-    window.open("new_game.html");
+    if (authentication.uID() !== null) {window.open("new_game.html");}
+    else {window.open("login.html")};
+    
 };
 
 // ____________________Login_________________________//
