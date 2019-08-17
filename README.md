@@ -6,7 +6,7 @@ target audience are people who like outdoor games and have phones with cameras. 
 
 ## Getting Started:
 
-### Prerequisites
+### Prerequisites:
 *Mobile Device/Tablet/Lab-top
 *Up-to-Date Browser, (Google Chrome Preferred for best user experience)
 
@@ -38,7 +38,6 @@ This project is licensed under the University of Washington License
 
 * To our fellow TAs (Catherine P, and Trae Shanks) for support and guidance of this project.
 * Special thanks to our teacher: Arron Linton for the ongoing support for this project.
-
 
 ## Progress-Log:
 8.3.19 - Formed with Groups and began brainstorming ideas of the type of application we want to deploy. During this time we were eyeing out a scavenger hunt game or creating an AI bot.
