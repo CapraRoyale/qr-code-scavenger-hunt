@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
-
+​
 <head>
   <title>Clue Page</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
+​
+​
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,9 +15,9 @@
   <!-- Google Fonts API - Raleway -->
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
-
+​
 <body>
-
+​
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -37,56 +37,27 @@
           <a class="login_logout" href="login.html">Login</a>
         </div>
   </nav>
-
+​
   <div class="jumbotron clue_page">
     <h1 class="display-4">Clue Page!</h1>
-    <p class="lead">Here we'll have some Clue information.</p>
     <hr class="my-4">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt aspernatur, velit excepturi asperiores itaque
-      molestias hic accusantium. Vero repellat, voluptatibus eius ipsam officiis obcaecati. Architecto alias maiores
-      corrupti neque dicta..</p>
+    <p>Your next clue is: </p>
       <!--Grid row-->
       <div class="row">
         <!-- This is the div id that will contain the rendered data from clue_page.js logic -->
         <div id="renderArea"></div>
-
+​
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card card-cascade narrower">
-
-            <!--Card image-->
-            <div class="view view-cascade gradient-card-header blue-gradient">
-              <h5 class="mb-0">Clue map</h5>
-            </div>
-            <!--/Card image-->
-
-            <!--Card content-->
-            <div class="card-body card-body-cascade text-center">
-
-              <!--Google map-->
-              <div id="map-container-google-8" class="z-depth-1-half map-container-5" style="height: 300px">
-                <iframe src="https://maps.google.com/maps?q=Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  frameborder="0" style="border:0" allowfullscreen></iframe>
-              </div>
-
-            </div>
-            <!--/.Card content-->
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-
+​
       </div>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Found new Clue</a>
+    <a class="btn btn-primary btn-lg" href="index.html" role="button">Found new Clue</a>
   </div>
   <div class="container">
     <div id="clue_text" class="col-sm-6">
-
+​
     </div>
-
+​
     <!-- Scripts -->
     <!-- Firebase Components -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -95,13 +66,13 @@
     <!-- Add SDKs for Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-
+​
     <!-- Our scripts -->
     <script src="assets/javascript/authTrack.js"></script>
     <script src="assets/javascript/dbControll.js"></script>
     <script src="assets/javascript/index.js"></script>
     <script src="assets/javascript/clue_page.js"></script>
-
+​
 <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
@@ -118,5 +89,5 @@ function myFunction() {
 }
   </script>
 </body>
-
+​
 </html>
