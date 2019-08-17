@@ -85,6 +85,8 @@ const authentication = {
                 // Add new click handler which just calls the log out function
                 authentication.loginElement.click(function () {
                     authentication.logout();
+                    location.reload(); 
+
                 });
 
                 // If user is logged out, change button to 'login'
