@@ -22,16 +22,16 @@ const authentication = {
     // Get user's unique firebase user ID
     // if no user is signed in, this function returns null
     uID: function () {
-        if (!auth.currentUser) {return null}
-        else {return auth.currentUser.uid};
+        if (!auth.currentUser) { return null }
+        else { return auth.currentUser.uid };
     },
 
     // Get user's display name
     // if no user is signed in, this function returns null
     // if the user is signed in, but this function still returns null, then we made a mistake during account creation
     uName: function () {
-        if (!auth.currentUser) {return null}
-        else {return auth.currentUser.displayName};
+        if (!auth.currentUser) { return null }
+        else { return auth.currentUser.displayName };
     },
 
     // Logout current user
@@ -104,5 +104,14 @@ const authentication = {
         });
     }
 };
-//TODO: setNavBar status should always call itself inside of document.ready() whever its loaded with a page so that
-// that just automatically happens. Not going to write that until we have the proper element ID though.
+
+// Use this function to make sure that authentication is up and running before tyring to do anything.
+// This should hopefully prevent errors due to auth not being loaded.
+// Put your entire code inside of the callback argument as an anonymous function (just like with onClick events)
+// I wish this wasn't so hackey, but hey, here we are and it effin' works
+function waitForAuth(callback) {
+    auth.onAuthStateChanged(callback);
+
+};
+
+authentication.setNavbarStatus();
