@@ -66,7 +66,7 @@ function login() {
 };
 
 if (clueCode) {
-    $("#codeForm").val(clueCode)
+    $("#codeForm").val(clueCode.slice(1))
     if ($('#codeForm').val() == "undefined") {$('#codeForm').val('')}
 }
 
