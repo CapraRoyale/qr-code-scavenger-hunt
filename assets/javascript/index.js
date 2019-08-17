@@ -25,6 +25,17 @@
 
 // _______________Submit User Code -> Go To Clue Page_____________________//
 
+
+//Create variable to grab content from URL
+var grabString = location.search;
+//Split the string after the '=' sign and contain new string in a variable
+// console.log(grabString);
+var temp = grabString.split("=");
+//Decode the string into valid text for URL encoded characters
+// console.log(temp);
+var clueCode = decodeURI(temp[1]);
+
+
 // When user enters input this code will be stored locally.
 function store() {
 // Declared a variable: codeVariable | where, the user inputs their data in the id, #codeForm, and will be transferred to localStorage.
@@ -54,7 +65,10 @@ function login() {
     window.open("login.html")
 };
 
-
+if (clueCode) {
+    $("#codeForm").val(clueCode)
+    if ($('#codeForm').val() == "undefined") {$('#codeForm').val('')}
+}
 
 
 
