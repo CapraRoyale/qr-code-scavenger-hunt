@@ -1,169 +1,177 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-  }
+  background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: cover;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
 
-  /* jumbotron from game_mode.html */
-  .gameMode {
-    /* Note these dimensions are based off a screen with a width of 1552px */
-    background-color: grey;
-    color: black;
-    /* These positions and dimensions of the w x h for the jumbotron work well for 1552px and up */
-    /* Minor-off positioning begins to start at 1800px */
-    padding-top: auto;
-    margin-top: 85px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    width: 100%;
-    text-align: center;
-    /* height: 80vh; */
-  }
+/* jumbotron from game_mode.html */
+.gameMode {
+  /* Note these dimensions are based off a screen with a width of 1552px */
+  background-color: grey;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  /* These positions and dimensions of the w x h for the jumbotron work well for 1552px and up */
+  /* Minor-off positioning begins to start at 1800px */
+  padding-top: auto;
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  width: 100%;
+  text-align: center;
+  /* height: 80vh; */
+}
 
-   /* jumbotron from dashboard.html */
-  .Dashboard {
+/* jumbotron from dashboard.html */
+.Dashboard {
+  background-color: grey;
+  margin-top: 50px;
+  width: 55%;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* jumbotron from clue_page.html */
+.jumbotron {
+
     background-color: grey;
     margin-top: 50px;
     width: 55%;
     color: black;
-    margin-left: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
-     /* jumbotron from clue_page.html */
-    .clue_page {
-      background-color: grey;
-      margin-top: 50px;
-      width: 55%;
-      color: black;
-      margin-left: 300px;
-    }
 
-  .map-container-5{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-    }
-    .map-container-5 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-    }
+  h1 {
+    text-align: center
+  }
 
-.nameForm{
+  .btn btn-primary btn-lg {
+    float: right;
+  }
+
+  .nameForm {
+
       display: none;
     }
+
     /* Add a black background color to the top navigation */
-.topnav {
-  background-color: gray;
-  overflow: hidden;
-}
+    .topnav {
+      background-color: gray;
+      overflow: hidden;
+      width: 100%;
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: whitesmoke;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color:gray;
-  color: black;
-}
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: whitesmoke;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color:lightgray;
-  color: white;
-}
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: gray;
+      color: black;
+    }
 
-/* @media dimension groups: min-width: 576px */
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: lightgray;
+      color: white;
+    }
 
-/* _______________________@media index.html _________________________ */
+    /* @media dimension groups: min-width: 576px */
 
-@media(min-width: 576px) {
+    /* _______________________@media index.html _________________________ */
 
-  /* <jumbotron> */
-  .gameMode {
-    margin-top: 85px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: auto;
-    margin-bottom: auto;
-    padding-bottom: auto;
-    padding-right: auto;
-    padding-left: auto;
+    @media(min-width: 576px) {
 
-    /* Assuming the smallest screen height is 768px */
-    /* height: 250vh; */
-  }
+      /* _________________________________________________@media tracking_page.html _______________________________________________________________ */
+      /* <jumbotron> */
+      .gameMode {
+        margin-top: 85px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: auto;
+        margin-bottom: auto;
+        padding-bottom: auto;
+        padding-right: auto;
+        padding-left: auto;
 
-  /* Navigation bar */
-  .topnav {
-    background-color: gray;
-    overflow: hidden;
-    width: 100vh;
-  }
+        /* Assuming the smallest screen height is 768px */
+        /* height: 250vh; */
+      }
 
-  /* Game Mode Title */
-  .gameModeDisplay {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <p> Instructions */
-  .lead {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <h3 Game Code> */
-  #gameCodeHeader {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <form code> */
-  #codeForm {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <submit button> */
-  .submitButton {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <h3 New Game> */
-  #newGameHeader {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <new game button> */
-  .newGame {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <h3 Login> */
-  #loginHeader {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* <login button> */
-  .login {
-    margin-left: auto;
-    margin-right: auto;
-  }
-};
+      /* Navigation bar */
+      .topnav {
+        background-color: gray;
+        overflow: hidden;
+        width: 100vh;
+      }
 
+      /* Game Mode Title */
+      .gameModeDisplay {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* <p> Instructions */
+      .lead {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* <h3 Game Code> */
+      #gameCodeHeader {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* <form code> */
+      #codeForm {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* <submit button> */
+      .submitButton {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* <h3 New Game> */
+      #newGameHeader {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* <new game button> */
+      .newGame {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* <h3 Login> */
+      #loginHeader {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* <login button> */
+      .login {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    ;
