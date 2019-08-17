@@ -94,8 +94,8 @@ waitForAuth(function () {
 
             //Create edit function for game clues
             $('#edit-new-game').click(function () {
-
-                window.location.href = "edit_game.html";
+                console.log(localGameID)
+                window.location.href = `edit_game.html?game=${localGameID}`;
 
                 // $("#edit-new-game").hide();
                 // $("#clues-and-hints>tbody").empty();
