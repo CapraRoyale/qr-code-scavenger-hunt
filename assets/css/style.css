@@ -2,7 +2,6 @@ body {
     background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     background-repeat: no-repeat;
     background-position: cover;
-    background-size: 100%;
     color: black;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
@@ -10,14 +9,23 @@ body {
 
   /* jumbotron from game_mode.html */
   .gameMode {
+    /* Note these dimensions are based off a screen with a width of 1552px */
     background-color: grey;
-    margin-top: 50px;
-    width: 55%;
     color: black;
-    margin-left: 300px;
+    /* These positions and dimensions of the w x h for the jumbotron work well for 1552px and up */
+    /* Minor-off positioning begins to start at 1800px */
+    padding-top: auto;
+    margin-top: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 100%;
+    text-align: center;
+    /* height: 80vh; */
   }
+
    /* jumbotron from dashboard.html */
-   .Dashboard {
+  .Dashboard {
     background-color: grey;
     margin-top: 50px;
     width: 55%;
@@ -25,7 +33,7 @@ body {
     margin-left: 300px;
   }
      /* jumbotron from clue_page.html */
-     .clue_page {
+    .clue_page {
       background-color: grey;
       margin-top: 50px;
       width: 55%;
@@ -47,8 +55,7 @@ body {
     position:absolute;
     }
 
-
-    .nameForm{
+.nameForm{
       display: none;
     }
     /* Add a black background color to the top navigation */
@@ -79,502 +86,84 @@ body {
   color: white;
 }
 
+/* @media dimension groups: min-width: 576px, 768, 992, 1200 */
 
+/* _______________________@media index.html _________________________ */
 
+@media(min-width: 576px) {
 
-/* _________________________________________________@media tracking_page.html _______________________________________________________________ */
+  /* <jumbotron> */
+  .gameMode {
+    margin-top: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: auto;
+    margin-bottom: auto;
+    padding-bottom: auto;
+    padding-right: auto;
+    padding-left: auto;
 
-
-
-@media (max-width: 2560px){
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 600px;
-  margin-left: 450px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-
-
-.trackerTable{
-  margin-left: 510px;
+    /* Assuming the smallest screen height is 768px */
+    /* height: 250vh; */
   }
 
-
-}
-
-
-@media (min-width: 2000px) and (max-width: 2559px) {
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 500px;
-  margin-left: 400px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-  text-align: center;
-}
-
-.trackerTable{
-  margin-left: 390px;
+  /* Navigation bar */
+  .topnav {
+    background-color: gray;
+    overflow: hidden;
+    width: 100vh;
   }
 
-}
-
-@media (min-width: 1780px) and (max-width: 1999px) {
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 240px;
-  margin-left: 333px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-  text-align: center;
-}
-
-.trackerTable{
-  margin-left: 320px;
+  /* Game Mode Title */
+  .gameModeDisplay {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-}
-
-
-
-@media (min-width: 1600px) and (max-width: 1779px) {
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 200%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 240px;
-  margin-left: 333px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-  text-align: center;
-}
-
-.trackerTable{
-  margin-left: 276px;
+  /* <p> Instructions */
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-}
-
-
-@media (min-width: 1280px) and (max-width: 1599px) {
-
-  body {
-      background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-      background-repeat: no-repeat;
-      background-position: cover;
-      background-size: 200%;
-      color: black;
-      font-size: 20px;
-      font-family: 'Raleway', sans-serif;
-      text-align: center;
+  /* <h3 Game Code> */
+  #gameCodeHeader {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-
-  .gameTracker{
-    margin-top: 160px;
-    margin-left: 250px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    position: center;
+  /* <form code> */
+  #codeForm {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .trackerTable{
-  margin-left: 276px;
+  /* <submit button> */
+  .submitButton {
+    margin-left: auto;
+    margin-right: auto;
   }
-}
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  body {
-      background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-      background-repeat: no-repeat;
-      background-position: cover;
-      background-size: 200%;
-      color: black;
-      font-size: 20px;
-      font-family: 'Raleway', sans-serif;
-      text-align: center;
+  /* <h3 New Game> */
+  #newGameHeader {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-
-  .gameTracker{
-    margin-top: 200px;
-    margin-left: 190px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    position: center;
+  /* <new game button> */
+  .newGame {
+    margin-left: auto;
+    margin-right: auto;
   }
-}
-
-@media(min-width: 700px) and (max-width: 768px) {
-
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 220%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 143px;
-  margin-left: 185px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-
-}
-
-
-@media (max-width: 607px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 240%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 65px;
-  margin-left: 139px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-@media (min-width: 600px) and (max-width: 699px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 240%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 124px;
-  margin-left: 139px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-
-
-@media (min-width: 500px) and (max-width: 599px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 270%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 142px;
-  margin-left: 119px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-@media (min-width: 450px) and (max-width: 499px) {
-
-  body {
-    background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 270%;
-    color: black;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-
-
-.gameTracker{
-  margin-top: 114px;
-  margin-left: 110px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  position: center;
-}
-}
-
-
-
-@media(min-width: 300px) and (max-width: 450px) {
-  body {
-    color: black;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    background: 0;
-}
-
-.gameTracker{
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  height: 200vh;
-  width: 63vh;
-}
-
-.display-4{
-  font-size: 2.0rem;
-}
-
-.trackerTable{
-  font-size: 1.0rem;
-}
-}
-
-
-@media(min-width: 100px) and (max-width: 299px) {
-  body {
-    color: black;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    background: 0;
-}
-
-.gameTracker{
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 500px;
-  height: 500vh;
-}
-
-.lead{
-  margin-right: 85px;
-}
-
-.display-4{
-  font-size: 8px;
-
-}
-
-.trackerTable{
-  font-size: 8px;
-  margin-top: 0px;
-  margin-left: 140px;
-  margin-right: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-
-}
-
-.goDashboard{
-  margin-right: 70px;
-}
-
-}
-
-
-
-
-/* ___________________________________________________@media game_mode.html _______________________________________________________________ */
-
-/* 100-299px */
-@media(min-width: 100px) and (max-width: 299px){
-
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 66vh;
-    height: 230vh;
+  /* <h3 Login> */
+  #loginHeader {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .lead{
-    margin-left: 86px;
+  /* <login button> */
+  .login {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .gameModeDisplay{
-  font-size: 30px;
-  }
-}
-
-/* 300-450px */
-@media(min-width: 300px) and (max-width: 450px){
+};
 
 
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 414px;
-    height: 770px;
-  }
-}
 
-/* 450-499px */
-@media(min-width: 450px) and (max-width: 499px){
 
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 500px;
-    height: 670px;
-  }
 
-}
 
-/* 500-599px */
-@media (min-width: 500px) and (max-width: 599px) {
 
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 600px;
-    height: 685px;
-  }
-}
-
-/* 600-699px */
-@media (min-width: 600px) and (max-width: 699px) {
-
-  .gameMode{
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 600px;
-    height: 685px;
-  }
-}
