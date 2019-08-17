@@ -1,8 +1,12 @@
 body {
     background-image: url("https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-size: cover;
     background-size: 100%;
+=======
+    background-position: cover;
+>>>>>>> 74a1740b300571159d9bbd01b9fe10066a14dcf4
     color: black;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
@@ -10,15 +14,28 @@ body {
 
   /* jumbotron from game_mode.html */
   .gameMode {
+    /* Note these dimensions are based off a screen with a width of 1552px */
     background-color: grey;
-    margin-top: 50px;
-    width: 55%;
     color: black;
+<<<<<<< HEAD
     margin-left: auto;
     margin-right: auto; 
+=======
+    /* These positions and dimensions of the w x h for the jumbotron work well for 1552px and up */
+    /* Minor-off positioning begins to start at 1800px */
+    padding-top: auto;
+    margin-top: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 100%;
+    text-align: center;
+    /* height: 80vh; */
+>>>>>>> 74a1740b300571159d9bbd01b9fe10066a14dcf4
   }
+
    /* jumbotron from dashboard.html */
-   .Dashboard {
+  .Dashboard {
     background-color: grey;
     margin-top: 50px;
     width: 55%;
@@ -27,7 +44,11 @@ body {
     margin-right: auto; 
   }
      /* jumbotron from clue_page.html */
+<<<<<<< HEAD
      .jumbotron {
+=======
+    .clue_page {
+>>>>>>> 74a1740b300571159d9bbd01b9fe10066a14dcf4
       background-color: grey;
       margin-top: 50px;
       width: 55%;
@@ -39,10 +60,14 @@ body {
       text-align: center
     }
 
+<<<<<<< HEAD
     .btn btn-primary btn-lg{
       float : right;
     }
     .nameForm{
+=======
+.nameForm{
+>>>>>>> 74a1740b300571159d9bbd01b9fe10066a14dcf4
       display: none;
     }
     /* Add a black background color to the top navigation */
@@ -75,8 +100,88 @@ body {
   color: white;
 }
 
+/* @media dimension groups: min-width: 576px */
 
+/* _______________________@media index.html _________________________ */
 
+@media(min-width: 576px) {
 
+<<<<<<< HEAD
 /* _________________________________________________@media tracking_page.html _______________________________________________________________ */
+=======
+  /* <jumbotron> */
+  .gameMode {
+    margin-top: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: auto;
+    margin-bottom: auto;
+    padding-bottom: auto;
+    padding-right: auto;
+    padding-left: auto;
+
+    /* Assuming the smallest screen height is 768px */
+    /* height: 250vh; */
+  }
+
+  /* Navigation bar */
+  .topnav {
+    background-color: gray;
+    overflow: hidden;
+    width: 100vh;
+  }
+
+  /* Game Mode Title */
+  .gameModeDisplay {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <p> Instructions */
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <h3 Game Code> */
+  #gameCodeHeader {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <form code> */
+  #codeForm {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <submit button> */
+  .submitButton {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <h3 New Game> */
+  #newGameHeader {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <new game button> */
+  .newGame {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <h3 Login> */
+  #loginHeader {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* <login button> */
+  .login {
+    margin-left: auto;
+    margin-right: auto;
+  }
+};
+
+
+
+
+
+
+>>>>>>> 74a1740b300571159d9bbd01b9fe10066a14dcf4
 
