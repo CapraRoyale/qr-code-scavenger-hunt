@@ -37,12 +37,16 @@ waitForAuth(function () {
             var clueInput = $("<input>", {
                 type: "text",
                 id: "clue" + i,
-                value: result.clues[i]
+                value: result.clues[i],
+                readonly: 'true',
+                class: 'edit-me clue'
             });
             var hintInput = $("<input>", {
                 type: "text",
                 id: "hint" + i,
-                value: result.hints[i]
+                value: result.hints[i],
+                readonly: 'true',
+                class: 'edit-me hint'
             });
             //Attach variable content to table row element and append to the page to generate a form
             td0.append(i + 1);
@@ -95,7 +99,47 @@ waitForAuth(function () {
 
         });
 
+        // New click event for edit button that makes the form fields editable
+        $('#edit-new-game').click(function(){
+
+            // Remove button from dom after its clicked since it's purpose has been served.
+            $('#edit-new-game').detach();
+
+            // Make form fields editable
+            $('.edit-me').removeAttr('readonly');
+
+            // Reveal submit edits button
+            $('#submit-game-edit').show();
+
+            // Create click event listener for newly revealed submit edits button
+            $('#submit-game-edit').click(function(){
+
+                // Make some empty lists
+                let clueEdits = [];
+                let hintEdits = [];
+
+                // Iterate through current text field values for clues and hints appending to lists as we go
+                $('.clue').each(function(){
+                    clueEdits.push($(this).val());
+                });
+
+                $('.hint').each(function(){
+                    hintEdits.push($(this).val());
+                });
+
+                // Call update function with current database id for game, plus those lists we just created
+                dbi.updateGame(gameCode, clueEdits, hintEdits);
+
+                // Just reload the page since that's the easiest way to reset
+                location.reload();
+
+            });
+
+        });
+
     });
+
+    
 
 
 
