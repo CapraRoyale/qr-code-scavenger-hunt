@@ -1,4 +1,4 @@
-waitForAuth(function() {
+waitForAuth(function () {
     //Create variable to grab content from URL
     var grabString = location.search;
     //Split the string after the '=' sign and contain new string in a variable
@@ -25,7 +25,7 @@ waitForAuth(function() {
     $("#clues-and-hints").show();
     $("#submit-game-edit").hide();
     //
-    dbi.getSingleGame(gameCode, function(result) {
+    dbi.getSingleGame(gameCode, function (result) {
         for (let i = 0; i < result.clues.length; i++) {
             console.log(result.clues[i], result.hints[i]);
 
@@ -54,5 +54,49 @@ waitForAuth(function() {
             $("#clues-and-hints>tbody").append(tr);
 
         }
+
+        // Function that Siege wrote earlier, slightly modified
+        var qrGen = function (qrContent) {
+            // Create variable to contain Google QR code generating API according to input qrContent
+            var qr = "https://chart.googleapis.com/chart?chs=100x100&cht=qr&choe=UTF-8&chl=" + encodeURI(qrContent);
+            console.log(qr);
+            // Create variable to contain HTML element 
+            var img = $("<img>")
+            img.attr("src", qr);
+            
+            return img;
+        }
+
+        $('#print-game').click(function () {
+            $('.container').empty();
+            $('.container').html("<table><tbody id='print-table'></tbody></table>")
+            let tablebody = $('#print-table');
+
+            for (let i = 0; i < result.clueCodes.length; i++) {
+                let newRow = $('<tr>')
+                let newCell1 = $('<td>')
+                let newCell2 = $('<td>')
+                let newCell3 = $('<td>')
+
+                newCell1.text(`Clue ${i+1}:`)
+                newCell2.append(qrGen(result.clueCodes[i]));
+                newCell3.text(result.clueCodes[i].slice(1));
+
+                newRow.append(newCell1)
+                newRow.append(newCell2)
+                newRow.append(newCell3)
+
+                tablebody.append(newRow);
+            }
+
+
+
+
+
+        });
+
     });
+
+
+
 })
