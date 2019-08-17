@@ -100,7 +100,9 @@ waitForAuth(function () {
         });
 
         // New click event for edit button that makes the form fields editable
-        $('#edit-new-game').click(function(){
+        $('#edit-new-game').click(function(event){
+
+            event.preventDefault()
 
             // Remove button from dom after its clicked since it's purpose has been served.
             $('#edit-new-game').detach();
@@ -112,7 +114,9 @@ waitForAuth(function () {
             $('#submit-game-edit').show();
 
             // Create click event listener for newly revealed submit edits button
-            $('#submit-game-edit').click(function(){
+            $('#submit-game-edit').click(function(event){
+
+                event.preventDefault()
 
                 // Make some empty lists
                 let clueEdits = [];
@@ -128,10 +132,10 @@ waitForAuth(function () {
                 });
 
                 // Call update function with current database id for game, plus those lists we just created
-                dbi.updateGame(gameCode, clueEdits, hintEdits);
+                dbi.updateGame(gameCode, clueEdits, hintEdits, function(){location.reload()});
 
                 // Just reload the page since that's the easiest way to reset
-                location.reload();
+                
 
             });
 

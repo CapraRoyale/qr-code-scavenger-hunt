@@ -38,7 +38,7 @@ const dbi = {
         return gameID.key;
     },
 
-    updateGame: function (gameID, clueList, hintList) {
+    updateGame: function (gameID, clueList, hintList, callback = function () { }) {
         // Method that updates an existing directory in the database, which will holds all the info we need about our game
 
         // First let's grab the currently logged-in user's user ID since we'll want to store the game info inside a folder of that name for authentication purposes
@@ -46,7 +46,7 @@ const dbi = {
 
         // Grab the list of clue locations from the existing database 
         this.database.ref(`${gameOwner}/${gameID}/clues/`).once('value', (snapshot) => {
-            
+
             let clueHandle = snapshot.val();
 
             // Create an object to hold all updates we'll make
@@ -54,8 +54,8 @@ const dbi = {
 
             // Figure out which is longer, updated or old list and use that length for iteration
             let longerListLength;
-            if (clueHandle.length > clueList.length) {longerListLength = clueHandle.length}
-            else {longerListLength = clueList.length};
+            if (clueHandle.length > clueList.length) { longerListLength = clueHandle.length }
+            else { longerListLength = clueList.length };
 
             // Iterate through new list of clues
             for (let i = 0; i < longerListLength; i++) {
@@ -81,11 +81,11 @@ const dbi = {
                     updates[`${gameOwner}/${gameID}/hints/${i}`] = null;
                     updates[`clues/${clueHandle[i]}`] = null;
                 }
-                else {throw('Something is very broken and you should show this error to Dan.')};
+                else { throw ('Something is very broken and you should show this error to Dan.') };
             };
 
             // After doing all of that, we need to push our big fat object full of all of our updates to the server
-            this.database.ref().update(updates);
+            this.database.ref().update(updates).then(callback);
 
         });
 
