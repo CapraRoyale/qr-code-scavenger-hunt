@@ -65,7 +65,7 @@ const dbi = {
                 if (clueHandle[i] && clueList[i]) {
 
                     // For updates, we'll add them all to one objects that we'll push to the db all at once later
-                    updates[`clues/${clueHandle[i]}`] = clueList[i];
+                    updates[`clues/${clueHandle[i]}/text`] = clueList[i];
                     updates[`${gameOwner}/${gameID}/hints/${i}`] = hintList[i];
                 }
                 else if (clueList[i]) {
@@ -163,7 +163,7 @@ const dbi = {
                     singleGame.clueCodes.push(snapVal.clues[i]);
 
                     // Then asynchronously grab the clue text using the codes from our snapshot
-                    this.database.ref(`clues/${snapVal.clues[i]}`).once('value', (subSnapshot) => {
+                    this.database.ref(`clues/${snapVal.clues[i]}/text`).once('value', (subSnapshot) => {
 
                         // add clue text to list in singleGame object via index
                         singleGame.clues[i] = (subSnapshot.val());
@@ -184,7 +184,7 @@ const dbi = {
         // adds the leading '-' to it and then
         // plugs that in to a database GET and then returns the .val (which is just the text of our clue)
         // to our callback function
-        this.database.ref(`clues/-${clueID}`).once('value', (snapshot) => {
+        this.database.ref(`clues/-${clueID}/text`).once('value', (snapshot) => {
             callback(snapshot.val());
 
         });
@@ -196,7 +196,7 @@ const dbi = {
         // Then we just call .val() on our snapshot and pass that to a new database get, which should then return a snapshot with the actual
         // clue text, which we then pass to the callback with .val to grab the actual text from the snapshot object
         this.database.ref(`${authentication.uID()}/${gameID}/clues/${clueNumber}`).once('value', (snapshot) => {
-            this.database.ref(`clues/${snapshot.val()}`).once('value', (subSnapshot) => {
+            this.database.ref(`clues/${snapshot.val()}/text`).once('value', (subSnapshot) => {
                 callback(subSnapshot.val())
             });
         });
