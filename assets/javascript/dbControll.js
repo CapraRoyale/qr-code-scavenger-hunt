@@ -38,7 +38,7 @@ const dbi = {
         return gameID.key;
     },
 
-    updateGame: function (gameID, clueList, hintList) {
+    updateGame: function (gameID, clueList, hintList, callback = function () { }) {
         // Method that updates an existing directory in the database, which will holds all the info we need about our game
 
         // First let's grab the currently logged-in user's user ID since we'll want to store the game info inside a folder of that name for authentication purposes
@@ -46,7 +46,7 @@ const dbi = {
 
         // Grab the list of clue locations from the existing database 
         this.database.ref(`${gameOwner}/${gameID}/clues/`).once('value', (snapshot) => {
-            
+
             let clueHandle = snapshot.val();
 
             // Create an object to hold all updates we'll make
@@ -54,8 +54,8 @@ const dbi = {
 
             // Figure out which is longer, updated or old list and use that length for iteration
             let longerListLength;
-            if (clueHandle.length > clueList.length) {longerListLength = clueHandle.length}
-            else {longerListLength = clueList.length};
+            if (clueHandle.length > clueList.length) { longerListLength = clueHandle.length }
+            else { longerListLength = clueList.length };
 
             // Iterate through new list of clues
             for (let i = 0; i < longerListLength; i++) {
@@ -81,18 +81,18 @@ const dbi = {
                     updates[`${gameOwner}/${gameID}/hints/${i}`] = null;
                     updates[`clues/${clueHandle[i]}`] = null;
                 }
-                else {throw('Something is very broken and you should show this error to Dan.')};
+                else { throw ('Something is very broken and you should show this error to Dan.') };
             };
 
             // After doing all of that, we need to push our big fat object full of all of our updates to the server
-            this.database.ref().update(updates);
+            this.database.ref().update(updates).then(callback);
 
         });
 
 
     },
 
-    getGames: function (callBack) {
+    getGames: function (callback) {
         // Queries the database for games owned by the specified user
         // Returns a list of game names and directory names for the games in the form of {name: 'game name', id : 'directoryID'} to a callback function
         // Returns null to the callback function if user hase no saved games in the database
@@ -105,7 +105,7 @@ const dbi = {
 
             // If user has no games saved, then abort the rest of this function and return null
             if (!snapshot.val()) {
-                callBack(null)
+                callback(null)
             }
 
             // If, however, the user does have at least one saved game, we can get into the actual meat of this function
@@ -127,7 +127,7 @@ const dbi = {
 
                 // Once we're all finished grabbing values out of our snapshot and appending them to our userGames array
                 // in object form, we'll return the array.
-                callBack(userGames);
+                callback(userGames);
             }
         });
     },
@@ -143,7 +143,7 @@ const dbi = {
 
             // If the game does not exist, return null
             if (!snapshot.val()) {
-                callBack(null)
+                callback(null)
             }
 
             // If, however, the user does have info saved under this gameID, contruct an object from the returned snapshot
@@ -153,13 +153,14 @@ const dbi = {
                 let snapVal = snapshot.val();
 
                 // Create return object with value for name and empty lists for clues and hints
-                let singleGame = { name: snapVal.gameName, clues: [], hints: [] };
+                let singleGame = { name: snapVal.gameName, clues: [], hints: [], clueCodes: [] };
 
                 // Iterate through clue and hints list at the same time (since they must be the same length anyway)
                 for (let i = 0; i < snapVal.clues.length; i++) {
 
                     // Grab hint straight from snapshot and add to hint list in singleGame object
                     singleGame.hints.push(snapVal.hints[i]);
+                    singleGame.clueCodes.push(snapVal.clues[i]);
 
                     // Then asynchronously grab the clue text using the codes from our snapshot
                     this.database.ref(`clues/${snapVal.clues[i]}`).once('value', (subSnapshot) => {

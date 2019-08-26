@@ -25,6 +25,17 @@
 
 // _______________Submit User Code -> Go To Clue Page_____________________//
 
+
+//Create variable to grab content from URL
+var grabString = location.search;
+//Split the string after the '=' sign and contain new string in a variable
+// console.log(grabString);
+var temp = grabString.split("=");
+//Decode the string into valid text for URL encoded characters
+// console.log(temp);
+var clueCode = decodeURI(temp[1]);
+
+
 // When user enters input this code will be stored locally.
 function store() {
 // Declared a variable: codeVariable | where, the user inputs their data in the id, #codeForm, and will be transferred to localStorage.
@@ -42,7 +53,9 @@ window.open("clue_page.html", "_self");
 // ____________________New Game_________________________//
 // This line of code is the onclick function for the <New Game button> which will lead the user to: new_game.html
 function newGame() {
-    window.open("new_game.html");
+    if (authentication.uID() !== null) {window.open("new_game.html");}
+    else {window.open("login.html")};
+    
 };
 
 // ____________________Login_________________________//
@@ -52,7 +65,10 @@ function login() {
     window.open("login.html")
 };
 
-
+if (clueCode) {
+    $("#codeForm").val(clueCode.slice(1))
+    if ($('#codeForm').val() == "ndefined") {$('#codeForm').val('')}
+}
 
 
 

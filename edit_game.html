@@ -8,49 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-
-    <!-- Add SDKs for Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-
-    <script src="assets/javascript/authTrack.js"></script>
-    <script src="assets/javascript/dbControll.js"></script>
-    <script src="assets/javascript/app.js"></script>
-    <script src="assets/javascript/editGame.js"></script>
-    <!--Start Page Test-->
-    <script>
-    </script>
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">QR Scavenger Clue Hunt</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Game Mode</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="new_game.html">New Game<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="clue_page.html">Clue</a>
-                </li>
-            </ul>
+    <nav>
+        <div class="topnav">
+            <a class="active" href="index.html">Enter Code</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a class="login_logout" href="login.html">Login</a>
         </div>
     </nav>
     <!-- End of Navigation Bar -->
@@ -78,6 +48,7 @@
                         <br>
                         <button type="submit" class="btn btn-danger" id="edit-new-game">Edit</button>
                         <button type="submit" class="btn btn-warning" id="submit-game-edit">Submit Edits</button>
+                        <button type="submit" class="btn btn-success" id="print-game">Print Game</button>
                         <br>
                         <div class="images"></div>
                     </div>
@@ -85,6 +56,29 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+    <script src="assets/javascript/authTrack.js"></script>
+    <script src="assets/javascript/dbControll.js"></script>
+    <script src="assets/javascript/editGame.js"></script>
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 
 </html>
