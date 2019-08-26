@@ -1,25 +1,27 @@
-// _______________________________________________________ Algorithm ___________________________________________________________________ //
+waitForAuth(function () {
 
-// The objective is to use jQuery to render two arguments (localStorage value + call-back function) to have current clue rendered onto the HTML page.
-// 1. Retrieve the localStorage value from the 'key'
-// 2. Follow-up with a call-back f(x)
-
-// _______________________________________________________ Program _____________________________________________________________________ //
-// The ready() method is used to make a function available after the document is loaded. Whatever code you write inside the $(document ).ready() method will run once the page DOM is ready to execute JavaScript code.
-$(document).ready(function () {
-
-    // dbi.getClue is from: dbControll.js which will retrieve it's data.
+    // Attempt to retrieve clue text. If found, display it, if not display 'no clue' message
     dbi.getClue(localStorage.getItem("code"), function (clueText) {
 
-        //This console.log('getClue') will test out whether a clue was deployed or not.
-        console.log('getClue');
-        console.log(clueText);
-        // Call-back Function:
         if (clueText) {
             $("#renderArea").append(clueText);
         } else {
-            $("#renderArea").append('No Clue');
+            $("#renderArea").append('<strong>Sorry. No clue with that code could be found.</strong><br>Either the code was entred incorrectly, or the game owner has deleted that clue.');
         }
+    });
+
+    // When user clicks claim clue button, check if they are logged in
+    // If logged in, update database, if not logged in, send to login.html
+    // TODO: Add document.referrer lookup to login page for smart redirects upon successful login
+    $('#claim-clue').click(function(event) {
+        event.preventDefault();
+        if (authentication.uID()) {
+            // Update clue folder in database with clues/foundBy/{name: authentication.uName, uID: authentication.uID}
+            dbi.claimClue(localStorage.getItem("code"));
+        }
+        else {
+            window.open("login.html", "_self");
+        };
     });
 
 });
