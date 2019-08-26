@@ -218,4 +218,13 @@ const dbi = {
 
     },
 
+    claimClue: function (clueID) {
+        // adds an entry to the database for the currently logged in user under the supplied clue code
+        // users name and uID will be stored under clues/${clueID}/claims/{name: ${uName}, id: ${uID}}
+        // NOTE: because this pulls the clueID from the clue page, the leading '-' must be added 
+
+        this.database.ref(`clues/-${clueID}/claims`).push({name: authentication.uName, id: authentication.uID});
+
+    },
+
 }
