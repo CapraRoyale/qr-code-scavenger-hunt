@@ -24,13 +24,13 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
   <!-- Navigation bar -->
   <nav>
     <div class="topnav">
@@ -43,54 +43,50 @@
   <div class="jumbotron clue_page">
     <h1 class="display-4">Clue Page!</h1>
     <hr class="my-4">
-    <p>Your next clue is: </p>
+
     <!--Grid row-->
     <div class="row">
-      <!-- This is the div id that will contain the rendered data from clue_page.js logic -->
-      <div id="renderArea"></div>
-      ​
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
-        ​
+      <div class="col-md-6 mb-4 mx-auto text-center">
+        <p>Your next clue is: </p>
 
+        <!-- Clue text will be rendered in this paragraph tag -->
+        <p id="renderArea"></p>
+        
+        <a class="btn btn-primary btn-lg" href="index.html" role="button">Found new Clue</a>
       </div>
-      <a class="btn btn-primary btn-lg" href="index.html" role="button">Found new Clue</a>
     </div>
-    <div class="container">
-      <div id="clue_text" class="col-sm-6">
-        ​
-      </div>
-      ​
-      <!-- Scripts -->
-      <!-- Firebase Components -->
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-      ​
-      <!-- Add SDKs for Firebase products that you want to use -->
-      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-      ​
-      <!-- Our scripts -->
-      <script src="assets/javascript/authTrack.js"></script>
-      <script src="assets/javascript/dbControll.js"></script>
-      <script src="assets/javascript/index.js"></script>
-      <script src="assets/javascript/clue_page.js"></script>
-      ​
-      <!-- jQuery -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-      <script>
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script>
+  </div>
+  ​
+  <!-- Scripts -->
+  <!-- Firebase Components -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  ​
+  <!-- Add SDKs for Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+  ​
+  <!-- Our scripts -->
+  <script src="assets/javascript/authTrack.js"></script>
+  <script src="assets/javascript/dbControll.js"></script>
+  <script src="assets/javascript/index.js"></script>
+  <script src="assets/javascript/clue_page.js"></script>
+  ​
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
 </body>
 ​
 
