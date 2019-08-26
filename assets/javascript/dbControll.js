@@ -21,7 +21,7 @@ const dbi = {
             let gamePath = `${gameOwner}/${gameID.key}/clues/${i}`;
 
             // Store clue in clue bucket and grab firebase generated memory location that it was put into
-            let clueLocation = this.database.ref('clues').push(clueList[i]);
+            let clueLocation = this.database.ref('clues').push({text : clueList[i]});
 
             // Add clue location refence to game clue list
             this.database.ref(gamePath).set(clueLocation.key);
