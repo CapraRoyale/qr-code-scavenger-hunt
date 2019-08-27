@@ -17,7 +17,14 @@ waitForAuth(function () {
         event.preventDefault();
         if (authentication.uID()) {
             // Update clue folder in database with clues/foundBy/{name: authentication.uName, uID: authentication.uID}
-            dbi.claimClue(localStorage.getItem("code"));
+            dbi.claimClue(localStorage.getItem("code"),function() {
+                // On success, update DOM to iform user that the operation was completed successfully. 
+                $('#claim-clue').removeClass('btn-success');
+                $('#claim-clue').addClass('btn-secondary');
+                $('#claim-clue').text('Claimed!')
+                $('#claim-clue').off();
+                $('#claim-clue').attr('disabled', 'true')
+            });
         }
         else {
             window.open("login.html", "_self");
