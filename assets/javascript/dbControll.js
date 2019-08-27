@@ -218,12 +218,23 @@ const dbi = {
 
     },
 
-    claimClue: function (clueID) {
+    claimClue: function (clueID, callback) {
         // adds an entry to the database for the currently logged in user under the supplied clue code
-        // users name and uID will be stored under clues/${clueID}/claims/{name: ${uName}, id: ${uID}}
-        // NOTE: because this pulls the clueID from the clue page, the leading '-' must be added 
+        // users name is added under 'claims' in the clue's database entry
+        // The clue ID is then added to the user's account folder so that they can refer back to it later
+        // NOTE: because this pulls the clueID from the clue page, the leading '-' must be added to database references to that clue ID
+        
+        let playerID = authentication.uID();
+        let playerName = authentication.uName();
 
-        this.database.ref(`clues/-${clueID}/claims`).push({name: authentication.uName, id: authentication.uID});
+        let newClaim = this.database.ref(`clues/-${clueID}/claims`).push(playerName).key;
+
+        console.log(newClaim);
+
+        let dataPackage = {};
+        dataPackage[`${playerID}/foundClues`] = `-${clueID}`;
+        this.database.ref().update(dataPackage).then(callback);
+
 
     },
 
