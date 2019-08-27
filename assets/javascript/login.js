@@ -1,6 +1,9 @@
 // dbControll.js already initializes firebase and calls up the database
 // so we don't need to do any of that here.
 
+// Get Referrer URL
+const referrer = document.referrer;
+
 // jQuery hooks:
 const uNameField = $('#inputName');
 const uEmailField = $('#inputEmail');
@@ -17,7 +20,22 @@ const newUserButton = $('.newAccount');
 // Username for new accounts must be global so it can be grabbed by the signin event listener.
 let uName;
 
-function invalidInput(field, response='Invalid input!') {
+// Sends the user to the proper location based on referrer url
+function sendUser() {
+
+    if (referrer.includes('/ClueHunt-QR/')) {
+        if (!referrer.includes('/ClueHunt-QR/index.html')) {
+            window.open(referrer, "_self");
+        }
+
+    }
+    else {
+        window.open('dashboard.html', '_self');
+    }
+
+};
+
+function invalidInput(field, response = 'Invalid input!') {
     // Function for handling specific types of invalid input
     switch (field) {
         case 'email':
@@ -83,16 +101,16 @@ newUserButton.on("click", function (event) {
             let user = response.user
 
             // Add user name to account under 'displayName' property
-                user.updateProfile({
-                    displayName: uName
-                }).then(function(){
-                    // On success
-                    console.log('Successfully created new account!')
+            user.updateProfile({
+                displayName: uName
+            }).then(function () {
+                // On success
+                console.log('Successfully created new account!')
 
-                }).catch(function(error){
-                    console.log('Database Error: Could not attach displayName to user account due to the following error:');
-                    throw(error);
-                });
+            }).catch(function (error) {
+                console.log('Database Error: Could not attach displayName to user account due to the following error:');
+                throw (error);
+            });
 
         }).catch(function (error) {
             console.log(`Server rejected request with error message: '${error.message}'`);
@@ -175,7 +193,7 @@ auth.onAuthStateChanged(function (user) {
 
     // If user is logged in, send them to the dashboard
     if (user) {
-        window.open("dashboard.html", "_self");
+        sendUser();
 
         // If for some reason the login state changes, but the user is not logged in
         // blank the input fields so we know something happened, but don't do anything else
