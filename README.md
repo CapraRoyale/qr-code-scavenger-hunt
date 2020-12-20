@@ -4,8 +4,6 @@ Scavenger hunts can be great fun, offering groups of people the ability to track
 
 In an effort to upgrade and simplify the process, our team developed a simple web-based application that allows you to generate as many clues as you like, with an associated QR code that can then be printed and placed where appropriate. When a user scans that QR code, the following clue in the sequence will be revealed, allowing the player to track down the next clue, until eventually reaching the end.
 
-## Getting Started:
-
 ### Prerequisites
 
 * [] Mobile Device/Tablet/Laptop
